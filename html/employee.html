@@ -313,7 +313,7 @@
                           </div>
                           <div class="mb-3">
                             <label for="exampleFormControlSelect1" class="form-label">職務</label>
-                            <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
+                            <select class="form-select" id="emplevel" aria-label="Default select example">
                               <option selected>請選擇</option>
                               <option value="00">助理</option>
                               <option value="01">業務</option>
@@ -321,32 +321,40 @@
                               <option value="99">總經理</option>
                             </select>
                           </div>
-                          <div class="row g-2">
-                            <div class="col mb-0">
+                          <div class="row">
+                            <div class="col mb-3">
                               <label for="emailWithTitle" class="form-label">Email</label>
                               <input
-                                type="text"
-                                id="emailWithTitle"
-                                class="form-control"
-                                placeholder="xxxx@xxx.xx"
+                              type="text"
+                              id="empmail"
+                              class="form-control"
+                              placeholder="xxxx@xxx.xx"
                               />
                             </div>
+                          </div>
+                          <div class="row g-2">
                             <div class="col mb-0">
                               <label for="dobWithTitle" class="form-label">生日</label>
                               <input
                                 type="date"
-                                id="dobWithTitle"
+                                id="empdate"
                                 class="form-control"
                                 placeholder="DD / MM / YY"
                               />
+                            </div>
+                            <div class="col mb-0">
+                              <div class="form-check mt-3" style="margin: 0% 35%;">
+                                <input class="form-check-input" type="checkbox" value="" id="empexists" />
+                                <label class="form-check-label" for="defaultCheck1"> 在職 </label>
+                              </div>
                             </div>
                           </div>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                            Close
+                            關閉
                           </button>
-                          <button type="button" class="btn btn-primary">Save changes</button>
+                          <button type="button" class="btn btn-primary">儲存</button>
                         </div>
                       </div>
                     </div>
