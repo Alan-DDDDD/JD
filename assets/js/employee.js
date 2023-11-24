@@ -32,6 +32,11 @@ async function getSelfData(){
     }
 }
 //新增
+$(`#btni`).on(`click`,function(){
+  $(`.model input`).val("");
+  $(`#empid`).removeAttr("readonly");
+  $(`#send`).data("id","");
+})
 //修改
 $(`#empltbody`).on(`click`,`.btne`,function(){
   let id = $(this).data("id");
@@ -57,5 +62,4 @@ $(`#empltbody`).on(`click`,`.btne`,function(){
 })
 
 $(`#send`).on(`click`,()=>{
-  alert($(`#send`).data("id"));
 })
