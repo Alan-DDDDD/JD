@@ -31,7 +31,8 @@ async function getSelfData(){
       //openLogin();
     }
 }
-
+//新增
+//修改
 $(`#empltbody`).on(`click`,`.btne`,function(){
   let id = $(this).data("id");
   $(`#empid`).attr("readonly","readonly");
