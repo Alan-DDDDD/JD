@@ -43,18 +43,12 @@ $(`#empltbody`).on(`click`,`.btne`,function(){
       $(`#empphone`).val(data.PHONE);
       $(`#empmail`).val(data.EMAIL);
       $(`#emppw`).val(data.EMPPWD);
-      $(`#empdate`).val(data.BIRTHDAY);
+      $(`#empdate`).val(data.BIRTHDAY || "");
       $(`#send`).data("id",id);
-      $.each($(`#emplevel option`),(i,item)=>{
-        if($(item).val()==data.EMPLLEVEL){
-          $(item).attr("selected");
-        }else{
-          $(item).removeAttr("selected");
-        }
-      })
+      $(`#emplevel option`).removeAttr("selected").filter(`[value=${data.EMPLLEVEL}]`).attr("selected",true);
       let exists = $(`#empexists`);
       if(data.EXISTS == "Y"){
-        exists.attr("checked");
+        exists.attr("checked",true);
       }else{
         exists.removeAttr("checked");
       }
