@@ -1,7 +1,5 @@
 $(`#login`).on(`click`,async function (e){
     e.preventDefault();
-    var formdata = new FormData(formAuthentication);
-    formdata.append(`check`,null);
     var data = {
         EMPID:$(`#email`).val(),
         EMPPWD:$(`#password`).val()
@@ -12,7 +10,8 @@ $(`#login`).on(`click`,async function (e){
             "ngrok-skip-browser-warning": "true"
         },
         contentType: 'application/json',
-        body:JSON.stringify(data)
+        // body:JSON.stringify(data),
+        data:JSON.stringify(data),
     });
     var responseData = await response.json();
     console.log(responseData);
