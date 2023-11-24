@@ -8,6 +8,10 @@ $(`#login`).on(`click`,async function (e){
     };
     var response = await fetch(`${url}/api/Login/LoginCheckMember`,{
         method:"Post",
+        headers: {
+            "ngrok-skip-browser-warning": "true"
+        },
+        contentType: 'application/json',
         body:JSON.stringify(data)
     });
     var responseData = await response.json();
