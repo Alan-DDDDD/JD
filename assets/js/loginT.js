@@ -2,9 +2,13 @@ $(`#login`).on(`click`,async function (e){
     e.preventDefault();
     var formdata = new FormData(formAuthentication);
     formdata.append(`check`,null);
+    var data = {
+        EMPID:$(`#email`).val(),
+        EMPPWD:$(`#password`).val()
+    };
     var response = await fetch(`${url}/api/Login`,{
         method:"Post",
-        body:{EMPID:$(`#email`).val(),EMPPWD:$(`#password`).val()}
+        body:data
     });
     var responseData = await response.json();
     console.log(responseData);
