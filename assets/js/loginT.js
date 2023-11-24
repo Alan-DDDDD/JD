@@ -6,7 +6,7 @@ $(`#login`).on(`click`,async function (e){
         EMPID:$(`#email`).val(),
         EMPPWD:$(`#password`).val()
     };
-    var response = await fetch(`${url}/api/Login/LoginCheckMember`,{
+    var response = await fetch(`${url}/api/Login`,{
         method:"Post",
         headers: {
             "ngrok-skip-browser-warning": "true"
