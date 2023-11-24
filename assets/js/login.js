@@ -6,6 +6,9 @@ $(function (){
 
     if(!curruntid){
         openLogin();
+    }else{
+        $(`#JDUSER`).html(curruntuser);
+        $(`#JDLEVEL`).html(curruntlevel);
     }
 })
 
