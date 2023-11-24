@@ -32,7 +32,7 @@ async function getSelfData(){
     }
 }
 
-$(`#empltbody`).on(`click`,`.btne`,()=>{
+$(`#empltbody`).on(`click`,`.btne`,function(){
   let id = $(this).data("id");
   alert(id)
   $.each(datalist,(index,data)=>{
