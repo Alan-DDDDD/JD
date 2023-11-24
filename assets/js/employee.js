@@ -34,7 +34,6 @@ async function getSelfData(){
 
 $(`#empltbody`).on(`click`,`.btne`,function(){
   let id = $(this).data("id");
-  alert(id)
   $(`#empid`).attr("readonly","readonly");
   $.each(datalist,(index,data)=>{
     if(data.EMPID == id){
@@ -43,6 +42,21 @@ $(`#empltbody`).on(`click`,`.btne`,function(){
       $(`#empphone`).val(data.PHONE);
       $(`#empmail`).val(data.EMAIL);
       $(`#emppw`).val(data.EMPPWD);
+      $(`#empdate`).val(data.BIRTHDAY);
+      $(`#send`).data("id",id);
+      $.each($(`#emplevel option`),(i,item)=>{
+        if($(item).val()==data.EMPLLEVEL){
+          $(item).attr("selected");
+        }else{
+          $(item).removeAttr("selected");
+        }
+      })
+      let exists = $(`#empexists`);
+      if(data.EXISTS == "Y"){
+        exists.attr("checked");
+      }else{
+        exists.removeAttr("checked");
+      }
     }
   });
 })
