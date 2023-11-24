@@ -4,7 +4,7 @@ $(`#login`).on(`click`,async function (e){
     formdata.append(`check`,null);
     var response = await fetch(`${url}/api/Login`,{
         method:"Post",
-        body:{EMPID:$(`#email`).VAL(),EMPPWD:$(`#password`).val()}
+        body:{EMPID:$(`#email`).val(),EMPPWD:$(`#password`).val()}
     });
     var responseData = await response.json();
     console.log(responseData);
