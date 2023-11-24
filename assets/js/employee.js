@@ -17,7 +17,7 @@ async function getSelfData(){
         });
     }
     else{
-      openLogin();
+      //openLogin();
     }
 }
 
