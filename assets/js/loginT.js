@@ -11,7 +11,7 @@ $(`#login`).on(`click`,async function (e){
             "ngrok-skip-browser-warning": "true",
             // contentType: 'application/json',
         },
-        body:data,
+        body:JSON.stringify(data),
     });
     var responseData = await response.json();
     console.log(responseData);
