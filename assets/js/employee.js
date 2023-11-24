@@ -35,4 +35,12 @@ async function getSelfData(){
 $(`#empltbody`).on(`click`,`.btne`,()=>{
   let id = $(this).data("id");
   alert(id)
+  $.each(datalist,(index,data)=>{
+    if(data.EMPID == id){
+      $(`#empname`).val(data.EMPNAME);
+      $(`#empphone`).val(data.PHONE);
+      $(`#empmail`).val(data.EMAIL);
+      $(`#emppw`).val(data.EMPPWD);
+    }
+  });
 })
