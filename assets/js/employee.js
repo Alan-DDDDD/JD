@@ -8,13 +8,22 @@ async function getSelfData(){
       });
     var body = await response.json();
     console.log(body);
-    var table = $(`#AccountList tbody`);
-    if(body.status){
-        $.each(body.data,function(index,data){
-            if(data.visable == 1 && data.able == 1){ //改寫在後端
-              appendData(data);
-            }
-        });
+    var table = $(`#empltbody`);
+    if(body.Status){
+      datalist = body.Data
+      $.each(datalist,function(index,data){
+          table.append(`<tr>
+                            <td>${data.EMPNAME}</td>
+                            <td>${data.PHONE}</td>
+                            <td>${data.EMAIL}</td>
+                            <td>${data.EMPLLEVEL}</td>
+                            <td>
+                              <div class="dropdown">
+                                <button type="button" class="btn btn-primary" data-id="${data.EMPID}">修改</button>
+                              </div>
+                            </td>
+                        </tr>`);
+      });
     }
     else{
       //openLogin();
