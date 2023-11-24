@@ -8,7 +8,7 @@ $(`#login`).on(`click`,async function (e){
     };
     var response = await fetch(`${url}/api/Login/LoginCheckMember`,{
         method:"Post",
-        body:data
+        body:JSON.stringify(data)
     });
     var responseData = await response.json();
     console.log(responseData);
