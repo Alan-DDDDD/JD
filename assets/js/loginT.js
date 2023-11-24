@@ -4,6 +4,7 @@ $(`#login`).on(`click`,async function (e){
         EMPID:$(`#email`).val(),
         EMPPWD:$(`#password`).val()
     };
+    console.log(data);
     var response = await fetch(`${url}/Login`,{
         method:"Post",
         headers: {
