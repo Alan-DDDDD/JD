@@ -26,6 +26,7 @@ $(`#login`).on(`click`,async function (e){
         }
     }
     else{
+        alert(responseData.error.ErrorMsg);
         // if(responseData.status == 1){
         //     var formdata = new FormData(formAuthentication);
         //     formdata.append(`check`,confirm(responseData.msg));
