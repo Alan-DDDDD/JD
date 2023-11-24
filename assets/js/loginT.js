@@ -9,7 +9,7 @@ $(`#login`).on(`click`,async function (e){
         method:"Post",
         headers: {
             "ngrok-skip-browser-warning": "true",
-            // contentType: 'application/json',
+            "Content-Type": 'application/json',
         },
         body:JSON.stringify(data),
     });
