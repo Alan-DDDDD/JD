@@ -8,9 +8,9 @@ $(`#login`).on(`click`,async function (e){
         method:"Post",
         headers: {
             "ngrok-skip-browser-warning": "true",
-            contentType: 'application/json',
+            // contentType: 'application/json',
         },
-        body:JSON.stringify(data),
+        body:data,
     });
     var responseData = await response.json();
     console.log(responseData);
