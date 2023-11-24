@@ -15,8 +15,9 @@ $(`#login`).on(`click`,async function (e){
     });
     var responseData = await response.json();
     console.log(responseData);
-    if(responseData.status == 0){
-        localStorage.setItem(`loginToken`,responseData.data);
+    if(responseData.Status){
+        localStorage.setItem(`currid`,responseData.data.EMPID);
+        localStorage.setItem(`curruser`,responseData.data.EMPNAME);
         let url = localStorage.getItem(`backUrl`)
         if(url){
             localStorage.removeItem(`backUrl`); 
