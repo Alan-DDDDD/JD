@@ -1,6 +1,6 @@
 getSelfData();
 async function getSelfData(){
-    var response = await fetch(url + "/EMPL/getAllEMPL?user=" + curruntid, {
+    var response = await fetch(url + "/EMPL/getAllEMPL?user=" + localStorage.getItem(`currid`), {
         method: "get",
         headers: new Headers({
           "ngrok-skip-browser-warning": "69420",
