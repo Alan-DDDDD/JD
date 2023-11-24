@@ -3,7 +3,7 @@ $(function (){
     curruntid = localStorage.getItem("currid");
     curruntuser = localStorage.getItem("curruser");
     curruntlevel = localStorage.getItem("currlevel");
-    console.log(curruntid)
+    alert(curruntid)
     if(!curruntid){
         openLogin();
     }else{
