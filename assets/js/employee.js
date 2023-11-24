@@ -32,7 +32,7 @@ async function getSelfData(){
     }
 }
 
-$(`#empltbody`).on(`click`,`.btne`,(e)=>{
-  let id = $(e).data("id");
+$(`#empltbody`).on(`click`,`.btne`,()=>{
+  let id = $(this).data("id");
   alert(id)
 })
