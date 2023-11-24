@@ -36,6 +36,8 @@ $(`.btni`).on(`click`,function(){
   $(`.modal input`).val("");
   $(`#empid`).removeAttr("readonly");
   $(`#send`).data("id","");
+  $(`#empexists`).attr("checked",true);
+  $(`#emplevel option`).removeAttr("selected");
 })
 //修改
 $(`#empltbody`).on(`click`,`.btne`,function(){
