@@ -19,7 +19,9 @@ async function getSelfData(){
                             <td>${data.ELNAME}</td>
                             <td>
                               <div class="dropdown">
-                                <button type="button" class="btn btn-primary" data-id="${data.EMPID}">修改</button>
+                                <button type="button" class="btn btn-primary" 
+                                 data-bs-toggle="modal"
+                                 data-bs-target="#modalCenter" data-id="${data.EMPID}">修改</button>
                               </div>
                             </td>
                         </tr>`);
