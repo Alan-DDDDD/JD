@@ -1,18 +1,15 @@
 getSelfData();
 async function getSelfData(){
-    //const userid = "F111111111";
-    const userid = "F128933062";
-    var response = await fetch(url + "/api/Account/", {
+    var response = await fetch(url + "/EMPL?user=" + curruntid, {
         method: "get",
         headers: new Headers({
           "ngrok-skip-browser-warning": "69420",
-          "authorization":localStorage.getItem("loginToken")
         }),
       });
     var body = await response.json();
     console.log(body);
     var table = $(`#AccountList tbody`);
-    if(body.status == 0){
+    if(body.status){
         $.each(body.data,function(index,data){
             if(data.visable == 1 && data.able == 1){ //改寫在後端
               appendData(data);
