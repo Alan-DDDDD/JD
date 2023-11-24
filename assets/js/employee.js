@@ -57,5 +57,5 @@ $(`#empltbody`).on(`click`,`.btne`,function(){
 })
 
 $(`#send`).on(`click`,()=>{
-  alert($(`$send`).data("id"));
+  alert($(`#send`).data("id"));
 })
