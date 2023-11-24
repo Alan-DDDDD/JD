@@ -35,8 +35,10 @@ async function getSelfData(){
 $(`#empltbody`).on(`click`,`.btne`,function(){
   let id = $(this).data("id");
   alert(id)
+  $(`#empid`).attr("readonly","readonly");
   $.each(datalist,(index,data)=>{
     if(data.EMPID == id){
+      $(`#empid`).val(data.EMPID);
       $(`#empname`).val(data.EMPNAME);
       $(`#empphone`).val(data.PHONE);
       $(`#empmail`).val(data.EMAIL);
