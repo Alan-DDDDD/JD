@@ -7,11 +7,10 @@ $(`#login`).on(`click`,async function (e){
     var response = await fetch(`${url}/Login`,{
         method:"Post",
         headers: {
-            "ngrok-skip-browser-warning": "true"
+            "ngrok-skip-browser-warning": "true",
+            contentType: 'application/json',
         },
-        contentType: 'application/json',
-        // body:JSON.stringify(data),
-        data:JSON.stringify(data),
+        body:JSON.stringify(data),
     });
     var responseData = await response.json();
     console.log(responseData);
