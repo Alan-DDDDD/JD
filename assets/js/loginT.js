@@ -18,6 +18,7 @@ $(`#login`).on(`click`,async function (e){
     if(responseData.Status){
         localStorage.setItem(`currid`,responseData.Data.EMPL.EMPID);
         localStorage.setItem(`curruser`,responseData.Data.EMPL.EMPNAME);
+        localStorage.setItem(`currlevel`,responseData.Data.LVNAME);
         let url = localStorage.getItem(`backUrl`)
         if(url){
             localStorage.removeItem(`backUrl`); 
