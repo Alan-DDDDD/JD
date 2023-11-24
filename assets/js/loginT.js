@@ -26,23 +26,23 @@ $(`#login`).on(`click`,async function (e){
         }
     }
     else{
-        if(responseData.status == 1){
-            var formdata = new FormData(formAuthentication);
-            formdata.append(`check`,confirm(responseData.msg));
-            var response = await fetch(`${url}/api/Login`,{
-                method:"Post",
-                body:formdata
-            });
-            var responseData = await response.json();
-            console.log(responseData);
-            if(responseData.status == 0){
-                localStorage.setItem(`loginToken`,responseData.data);
-                let url = localStorage.getItem(`backUrl`)
-                if(url){
-                    localStorage.removeItem(`backUrl`); 
-                    open(url,"_self");
-                }
-            }
-        }
+        // if(responseData.status == 1){
+        //     var formdata = new FormData(formAuthentication);
+        //     formdata.append(`check`,confirm(responseData.msg));
+        //     var response = await fetch(`${url}/api/Login`,{
+        //         method:"Post",
+        //         body:formdata
+        //     });
+        //     var responseData = await response.json();
+        //     console.log(responseData);
+        //     if(responseData.status == 0){
+        //         localStorage.setItem(`loginToken`,responseData.data);
+        //         let url = localStorage.getItem(`backUrl`)
+        //         if(url){
+        //             localStorage.removeItem(`backUrl`); 
+        //             open(url,"_self");
+        //         }
+        //     }
+        // }
     }
 })
