@@ -32,7 +32,7 @@ async function getSelfData(){
     }
 }
 //新增
-$(`#btni`).on(`click`,function(){
+$(`.btni`).on(`click`,function(){
   $(`.modal input`).val("");
   $(`#empid`).removeAttr("readonly");
   $(`#send`).data("id","");
