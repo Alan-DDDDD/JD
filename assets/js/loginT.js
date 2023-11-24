@@ -1,3 +1,7 @@
+localStorage.removeItem("currid");
+localStorage.removeItem("curruser");
+localStorage.removeItem("currlevel");
+
 $(`#login`).on(`click`,async function (e){
     e.preventDefault();
     var data = {
