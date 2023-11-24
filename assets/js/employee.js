@@ -16,7 +16,7 @@ async function getSelfData(){
                             <td>${data.EMPNAME}</td>
                             <td>${data.PHONE}</td>
                             <td>${data.EMAIL}</td>
-                            <td>${data.EMPLLEVEL}</td>
+                            <td>${data.ELNAME}</td>
                             <td>
                               <div class="dropdown">
                                 <button type="button" class="btn btn-primary" data-id="${data.EMPID}">修改</button>
