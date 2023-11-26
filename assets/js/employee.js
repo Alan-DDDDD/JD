@@ -62,6 +62,38 @@ $(`#empltbody`).on(`click`,`.btne`,function(){
     }
   });
 })
-
-$(`#send`).on(`click`,()=>{
+//確認送出
+$(`#send`).on(`click`,async ()=>{
+  let empl = {//組物件
+    empname : $(`#empname`).val(),
+    empphone : $(`#empphone`).val(),
+    emplevel :$(`#emplevel option:selected`).val(),
+    empmail : $(`#empmail`).val(),
+    emppw : $(`#emppw`).val(),
+    empdate : $(`#empdate`).val(),
+    empexists : $(`#empexists checked`),
+  };
+  let empid = $(`#empid`).val();
+  if(empid){//新增
+    // var response = await fetch(url + "/EMPL/create?user=" + curruntid,{
+    //   method : "POST",
+    //   headers : new Headers({
+    //     "ngrok-skip-browser-warning": "69420",
+    //   }),
+    //   body : JSON.stringify(empl)
+    // });
+    // var body = await response.json();
+    var body = ajax("/EMPL/create?user=",empl,"POST")
+    response(body);
+  }else{//修改
+    var response = await fetch(url + "/EMPL/edit?user=" + curruntid,{
+      method : "POST",
+      headers : new Headers({
+        "ngrok-skip-browser-warning": "69420",
+      }),
+      body : JSON.stringify(empl)
+    });
+    var body = await response.json();
+    response(body);
+  }
 })
