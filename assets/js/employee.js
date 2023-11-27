@@ -64,7 +64,7 @@ $(`#empltbody`).on(`click`,`.btne`,function(){
 })
 //確認送出
 $(`#send`).on(`click`,async ()=>{
-  console.log($(`#empexists`).is(":check"))
+  console.log($(`#empexists`).is(":checked"))
   let empl = {//組物件
     EMPID : $(`#send`).data("id"),
     EMPNAME : $(`#empname`).val(),
@@ -73,7 +73,7 @@ $(`#send`).on(`click`,async ()=>{
     EMAIL : $(`#empmail`).val(),
     EMPPWD : $(`#emppw`).val(),
     BIRTHDAY : $(`#empdate`).val(),
-    EXSITS : $(`#empexists`).is(":check")? "Y":"N",
+    EXSITS : $(`#empexists`).is(":checked")? "Y":"N",
   };
   let empid = $(`#empid`).val();
   if(!empid){//新增
