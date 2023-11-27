@@ -69,13 +69,14 @@ $(`#empltbody`).on(`click`,`.btne`,function(){
 //確認送出
 $(`#send`).on(`click`,async ()=>{
   let empl = {//組物件
-    empname : $(`#empname`).val(),
-    empphone : $(`#empphone`).val(),
-    emplevel :$(`#emplevel option:selected`).val(),
-    empmail : $(`#empmail`).val(),
-    emppw : $(`#emppw`).val(),
-    empdate : $(`#empdate`).val(),
-    empexists : $(`#empexists checked`),
+    EMPID : $(`#send`).data("id"),
+    EMPNAME : $(`#empname`).val(),
+    PHONE : $(`#empphone`).val(),
+    EMPLEVEL :$(`#emplevel option:selected`).val(),
+    EMAIL : $(`#empmail`).val(),
+    EMPPWD : $(`#emppw`).val(),
+    BIRTHDAY : $(`#empdate`).val(),
+    EXSITS : $(`#empexists checked`),
   };
   let empid = $(`#empid`).val();
   if(empid){//新增
