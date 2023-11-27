@@ -133,12 +133,12 @@
               </a>
 
               <ul class="menu-sub">
-                <li class="menu-item active" id="employeeView">
+                <li class="menu-item" id="employeeView">
                   <a href="employee.html" class="menu-link">
                     <div data-i18n="Without menu">員工資料設定</div>
                   </a>
                 </li>
-                <li class="menu-item" id="buybudgetView">
+                <li class="menu-item active" id="buybudgetView">
                   <a href="budget.html" class="menu-link">
                     <div data-i18n="Without menu">採購預算設定</div>
                   </a>
@@ -269,7 +269,7 @@
             <!-- Content -->
             <div class="container-xxl flex-grow-1 container-p-y">
               <!-- 標頭 -->
-              <h4 class="fw-bold py-2 mb-2"><span class="text-muted fw-light">設定 /</span> 員工資料</h4>
+              <h4 class="fw-bold py-2 mb-2"><span class="text-muted fw-light">設定 /</span> 採購預算資料</h4>
               <!-- 表單 -->
               <div class="col-lg-4 col-md-6">
                 <div class="mt-3">
@@ -287,7 +287,7 @@
                     <div class="modal-dialog modal-dialog-centered" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="modalCenterTitle">員工資料表</h5>
+                          <h5 class="modal-title" id="modalCenterTitle">採購預算</h5>
                           <button
                             type="button"
                             class="btn-close"
@@ -296,42 +296,10 @@
                           ></button>
                         </div>
                         <div class="modal-body">
-                          <div class="row" style="display: none;">
-                            <div class="col mb-3">
-                              <label for="empid" class="form-label">員工編號</label>
-                              <input
-                                type="text"
-                                id="empid"
-                                class="form-control"
-                                placeholder="AXXX"
-                              />
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col mb-3">
-                              <label for="empname" class="form-label">姓名</label>
-                              <input
-                                type="text"
-                                id="empname"
-                                class="form-control"
-                                placeholder="陳XX"
-                              />
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col mb-3">
-                              <label for="empphone" class="form-label">電話</label>
-                              <input
-                                type="text"
-                                id="empphone"
-                                class="form-control"
-                                placeholder="09XXXXXXXX"
-                              />
-                            </div>
-                          </div>
-                          <div class="mb-3" id="level">
-                            <label for="exampleFormControlSelect1" class="form-label">職務</label>
-                            <select class="form-select" id="emplevel" aria-label="Default select example">
+                          
+                          <div class="mb-3" id="">
+                            <label for="exampleFormControlSelect1" class="form-label">業務</label>
+                            <select class="form-select" id="emplist" aria-label="Default select example">
                               <option selected>請選擇</option>
                               <option value="00">助理</option>
                               <option value="01">業務</option>
@@ -341,47 +309,16 @@
                           </div>
                           <div class="row">
                             <div class="col mb-3">
-                              <label for="emailWithTitle" class="form-label">Email</label>
+                              <label for="empbudget" class="form-label">預算</label>
                               <input
                               type="text"
-                              id="empmail"
+                              id="empbudget"
                               class="form-control"
-                              placeholder="xxxx@xxx.xx"
+                              placeholder="XXX,XXX,XXX,XXX"
                               />
                             </div>
                           </div>
-                          <div class="form-password-toggle">
-                            <label class="form-label" for="emppw">密碼</label>
-                            <div class="input-group input-group-merge">
-                              <input
-                                type="password"
-                                class="form-control"
-                                id="emppw"
-                                placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                                aria-describedby="basic-default-password"
-                              />
-                              <span class="input-group-text cursor-pointer" id="basic-default-password"
-                                ><i class="bx bx-hide"></i
-                              ></span>
-                            </div>
-                          </div>
-                          <div class="row g-2">
-                            <div class="col mb-0">
-                              <label for="dobWithTitle" class="form-label">生日</label>
-                              <input
-                                type="date"
-                                id="empdate"
-                                class="form-control"
-                                placeholder="DD / MM / YY"
-                              />
-                            </div>
-                            <div class="col mb-0">
-                              <div class="form-check mt-3" style="margin: 0% 35%;">
-                                <input class="form-check-input" type="checkbox" value="" id="empexists" />
-                                <label class="form-check-label" for="defaultCheck1"> 在職 </label>
-                              </div>
-                            </div>
-                          </div>
+                          
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
@@ -402,12 +339,10 @@
                     <thead>
                       <tr>
                         <th>員工姓名</th>
-                        <th>電話</th>
-                        <th>EMAIL</th>
-                        <th>職務</th>
+                        <th>預算</th>
                       </tr>
                     </thead>
-                    <tbody class="table-border-bottom-0" id="empltbody">
+                    <tbody class="table-border-bottom-0" id="budgettbody">
                       
                     </tbody>
                   </table>
@@ -475,7 +410,7 @@
     <script src="../assets/js/dashboards-analytics.js"></script>
     <script src="../assets/js/maindata.js"></script>
     <script src="../assets/js/login.js"></script>
-    <script src="../assets/js/employee.js"></script>
+    <script src="../assets/js/budget.js"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
