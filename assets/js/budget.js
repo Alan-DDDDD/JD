@@ -83,7 +83,7 @@ $(`.btni`).on(`click`,function(){
   $(`#send`).data("id","");
   $(`#emplist option`).removeAttr("selected");
   $(`#status option`).removeAttr("selected");
-  $(`#status option[value="P"]`).attr("selected");
+  $(`#status option`)[1].attr("selected");
   $(`#emplist`).removeAttr("disabled");
   $(`#status`).parent().css("display","none");
   $(`#memo`).val("初次設定");
@@ -130,7 +130,7 @@ $(`#send`).on(`click`,async ()=>{
     memo :$(`#memo`).val(),
   };
   console.log(budget);
-  let empid = $(`#empid`).val();
+  let empid = $(`#send`).data("id");
   if(!empid){//新增
     var response = await fetch(url + "/api/Budget/create?user=" + curruntid,{
       method : "POST",
