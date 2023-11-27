@@ -73,7 +73,7 @@ $(`#send`).on(`click`,async ()=>{
     EMAIL : $(`#empmail`).val(),
     EMPPWD : $(`#emppw`).val(),
     BIRTHDAY : $(`#empdate`).val(),
-    EXSITS : $(`#empexists`).is(":checked")? "Y":"N",
+    EXISTS : $(`#empexists`).is(":checked")? "Y":"N",
   };
   console.log(empl);
   let empid = $(`#empid`).val();
