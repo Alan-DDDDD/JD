@@ -18,5 +18,4 @@ function openLogin(){
 }
 
 function logout(){
-    
 }
