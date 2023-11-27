@@ -1,5 +1,8 @@
 getSelfData();
+var parame = "";
 $(async function(){
+  //取得amount參數
+  parame = localStorage.getItem("amountparame");
   //取得BS資料
   var BS = await fetch(url+"/api/Code/BS",{
     method: "get",
@@ -41,7 +44,7 @@ $(async function(){
 })
 async function getSelfData(){
   $(`#budgettbody`).empty();
-    var response = await fetch(url + "/api/Budget?user=" + localStorage.getItem(`currid`), {
+    var response = await fetch(url + "/api/Amount_D?user=" + localStorage.getItem(`currid`), {
         method: "get",
         headers: new Headers({
           "ngrok-skip-browser-warning": "69420",
@@ -54,15 +57,11 @@ async function getSelfData(){
       datalist = body.Data
       $.each(datalist,function(index,data){
           table.append(`<tr>
-                            <td onclick="detail(${data.empid});">${data.empname}</td>
-                            <td>${data.budget.numberFormat(0,".",",")}</td>
-                            <td>
-                              <div class="dropdown">
-                                <button type="button" class="btn btn-primary btne"
-                                 data-bs-toggle="modal"
-                                 data-bs-target="#modalCenter" data-id="${data.empid}">修改</button>
-                              </div>
-                            </td>
+                            <td>${data.payment}</td>
+                            <td>${data.amount.numberFormat(0,".",",")}</td>
+                            <td>${data.memo}</td>
+                            <td>${data.u_sysdt}</td>
+                            <td>${data.u_user}</td>
                         </tr>`);
       });
     }
@@ -79,27 +78,29 @@ function select(){
 }
 //新增
 $(`.btni`).on(`click`,function(){
-  $(`.modal input`).val("");
-  $(`#send`).data("id","");
-  $(`#emplist option`).removeAttr("selected");
-  $(`#status option`).removeAttr("selected");
-  $(`#status option[value=P]`).attr("selected","selected");
-  $(`#emplist`).removeAttr("disabled");
-  $(`#status`).parent().css("display","none");
-  $(`#memo`).val("初次設定");
-  $(`#memo`).parent().css("display","none");
-})
-//修改
-$(`#budgettbody`).on(`click`,`.btne`,function(){
-  let id = $(this).data("id");
-  $(`#empid`).attr("readonly","readonly");
-  let current = $.grep(datalist,function(e){
-    return e.EMPID == curruntid
-  });
+  // $(`.modal input`).val("");
+  // $(`#send`).data("id","");
+  // $(`#emplist option`).removeAttr("selected");
+  // $(`#status option`).removeAttr("selected");
+  // $(`#status option[value=P]`).attr("selected","selected");
+  // $(`#emplist`).removeAttr("disabled");
+  // $(`#status`).parent().css("display","none");
+  // $(`#memo`).val("初次設定");
+  // $(`#memo`).parent().css("display","none");
   $(`#memo`).parent().css("display","");
   $(`#status`).parent().css("display","");
   $(`#status option`).removeAttr("selected");
-  $(`#emplist option`).removeAttr("selected").filter(`[value=${id}]`).attr("selected",true);
+  $(`#emplist option`).removeAttr("selected").filter(`[value=${parame}]`).attr("selected",true);
+  $(`#emplist`).attr("disabled","disabled");
+  $(`#empbudget`).val("");
+  $(`#memo`).val("");
+})
+//修改
+$(`#budgettbody`).on(`click`,`.btne`,function(){
+  $(`#memo`).parent().css("display","");
+  $(`#status`).parent().css("display","");
+  $(`#status option`).removeAttr("selected");
+  $(`#emplist option`).removeAttr("selected").filter(`[value=${parame}]`).attr("selected",true);
   $(`#emplist`).attr("disabled","disabled");
   $(`#empbudget`).val("");
   $(`#memo`).val("");
@@ -160,7 +161,7 @@ $(`#send`).on(`click`,async ()=>{
   $(`.btn-close`).click();
 })
 
-function detail(empid){
-  localStorage.setItem("amountparame",empid);
-  open(fronturl + "/amount.html");
-}
+$(`#back`).on('click',()=>{
+  localStorage.removeItem("amountparame");
+  open(fronturl + "/budget.html");
+})
