@@ -44,7 +44,7 @@ $(`.btni`).on(`click`,function(){
 $(`#empltbody`).on(`click`,`.btne`,function(){
   let id = $(this).data("id");
   $(`#empid`).attr("readonly","readonly");
-  let current = datalist.inArray(curruntid);
+  let current = $.inArray(curruntid,datalist);
   console.log(current);
   $.each(datalist,(index,data)=>{
     if(data.EMPID == id){
