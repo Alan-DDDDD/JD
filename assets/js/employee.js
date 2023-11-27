@@ -36,7 +36,7 @@ async function getSelfData(){
 function select(){
   let key = $(`#search`).val();
   $("#empltbody tr").filter(function() {
-    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    $(this).toggle($(this).text().toLowerCase().indexOf(key) > -1)
   });
 }
 //新增
