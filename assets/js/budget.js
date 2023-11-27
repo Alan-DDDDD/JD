@@ -54,7 +54,7 @@ async function getSelfData(){
       datalist = body.Data
       $.each(datalist,function(index,data){
           table.append(`<tr>
-                            <td onclick="detail(${data.empid});">${data.empname}</td>
+                            <td onclick="detail('${data.empid}');">${data.empname}</td>
                             <td>${data.budget.numberFormat(0,".",",")}</td>
                             <td>
                               <div class="dropdown">
