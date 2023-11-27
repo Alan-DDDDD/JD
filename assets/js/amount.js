@@ -136,7 +136,7 @@ $(`#send`).on(`click`,async ()=>{
         getSelfData();
       }
     }else{//系統錯誤
-      alert(body.error.errorMsg);
+      alert(body.error.ErrorMsg);
     }
   }else{//修改
     // var response = await fetch(url + "/api/Budget/edit?user=" + curruntid,{
