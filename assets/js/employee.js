@@ -75,6 +75,7 @@ $(`#send`).on(`click`,async ()=>{
     BIRTHDAY : $(`#empdate`).val(),
     EXSITS : $(`#empexists`).is(":checked")? "Y":"N",
   };
+  console.log(empl);
   let empid = $(`#empid`).val();
   if(!empid){//新增
     // var response = await fetch(url + "/EMPL/create?user=" + curruntid,{
