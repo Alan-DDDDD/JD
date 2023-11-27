@@ -86,7 +86,7 @@ $(`#send`).on(`click`,async ()=>{
     });
     var body = await response.json();
     console.log(body);
-    if(body.Status){
+    if(body.status){
       if(body.error){//資料邏輯錯誤
         alert("");
       }else{
@@ -105,6 +105,15 @@ $(`#send`).on(`click`,async ()=>{
       body : JSON.stringify(empl)
     });
     var body = await response.json();
-    response(body);
+    if(body.status){
+      if(body.error){//資料邏輯錯誤
+        alert("");
+      }else{
+        alert("編輯成功!!");
+
+      }
+    }else{//系統錯誤
+      alert("連線失敗!!");
+    }
   }
 })
