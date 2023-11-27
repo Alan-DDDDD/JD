@@ -94,7 +94,7 @@ $(`#send`).on(`click`,async ()=>{
 
       }
     }else{//系統錯誤
-      alert("連線失敗!!");
+      alert(body.error.errorMsg);
     }
   }else{//修改
     var response = await fetch(url + "/EMPL/edit?user=" + curruntid,{
@@ -114,7 +114,7 @@ $(`#send`).on(`click`,async ()=>{
 
       }
     }else{//系統錯誤
-      alert("連線失敗!!");
+      alert(body.error.errorMsg);
     }
   }
 })
