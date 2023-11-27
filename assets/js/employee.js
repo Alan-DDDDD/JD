@@ -44,6 +44,8 @@ $(`.btni`).on(`click`,function(){
 $(`#empltbody`).on(`click`,`.btne`,function(){
   let id = $(this).data("id");
   $(`#empid`).attr("readonly","readonly");
+  let current = datalist.inArray(curruntid);
+  console.log(current);
   $.each(datalist,(index,data)=>{
     if(data.EMPID == id){
       $(`#empid`).val(data.EMPID);
@@ -54,9 +56,7 @@ $(`#empltbody`).on(`click`,`.btne`,function(){
       $(`#empdate`).val(data.BIRTHDAY || "");
       $(`#send`).data("id",id);
       $(`#emplevel option`).removeAttr("selected").filter(`[value=${data.EMPLLEVEL}]`).attr("selected",true);
-      if(data.EMPLLEVEL != "99"){//職稱編輯權限
-        $(`#emplevel`).attr("readonly","readonly");
-      }
+      
       let exists = $(`#empexists`);
       if(data.EXISTS == "Y"){
         exists.attr("checked",true);
