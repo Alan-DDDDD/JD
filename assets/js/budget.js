@@ -162,5 +162,5 @@ $(`#send`).on(`click`,async ()=>{
 
 function detail(empid){
   localStorage.setItem("amountparame",empid);
-  open(fronturl + "/amount.html");
+  open(fronturl + "/amount.html","_self");
 }

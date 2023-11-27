@@ -163,5 +163,5 @@ $(`#send`).on(`click`,async ()=>{
 
 $(`#back`).on('click',()=>{
   localStorage.removeItem("amountparame");
-  open(fronturl + "/budget.html");
+  open(fronturl + "/budget.html","_self");
 })
