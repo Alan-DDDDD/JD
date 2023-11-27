@@ -73,7 +73,7 @@ async function getSelfData(){
 //搜尋
 function select(){
   let key = $(`#search`).val();
-  $("#empltbody tr").filter(function() {
+  $("#budgettbody tr").filter(function() {
     $(this).toggle($(this).text().toLowerCase().indexOf(key) > -1)
   });
 }
