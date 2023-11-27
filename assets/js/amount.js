@@ -44,7 +44,7 @@ $(async function(){
 })
 async function getSelfData(){
   $(`#budgettbody`).empty();
-    var response = await fetch(url + "/api/Amount_D?user=" + localStorage.getItem(`currid`), {
+    var response = await fetch(url + "/api/Amount_D?user=" + localStorage.getItem(`currid`) + "&empid=" + parame, {
         method: "get",
         headers: new Headers({
           "ngrok-skip-browser-warning": "69420",
