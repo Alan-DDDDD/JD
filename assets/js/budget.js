@@ -20,7 +20,7 @@ $(async function(){
     console.log("BS資料取得失敗")
   }
   //取得EMP資料
-  var emp = await fetch(url+"/EMPL/getAllEMPL?user=" + localStorage.getItem(`currid`),{
+  var emp = await fetch(url+"/EMPL/getAllEMPL?user=" + localStorage.getItem(`currid`) + "&flag=Y",{
     method: "get",
     headers: new Headers({
       "ngrok-skip-browser-warning": "69420",
