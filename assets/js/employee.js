@@ -76,17 +76,16 @@ $(`#send`).on(`click`,async ()=>{
   };
   let empid = $(`#empid`).val();
   if(!empid){//新增
-    // var response = await fetch(url + "/EMPL/create?user=" + curruntid,{
-    //   method : "POST",
-    //   headers : new Headers({
-    //     "ngrok-skip-browser-warning": "69420",
-    //   }),
-    //   body : JSON.stringify(empl)
-    // });
-    // var body = await response.json();
-    var result = ajax("/EMPL/create?user=",empl,"POST")
-    if(result.Status){
-      if(result.error){//資料邏輯錯誤
+    var response = await fetch(url + "/EMPL/create?user=" + curruntid,{
+      method : "POST",
+      headers : new Headers({
+        "ngrok-skip-browser-warning": "69420",
+      }),
+      body : JSON.stringify(empl)
+    });
+    var body = await response.json();
+    if(body.Status){
+      if(body.error){//資料邏輯錯誤
         alert("");
       }else{
         alert("新增成功!!");
