@@ -37,10 +37,17 @@ $(async function(){
       emplist.append(`
           <option value="${item.EMPID}">${item.EMPID}  ${item.EMPNAME}</option>
       `)
+      //設定個人統計資料
+      if(item.EMPID == parame){
+        $(`#empid`).val(item.EMPID);
+        $(`#empname`).val(item.EMPNAME);
+      }
     })
   }else{
     console.log("EMP資料取得失敗")
   }
+  //設定個人統計
+
 })
 async function getSelfData(){
   $(`#budgettbody`).empty();
