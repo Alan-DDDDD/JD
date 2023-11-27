@@ -1,4 +1,24 @@
 getSelfData();
+$(async function(){
+  var response = await fetch(url+"/api/Code/BS",{
+    method: "get",
+    headers: new Headers({
+      "ngrok-skip-browser-warning": "69420",
+    }),
+  })
+  var data = await response.json();
+  if(data.Status){
+    let status = $(`#status`);
+    status.append(`<option selected>請選擇</option>`)
+    $.each(data.Data,(index,item)=>{
+      status.append(`
+          <option value="${item.dataid}">${item.data}</option>
+      `)
+    })
+  }else{
+    console.log("BS資料取得失敗")
+  }
+})
 async function getSelfData(){
   $(`#budgettbody`).empty();
     var response = await fetch(url + "/api/Budget?user=" + localStorage.getItem(`currid`), {
