@@ -101,6 +101,7 @@ $(`#send`).on(`click`,async ()=>{
       method : "POST",
       headers : new Headers({
         "ngrok-skip-browser-warning": "69420",
+        "Content-Type":"application/json"
       }),
       body : JSON.stringify(empl)
     });
