@@ -84,8 +84,17 @@ $(`#send`).on(`click`,async ()=>{
     //   body : JSON.stringify(empl)
     // });
     // var body = await response.json();
-    var body = ajax("/EMPL/create?user=",empl,"POST")
-    response(body);
+    var result = ajax("/EMPL/create?user=",empl,"POST")
+    if(result.Status){
+      if(result.error){//資料邏輯錯誤
+        alert("");
+      }else{
+        alert("新增成功!!");
+
+      }
+    }else{//系統錯誤
+      alert("連線失敗!!");
+    }
   }else{//修改
     var response = await fetch(url + "/EMPL/edit?user=" + curruntid,{
       method : "POST",
