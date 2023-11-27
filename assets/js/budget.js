@@ -15,7 +15,7 @@ async function getSelfData(){
       $.each(datalist,function(index,data){
           table.append(`<tr>
                             <td>${data.empname}</td>
-                            <td>${data.budget}</td>
+                            <td>${data.budget.numberFormat(0,".",",")}</td>
                             <td>
                               <div class="dropdown">
                                 <button type="button" class="btn btn-primary btne"
