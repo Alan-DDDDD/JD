@@ -79,7 +79,7 @@ $(`#send`).on(`click`,async ()=>{
     EXSITS : $(`#empexists checked`),
   };
   let empid = $(`#empid`).val();
-  if(empid){//新增
+  if(!empid){//新增
     // var response = await fetch(url + "/EMPL/create?user=" + curruntid,{
     //   method : "POST",
     //   headers : new Headers({
