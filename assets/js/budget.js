@@ -83,7 +83,7 @@ $(`.btni`).on(`click`,function(){
   $(`#send`).data("id","");
   $(`#emplist option`).removeAttr("selected");
   $(`#status option`).removeAttr("selected");
-  $(`#status option`)[1].attr("selected");
+  $(`#status option[value=P]`).attr("selected","selected");
   $(`#emplist`).removeAttr("disabled");
   $(`#status`).parent().css("display","none");
   $(`#memo`).val("初次設定");
