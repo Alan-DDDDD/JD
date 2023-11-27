@@ -80,11 +80,14 @@ function select(){
 //新增
 $(`.btni`).on(`click`,function(){
   $(`.modal input`).val("");
-  $(`#empid`).removeAttr("readonly");
   $(`#send`).data("id","");
-  $(`#empexists`).attr("checked",true);
-  $(`#emplevel option`).removeAttr("selected");
-  $(`#emplevel`).removeAttr("disabled");
+  $(`#emplist option`).removeAttr("selected");
+  $(`#status option`).removeAttr("selected");
+  $(`#status option[value="P"]`).attr("selected");
+  $(`#emplist`).removeAttr("disabled");
+  $(`#status`).parent().css("display","none");
+  $(`#memo`).val("初次設定");
+  $(`#memo`).parent().css("display","none");
 })
 //修改
 $(`#empltbody`).on(`click`,`.btne`,function(){
@@ -117,16 +120,16 @@ $(`#empltbody`).on(`click`,`.btne`,function(){
 })
 //確認送出
 $(`#send`).on(`click`,async ()=>{
-  let empl = {//組物件
-    EMPID : $(`#send`).data("id"),
-    EMPNAME : $(`#empname`).val(),
-    PHONE : $(`#empphone`).val(),
-    EMPLLEVEL :$(`#emplevel option:selected`).val(),
-    EMAIL : $(`#empmail`).val(),
-    EMPPWD : $(`#emppw`).val(),
-    BIRTHDAY : $(`#empdate`).val(),
-    EMPEXISTS : $(`#empexists`).is(":checked")? "Y":"N",
+  let id = $(`#send`).data("id") || $(`#emplist option:selected`).val();
+  console.log(id)
+  debugger;
+  let budget = {//組物件
+    empid : $(`#send`).data("id"),
+    payment : $(`#status option:selected`).val(),
+    amount : $(`#empbudget`).val(),
+    memo :$(`#memo`).val(),
   };
+  console.log(budget);
   let empid = $(`#empid`).val();
   if(!empid){//新增
     var response = await fetch(url + "/api/Budget/create?user=" + curruntid,{
