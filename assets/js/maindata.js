@@ -24,6 +24,7 @@ async function ajax(controller,data,method){
         method : method,
         headers : new Headers({
           "ngrok-skip-browser-warning": "69420",
+          "Content-Type":"application/json"
         }),
         body : JSON.stringify(data)
       });
