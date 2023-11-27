@@ -58,7 +58,7 @@ async function getSelfData(){
       datalist = body.Data
       $.each(datalist,function(index,data){
           table.append(`<tr>
-                            <td>${data.payment}</td>
+                            ${data.payment == "新增" ? `<td style="color:green">`:`<td style="color:red">`}${data.payment}</td>
                             <td>${data.amount.numberFormat(0,".",",")}</td>
                             <td>${data.memo}</td>
                             <td>${data.u_sysdt}</td>
