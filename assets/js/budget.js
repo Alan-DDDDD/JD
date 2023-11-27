@@ -1,18 +1,38 @@
 getSelfData();
 $(async function(){
-  var response = await fetch(url+"/api/Code/BS",{
+  //取得BS資料
+  var BS = await fetch(url+"/api/Code/BS",{
     method: "get",
     headers: new Headers({
       "ngrok-skip-browser-warning": "69420",
     }),
   })
-  var data = await response.json();
-  if(data.Status){
+  var BSdata = await BS.json();
+  if(BSdata.Status){
     let status = $(`#status`);
     status.append(`<option selected>請選擇</option>`)
-    $.each(data.Data,(index,item)=>{
+    $.each(BSdata.Data,(index,item)=>{
       status.append(`
           <option value="${item.dataid}">${item.data}</option>
+      `)
+    })
+  }else{
+    console.log("BS資料取得失敗")
+  }
+  //取得EMP資料
+  var emp = await fetch(url+"/EMPL/getAllEMPL?user=" + localStorage.getItem(`currid`),{
+    method: "get",
+    headers: new Headers({
+      "ngrok-skip-browser-warning": "69420",
+    }),
+  })
+  var empdata = await emp.json();
+  if(empdata.Status){
+    let emplist = $(`#emplist`);
+    emplist.append(`<option selected>請選擇</option>`)
+    $.each(empdata.Data,(index,item)=>{
+      emplist.append(`
+          <option value="${item.EMPID}">${item.EMPID}  ${item.EMPNAME}</option>
       `)
     })
   }else{
