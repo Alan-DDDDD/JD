@@ -72,9 +72,9 @@ async function getSelfData(){
                             <td>${data.u_user}</td>
                         </tr>`);
       });
-      $(`#total`).html(body.Data.self.total);
-      $(`#keep`).html(body.Data.self.keep);
-      $(`#balance`).html(body.Data.self.balance);
+      $(`#total`).html(body.Data.self.total.numberFormat(0,".",","));
+      $(`#keep`).html(body.Data.self.keep.numberFormat(0,".",","));
+      $(`#balance`).html(body.Data.self.balance.numberFormat(0,".",","));
     }
     else{
       //openLogin();
