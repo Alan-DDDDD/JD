@@ -101,6 +101,7 @@ $(`#budgettbody`).on(`click`,`.btne`,function(){
   $(`#status option`).removeAttr("selected");
   $(`#emplist option`).removeAttr("selected").filter(`[value=${id}]`).attr("selected");
   $(`#empbudget`).val("");
+  $(`#memo`).val("");
 })
 //確認送出
 $(`#send`).on(`click`,async ()=>{
