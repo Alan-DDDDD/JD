@@ -32,6 +32,13 @@ async function getSelfData(){
       //openLogin();
     }
 }
+//搜尋
+function select(){
+  let key = $(`#search`).val();
+  $("#empltbody tr").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+  });
+}
 //新增
 $(`.btni`).on(`click`,function(){
   $(`.modal input`).val("");
