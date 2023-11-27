@@ -62,7 +62,7 @@ async function getSelfData(){
     console.log(body);
     var table = $(`#budgettbody`);
     if(body.Status){
-      datalist = body.Data
+      datalist = body.Data.list
       $.each(datalist,function(index,data){
           table.append(`<tr>
                             ${data.payment == "新增" ? `<td style="color:green">`:`<td style="color:red">`}${data.pname}</td>
@@ -72,6 +72,9 @@ async function getSelfData(){
                             <td>${data.u_user}</td>
                         </tr>`);
       });
+      $(`#total`).html(body.Data.self.total);
+      $(`#keep`).html(body.Data.self.keep);
+      $(`#balance`).html(body.Data.self.balance);
     }
     else{
       //openLogin();
