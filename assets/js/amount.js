@@ -109,7 +109,6 @@ $(`#budgettbody`).on(`click`,`.btne`,function(){
 //確認送出
 $(`#send`).on(`click`,async ()=>{
   let id = $(`#send`).data("id") || $(`#emplist option:selected`).val();
-  debugger;
   let budget = {//組物件
     empid : id,
     payment : $(`#status option:selected`).val(),
