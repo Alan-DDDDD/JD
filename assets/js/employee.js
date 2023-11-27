@@ -54,6 +54,9 @@ $(`#empltbody`).on(`click`,`.btne`,function(){
       $(`#empdate`).val(data.BIRTHDAY || "");
       $(`#send`).data("id",id);
       $(`#emplevel option`).removeAttr("selected").filter(`[value=${data.EMPLLEVEL}]`).attr("selected",true);
+      if(data.EMPLLEVEL != "99"){
+        $(`#emplevel`).attr("readonly","readonly");
+      }
       let exists = $(`#empexists`);
       if(data.EXISTS == "Y"){
         exists.attr("checked",true);
