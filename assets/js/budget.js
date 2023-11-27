@@ -90,33 +90,17 @@ $(`.btni`).on(`click`,function(){
   $(`#memo`).parent().css("display","none");
 })
 //修改
-$(`#empltbody`).on(`click`,`.btne`,function(){
+$(`#budgettbody`).on(`click`,`.btne`,function(){
   let id = $(this).data("id");
   $(`#empid`).attr("readonly","readonly");
   let current = $.grep(datalist,function(e){
     return e.EMPID == curruntid
   });
-  $.each(datalist,(index,data)=>{
-    if(data.EMPID == id){
-      $(`#empid`).val(data.EMPID);
-      $(`#empname`).val(data.EMPNAME);
-      $(`#empphone`).val(data.PHONE);
-      $(`#empmail`).val(data.EMAIL);
-      $(`#emppw`).val(data.EMPPWD);
-      $(`#empdate`).val(data.BIRTHDAY || "");
-      $(`#send`).data("id",id);
-      $(`#emplevel option`).removeAttr("selected").filter(`[value=${data.EMPLLEVEL}]`).attr("selected",true);
-      if(current[0].EMPLLEVEL <= 10){
-        $(`#emplevel`).attr('disabled', 'disabled');
-      }
-      let exists = $(`#empexists`);
-      if(data.EXISTS == "Y"){
-        exists.attr("checked",true);
-      }else{
-        exists.removeAttr("checked");
-      }
-    }
-  });
+  $(`#memo`).parent().css("display","");
+  $(`#status`).parent().css("display","");
+  $(`#status option`).removeAttr("selected");
+  $(`#emplist option`).removeAttr("selected").filter(`[value=${id}]`).attr("selected");
+  $(`#empbudget`).val("");
 })
 //確認送出
 $(`#send`).on(`click`,async ()=>{
