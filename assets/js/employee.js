@@ -118,6 +118,7 @@ $(`#send`).on(`click`,async ()=>{
       alert(body.error.errorMsg);
     }
   }
+  $(`.btn-close`).click();
 })
 $(`.btn-close`).on('click', function () {
   $(`#modalTour`).prop("display", "none");
