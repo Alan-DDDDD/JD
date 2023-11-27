@@ -36,7 +36,7 @@ $(async function(){
       `)
     })
   }else{
-    console.log("BS資料取得失敗")
+    console.log("EMP資料取得失敗")
   }
 })
 async function getSelfData(){
