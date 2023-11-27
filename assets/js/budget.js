@@ -1,7 +1,7 @@
 getSelfData();
 async function getSelfData(){
   $(`#empltbody`).empty();
-    var response = await fetch(url + "/api/Budget/Get?user=" + localStorage.getItem(`currid`), {
+    var response = await fetch(url + "/api/Budget?user=" + localStorage.getItem(`currid`), {
         method: "get",
         headers: new Headers({
           "ngrok-skip-browser-warning": "69420",
