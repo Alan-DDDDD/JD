@@ -50,11 +50,7 @@ $(`#empltbody`).on(`click`,`.btne`,function(){
       $(`#empphone`).val(data.PHONE);
       $(`#empmail`).val(data.EMAIL);
       $(`#emppw`).val(data.EMPPWD);
-      let daystring = "";
-      if(data.BIRTHDAY){
-        daystring = data.BIRTHDAY.substring(0,3) + '-' + data.BIRTHDAY.substring(4,5) + '-' + data.BIRTHDAY.substring(6,7);
-      }
-      $(`#empdate`).val(daystring || "");
+      $(`#empdate`).val(data.BIRTHDAY || "");
       $(`#send`).data("id",id);
       $(`#emplevel option`).removeAttr("selected").filter(`[value=${data.EMPLLEVEL}]`).attr("selected",true);
       let exists = $(`#empexists`);
