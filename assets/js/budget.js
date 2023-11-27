@@ -56,6 +56,8 @@ async function getSelfData(){
           table.append(`<tr>
                             <td onclick="detail('${data.empid}');" style="cursor:pointer;">${data.empname}</td>
                             <td>${data.budget.numberFormat(0,".",",")}</td>
+                            <td></td>
+                            <td></td>
                             <td>
                               <div class="dropdown">
                                 <button type="button" class="btn btn-primary btne"
