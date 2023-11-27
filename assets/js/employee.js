@@ -13,7 +13,7 @@ async function getSelfData(){
     if(body.Status){
       datalist = body.Data
       $.each(datalist,function(index,data){
-          table.append(`${data.EXISTS == "Y" ? `<tr>`:`<tr style="background-color:gray">`}
+          table.append(`<tr>
                             <td>${data.EMPNAME}</td>
                             <td>${data.PHONE}</td>
                             <td>${data.EMAIL}</td>
