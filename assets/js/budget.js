@@ -99,7 +99,8 @@ $(`#budgettbody`).on(`click`,`.btne`,function(){
   $(`#memo`).parent().css("display","");
   $(`#status`).parent().css("display","");
   $(`#status option`).removeAttr("selected");
-  $(`#emplist option`).removeAttr("selected").filter(`[value=${id}]`).attr("selected");
+  $(`#emplist option`).removeAttr("selected").filter(`[value=${id}]`).attr("selected",true);
+  $(`#emplist`).attr("disabled","disabled");
   $(`#empbudget`).val("");
   $(`#memo`).val("");
 })
