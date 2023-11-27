@@ -39,8 +39,8 @@ $(async function(){
       `)
       //設定個人統計資料
       if(item.EMPID == parame){
-        $(`#empid`).val(item.EMPID);
-        $(`#empname`).val(item.EMPNAME);
+        $(`#empid`).html(item.EMPID);
+        $(`#empname`).html(item.EMPNAME);
       }
     })
   }else{
