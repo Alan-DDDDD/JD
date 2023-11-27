@@ -54,7 +54,7 @@ $(`#empltbody`).on(`click`,`.btne`,function(){
       $(`#empdate`).val(data.BIRTHDAY || "");
       $(`#send`).data("id",id);
       $(`#emplevel option`).removeAttr("selected").filter(`[value=${data.EMPLLEVEL}]`).attr("selected",true);
-      if(data.EMPLLEVEL != "99"){
+      if(data.EMPLLEVEL != "99"){//職稱編輯權限
         $(`#emplevel`).attr("readonly","readonly");
       }
       let exists = $(`#empexists`);
