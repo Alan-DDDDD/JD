@@ -1,5 +1,6 @@
 getSelfData();
 async function getSelfData(){
+  $(`#empltbody`).empty();
     var response = await fetch(url + "/EMPL/getAllEMPL?user=" + localStorage.getItem(`currid`), {
         method: "get",
         headers: new Headers({
@@ -91,7 +92,7 @@ $(`#send`).on(`click`,async ()=>{
         alert("");
       }else{
         alert("新增成功!!");
-
+        getSelfData();
       }
     }else{//系統錯誤
       alert(body.error.errorMsg);
@@ -111,10 +112,13 @@ $(`#send`).on(`click`,async ()=>{
         alert("");
       }else{
         alert("編輯成功!!");
-
+        getSelfData();
       }
     }else{//系統錯誤
       alert(body.error.errorMsg);
     }
   }
 })
+$(`.btn-close`).on('click', function () {
+  $(`#modalTour`).prop("display", "none");
+});
