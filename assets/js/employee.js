@@ -120,6 +120,3 @@ $(`#send`).on(`click`,async ()=>{
   }
   $(`.btn-close`).click();
 })
-// $(`.btn-close`).on('click', function () {
-//   $(`#modalTour`).prop("display", "none");
-// });
