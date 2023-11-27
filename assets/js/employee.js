@@ -39,6 +39,7 @@ $(`.btni`).on(`click`,function(){
   $(`#send`).data("id","");
   $(`#empexists`).attr("checked",true);
   $(`#emplevel option`).removeAttr("selected");
+  $(`#emplevel`).removeAttr("disabled");
 })
 //修改
 $(`#empltbody`).on(`click`,`.btne`,function(){
@@ -47,7 +48,6 @@ $(`#empltbody`).on(`click`,`.btne`,function(){
   let current = $.grep(datalist,function(e){
     return e.EMPID == curruntid
   });
-  console.log(current);
   $.each(datalist,(index,data)=>{
     if(data.EMPID == id){
       $(`#empid`).val(data.EMPID);
@@ -58,7 +58,9 @@ $(`#empltbody`).on(`click`,`.btne`,function(){
       $(`#empdate`).val(data.BIRTHDAY || "");
       $(`#send`).data("id",id);
       $(`#emplevel option`).removeAttr("selected").filter(`[value=${data.EMPLLEVEL}]`).attr("selected",true);
-      
+      if(current[0].EMPLLEVEL != "99"){
+        $(`#emplevel`).attr("disabled");
+      }
       let exists = $(`#empexists`);
       if(data.EXISTS == "Y"){
         exists.attr("checked",true);
