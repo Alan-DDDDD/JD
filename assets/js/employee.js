@@ -72,7 +72,7 @@ $(`#send`).on(`click`,async ()=>{
     EMAIL : $(`#empmail`).val(),
     EMPPWD : $(`#emppw`).val(),
     BIRTHDAY : $(`#empdate`).val(),
-    EXISTS : $(`#empexists`).is(":checked")? "Y":"N",
+    EMPEXISTS : $(`#empexists`).is(":checked")? "Y":"N",
   };
   let empid = $(`#empid`).val();
   if(!empid){//新增
