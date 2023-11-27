@@ -72,11 +72,11 @@ $(`#send`).on(`click`,async ()=>{
     EMPID : $(`#send`).data("id"),
     EMPNAME : $(`#empname`).val(),
     PHONE : $(`#empphone`).val(),
-    EMPLEVEL :$(`#emplevel option:selected`).val(),
+    EMPLLEVEL :$(`#emplevel option:selected`).val(),
     EMAIL : $(`#empmail`).val(),
     EMPPWD : $(`#emppw`).val(),
     BIRTHDAY : $(`#empdate`).val(),
-    EXSITS : $(`#empexists checked`),
+    EXSITS : $(`#empexists checked`)? "Y":"N",
   };
   let empid = $(`#empid`).val();
   if(!empid){//新增
