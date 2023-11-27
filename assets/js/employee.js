@@ -65,7 +65,7 @@ $(`#empltbody`).on(`click`,`.btne`,function(){
       $(`#empdate`).val(data.BIRTHDAY || "");
       $(`#send`).data("id",id);
       $(`#emplevel option`).removeAttr("selected").filter(`[value=${data.EMPLLEVEL}]`).attr("selected",true);
-      if(current[0].EMPLLEVEL != "99"){
+      if(current[0].EMPLLEVEL <= 10){
         $(`#emplevel`).attr('disabled', 'disabled');
       }
       let exists = $(`#empexists`);
