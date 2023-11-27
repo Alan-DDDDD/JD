@@ -59,7 +59,7 @@ $(`#empltbody`).on(`click`,`.btne`,function(){
       $(`#send`).data("id",id);
       $(`#emplevel option`).removeAttr("selected").filter(`[value=${data.EMPLLEVEL}]`).attr("selected",true);
       if(current[0].EMPLLEVEL != "99"){
-        $(`#emplevel`).attr("disabled");
+        $(`#emplevel`).attr('disabled', 'disabled');
       }
       let exists = $(`#empexists`);
       if(data.EXISTS == "Y"){
