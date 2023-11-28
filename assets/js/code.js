@@ -158,7 +158,7 @@ $(`#syssend`).on('click',async function(){
       $(`#sysvalue`).val("");
       $(`#syscode`).removeClass("show");
     }else{
-      alert(result.error.ErrorMsg);
+      alert(result.error.errorMsg);
     }
   }else{
     alert("請輸入資料!!")
