@@ -138,7 +138,7 @@ $(`#syssend`).on('click',async function(){
     compid : "JD",
     datagroup : "SYS",
     dataid : $(`#sysdataid`).val() || "",
-    data : $(`#sysdata`).val() || ""
+    data : $(`#sysvalue`).val() || ""
   }
   let response = await fetch(url+"/api/Code/Create?user=" + curruntid,{
     method : "post",
