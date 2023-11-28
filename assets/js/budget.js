@@ -84,8 +84,7 @@ $(`.btni`).on(`click`,function(){
   $(`.modal input`).val("");
   $(`#send`).data("id","");
   $(`#emplist option`).removeAttr("selected");
-  $(`#status option`).removeAttr("selected");
-  $(`#status option[value=P]`).attr("selected","selected");
+  $(`#status option`).removeAttr("selected").filter(`[value=P]`).attr("selected",true);
   $(`#emplist`).removeAttr("disabled");
   $(`#status`).parent().css("display","none");
   $(`#memo`).val("初次設定");
