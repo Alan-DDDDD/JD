@@ -134,24 +134,33 @@ $(`#send`).on(`click`,async ()=>{
 })
 
 $(`#syssend`).on('click',async function(){
-  let data = {
-    compid : "JD",
-    datagroup : "SYS",
-    dataid : $(`#sysdataid`).val() || "",
-    data : $(`#sysvalue`).val() || ""
-  }
-  let response = await fetch(url+"/api/Code/Create?user=" + curruntid,{
-    method : "post",
-    headers : new Headers({
-      "ngrok-skip-browser-warning": "69420",
-      "Content-Type":"application/json"
-    }),
-    body : JSON.stringify(data)
-  });
-  let result = await response.json();
-  if(result.status){
-    getSelfData();
+  let dataid = $(`#sysdataid`).val();
+  let value = $(`#sysvalue`).val();
+  if(dataid || value){
+    let data = {
+      compid : "JD",
+      datagroup : "SYS",
+      dataid : $(`#sysdataid`).val() || "",
+      data : $(`#sysvalue`).val() || ""
+    }
+    let response = await fetch(url+"/api/Code/Create?user=" + curruntid,{
+      method : "post",
+      headers : new Headers({
+        "ngrok-skip-browser-warning": "69420",
+        "Content-Type":"application/json"
+      }),
+      body : JSON.stringify(data)
+    });
+    let result = await response.json();
+    if(result.status){
+      getSelfData();
+      $(`#sysdataid`).val("");
+      $(`#sysvalue`).val("");
+      $(`#syscode`).removeClass("show");
+    }else{
+      alert(result.error.ErrorMsg);
+    }
   }else{
-    alert(result.error.ErrorMsg);
+    alert("請輸入資料!!")
   }
 })
