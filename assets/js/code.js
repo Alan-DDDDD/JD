@@ -26,7 +26,8 @@ async function getSelfData(){
   var sysdata = await sys.json();
   if(sysdata.Status){
     let tbody = $(`#systbody`);
-    $.each(sysdata.Data,(index,data)=>{
+    datalist = sysdata.Data
+    $.each(datalist,(index,data)=>{
       tbody.append(`<tr>
         <td>金帝國際</td>
         <td>SYS</td>
