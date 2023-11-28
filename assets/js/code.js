@@ -1,25 +1,6 @@
 getSelfData();
 $(async function(){
-  //取得BS資料
-  var sys = await fetch(url+"/api/Code?datagroup=SYS",{
-    method: "get",
-    headers: new Headers({
-      "ngrok-skip-browser-warning": "69420",
-    }),
-  })
-  var sysdata = await sys.json();
-  if(sysdata.Status){
-    let tbody = $(`#systbody`);
-    $.each(sysdata.Data,(index,data)=>{
-      tbody.append(`<tr>
-        <td>金帝國際</td>
-        <td>SYS</td>
-        <td>${data.data}</td>
-        </tr>`)
-    })
-  }else{
-    console.log("SYS資料取得失敗")
-  }
+  
   //取得EMP資料
   // var emp = await fetch(url+"/EMPL/getAllEMPL?user=" + localStorage.getItem(`currid`) + "&flag=Y",{
   //   method: "get",
@@ -34,37 +15,34 @@ $(async function(){
   // }
 })
 async function getSelfData(){
-  $(`#budgettbody`).empty();
-    var response = await fetch(url + "/api/Budget?user=" + localStorage.getItem(`currid`), {
-        method: "get",
-        headers: new Headers({
-          "ngrok-skip-browser-warning": "69420",
-        }),
-      });
-    var body = await response.json();
-    console.log(body);
-    var table = $(`#budgettbody`);
-    if(body.Status){
-      datalist = body.Data
-      $.each(datalist,function(index,data){
-          table.append(`<tr>
-                            <td onclick="detail('${data.empid}');" style="cursor:pointer;">${data.empname}</td>
-                            <td>${data.pb.balance.numberFormat(0,".",",")}</td>
-                            <td>${data.pb.keep.numberFormat(0,".",",")}</td>
-                            <td>${data.pb.total.numberFormat(0,".",",")}</td>
-                            <td>
-                              <div class="dropdown">
-                                <button type="button" class="btn btn-primary btne"
-                                 data-bs-toggle="modal"
-                                 data-bs-target="#modalCenter" data-id="${data.empid}">修改</button>
-                              </div>
-                            </td>
-                        </tr>`);
-      });
-    }
-    else{
-      //openLogin();
-    }
+  $(`#systbody`).empty();
+    //取得CODE->SYS資料
+  var sys = await fetch(url+"/api/Code?datagroup=SYS",{
+    method: "get",
+    headers: new Headers({
+      "ngrok-skip-browser-warning": "69420",
+    }),
+  })
+  var sysdata = await sys.json();
+  if(sysdata.Status){
+    let tbody = $(`#systbody`);
+    $.each(sysdata.Data,(index,data)=>{
+      tbody.append(`<tr>
+        <td>金帝國際</td>
+        <td>SYS</td>
+        <td>${data.data}</td>
+        <td>
+          <div class="dropdown">
+            <button type="button" class="btn btn-primary btne"
+             data-bs-toggle="modal"
+             data-bs-target="#modalCenter" data-id="${data.id}">修改</button>
+          </div>
+        </td>
+        </tr>`)
+    })
+  }else{
+    console.log("SYS資料取得失敗")
+  }
 }
 //搜尋
 function select(){
