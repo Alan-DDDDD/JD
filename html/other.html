@@ -285,23 +285,24 @@
                   <!-- d-grid d-sm-flex -->
                   <div class="row">
                     <div class="col mb-3">
-                      <label for="sys" class="form-label">系統代號(主檔)</label>
+                      <label for="sysdataid" class="form-label">資料代號(主檔SYS)</label>
                       <input
                       type="text"
-                      id="sys"
+                      id="sysdataid"
                       class="form-control"
                       placeholder=""
                       />
                     </div>
                     <div class="col mb-3">
-                      <label for="dataid" class="form-label">系統代號</label>
+                      <label for="sysvalue" class="form-label">值</label>
                       <input
                       type="text"
-                      id="dataid"
+                      id="sysvalue"
                       class="form-control"
                       placeholder=""
                       />
                     </div>
+                    <button type="button" id="syssend">儲存</button>
                   </div>
                 </div>
               </div>
@@ -368,6 +369,7 @@
                       <tr>
                         <th>公司名稱</th>
                         <th>系統代號</th>
+                        <th>資料代號</th>
                         <th>值</th>
                         <th></th>
                       </tr>
