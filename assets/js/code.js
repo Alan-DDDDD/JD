@@ -1,7 +1,7 @@
 getSelfData();
 $(async function(){
   //取得BS資料
-  var sys = await fetch(url+"/api/Code?datagroup=sys",{
+  var sys = await fetch(url+"/api/Code?datagroup=SYS",{
     method: "get",
     headers: new Headers({
       "ngrok-skip-browser-warning": "69420",
