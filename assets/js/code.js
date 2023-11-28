@@ -64,19 +64,14 @@ $(`.btni`).on(`click`,function(){
   $(`#memo`).parent().css("display","none");
 })
 //修改
-$(`#budgettbody`).on(`click`,`.btne`,function(){
-  let id = $(this).data("id");
-  $(`#empid`).attr("readonly","readonly");
-  let current = $.grep(datalist,function(e){
-    return e.EMPID == curruntid
+$(`#systbody`).on(`click`,`.btne`,function(){
+  let id = $(this).data("id")
+  $.each(datalist,(index,data)=>{
+    if(data.id == id){
+      $(`#sysid`).html(data.dataid);
+      $(`#sysname`).html(data.data);
+    }
   });
-  $(`#memo`).parent().css("display","");
-  $(`#status`).removeAttr("disabled");
-  $(`#status option`).removeAttr("selected");
-  $(`#emplist option`).removeAttr("selected").filter(`[value=${id}]`).attr("selected",true);
-  $(`#emplist`).attr("disabled","disabled");
-  $(`#empbudget`).val("");
-  $(`#memo`).val("");
 })
 //確認送出
 $(`#send`).on(`click`,async ()=>{
