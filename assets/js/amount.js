@@ -100,7 +100,7 @@ $(`.btni`).on(`click`,function(){
   // $(`#memo`).parent().css("display","none");
   $(`#memo`).parent().css("display","");
   $(`#status`).parent().css("display","");
-  $(`#status option`).removeAttr("selected").filter(`[value=]`).attr("selected",true);
+  $(`#status option`).removeAttr("selected").filter(`[value=""]`).attr("selected",true);
   $(`#emplist option`).removeAttr("selected").filter(`[value=${parame}]`).attr("selected",true);
   $(`#emplist`).attr("disabled","disabled");
   $(`#empbudget`).val("");
