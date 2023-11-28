@@ -98,7 +98,7 @@ $(`#budgettbody`).on(`click`,`.btne`,function(){
     return e.EMPID == curruntid
   });
   $(`#memo`).parent().css("display","");
-  $(`#status`).parent().css("display","");
+  $(`#status`).removeAttr("disabled");
   $(`#status option`).removeAttr("selected");
   $(`#emplist option`).removeAttr("selected").filter(`[value=${id}]`).attr("selected",true);
   $(`#emplist`).attr("disabled","disabled");
