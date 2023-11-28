@@ -48,7 +48,7 @@ async function getSelfData(){
 //搜尋
 function select(){
   let key = $(`#search`).val();
-  $("#budgettbody tr").filter(function() {
+  $("#systbody tr").filter(function() {
     $(this).toggle($(this).text().toLowerCase().indexOf(key) > -1)
   });
 }
