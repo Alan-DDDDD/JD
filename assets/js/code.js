@@ -149,7 +149,7 @@ $(`#syssend`).on('click',async function(){
     body : JSON.stringify(data)
   });
   let result = await response.json();
-  if(result.Status){
+  if(result.status){
     getSelfData();
   }else{
     alert(result.error.ErrorMsg);
