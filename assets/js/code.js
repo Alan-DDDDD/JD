@@ -133,7 +133,25 @@ $(`#send`).on(`click`,async ()=>{
   $(`.btn-close`).click();
 })
 
-function detail(empid){
-  localStorage.setItem("amountparame",empid);
-  open(fronturl + "/amount.html","_self");
-}
+$(`#syssend`).on('click',async function(){
+  let data = {
+    compid : "JD",
+    datagroup : "SYS",
+    dataid : $(`#sysdataid`).val() || "",
+    data : $(`#sysdata`).val() || ""
+  }
+  let response = await fetch(url+"/api/Code/Create?user=" + curruntid,{
+    method : "post",
+    headers : new Headers({
+      "ngrok-skip-browser-warning": "69420",
+      "Content-Type":"application/json"
+    }),
+    body : JSON.stringify(data)
+  });
+  let result = await response.json();
+  if(result.Status){
+    getSelfData();
+  }else{
+    alert(result.error.ErrorMsg);
+  }
+})
