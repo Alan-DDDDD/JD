@@ -97,8 +97,8 @@ $(`#systbody`).on(`click`,`.btne`,async function(){
       <td style="width:40%">${data.dataid}</td>
       <td style="width:40%">${data.data}</td>
       <td style="width:20%">
-        <span class="badge bg-label-warning dataedit" style="cursor:pointer;">編輯</span>
-        <span class="badge bg-label-danger datadel" style="cursor:pointer;">刪除</span>
+        <small class="badge bg-label-warning dataedit" style="cursor:pointer;">編輯</small>
+        <small class="badge bg-label-danger datadel" style="cursor:pointer;">刪除</small>
       </td>
       </tr>`)
     });
@@ -184,8 +184,8 @@ $(`#dbtn`).on('click',()=>{
       <td style="width:40%">${dataid}</td>
       <td style="width:40%">${data}</td>
       <td style="width:20%">
-        <span class="badge bg-label-warning dataedit" style="cursor:pointer;">編輯</span>
-        <span class="badge bg-label-danger datadel" style="cursor:pointer;">刪除</span>
+        <small class="badge bg-label-warning dataedit" style="cursor:pointer;">編輯</small>
+        <small class="badge bg-label-danger datadel" style="cursor:pointer;">刪除</small>
       </td>
       </tr>`)
     $(`#dataid`).val("");
