@@ -67,7 +67,7 @@ $(`#systbody`).on(`click`,`.btne`,async function(){
   $(`#data`).val("");
   console.log(pg);
   if(pg != "null"){
-    let pd = await fetch(url +"/api/Code?datagroup=" + pg,{
+    let pd = await fetch(url +"/api/Code/"+pg+"?datagroup=" + pg,{
       method : "get",
       headers : new Headers({
         "ngrok-skip-browser-warning": "69420",
