@@ -147,5 +147,11 @@ $(`#dbtn`).on('click',()=>{
   let data = $(`#data`).val() || "";
   if(dataid != "" && data != ""){
     $(`#ddatetable`).parent().css("display","");
+    let tbodt = $(`#ddatetable tbody`);
+    tbody.append(`<tr>
+      <td>${dataid}</td>
+      <td>${data}</td>
+      <td>刪除</td>
+      </tr>`)
   }
 })
