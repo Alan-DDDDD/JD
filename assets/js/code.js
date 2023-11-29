@@ -17,6 +17,9 @@ $(async function(){
 })
 async function getSelfData(){
   $(`#systbody`).empty();
+  $(`#systbody`).append(`<div class="spinner-border text-primary" role="status" id="mainwait">
+    <span class="visually-hidden">Lodding....</span>
+  </div>`);
     //取得CODE->SYS資料
   var sys = await fetch(url+"/api/Code?datagroup=SYS",{
     method: "get",
@@ -91,7 +94,7 @@ $(`#systbody`).on(`click`,`.btne`,async function(){
       <td style="width:20%"><small class="badge bg-label-danger datadel">刪除</small></td>
       </tr>`)
     });
-    
+
   }
 })
 //確認送出
