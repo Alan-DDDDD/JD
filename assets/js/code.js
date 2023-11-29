@@ -77,6 +77,7 @@ $(`#systbody`).on(`click`,`.btne`,async function(){
     let datas = await pd.json();
     if(datas.Status){
       let pgele = $(`#parentgroup`);
+      pgele.removeAttr("disabled")
       pgele.parent().parent().css("display","");
       $.each(datas.Data,(index,item)=>{
         pgele.append(`<option value="${item.dataid}">${item.data}</option>`);
