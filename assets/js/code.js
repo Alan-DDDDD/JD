@@ -67,7 +67,6 @@ $(`#systbody`).on(`click`,`.btne`,async function(){
   });
   $(`#dataid`).val("");
   $(`#data`).val("");
-  console.log(pg);
   if(pg != null){
     let pd = await fetch(url +"/api/Code?datagroup=" + pg,{
       method : "get",
