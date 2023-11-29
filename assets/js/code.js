@@ -73,6 +73,7 @@ $(`#systbody`).on(`click`,`.btne`,function(){
       $(`#sysname`).html(data.data);
     }
   });
+  $(`#ddatetable tbody`).empty();
   $(`#ddatetable`).parent().css("display","none");
 })
 //確認送出
