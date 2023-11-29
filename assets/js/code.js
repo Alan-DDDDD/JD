@@ -198,8 +198,9 @@ $(`#ddatetable tbody`).on('click','.datadel',function(){
   $(this).parent().parent().remove();
 });
 $(`#ddatetable tbody`).on('click','.dataedit',function(){
-  let thistr = $(this).parent();
-  $(`#dataid`).val(thistr.prev().prev().html());
+  let thistd = $(this).parent();
+  $(`#dataid`).val(thistd.prev().prev().html());
   $(`#dataid`).attr("disabled","disables");
-  $(`#data`).val(thistr.prev().html());
+  $(`#data`).val(thistd.prev().html());
+  thistd.parent().remove();
 });
