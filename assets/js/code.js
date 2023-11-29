@@ -77,7 +77,7 @@ $(`#systbody`).on(`click`,`.btne`,async function(){
     if(datas.Status){
       let pgele = $(`#parentgroup`);
       $.each(datas.Data,(index,item)=>{
-        pgele.append(`<option value="${item.dataid}">${item.data}<option>`);
+        pgele.append(`<option value="${item.dataid}">${item.data}</option>`);
       });
     }
   }
