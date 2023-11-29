@@ -29,7 +29,7 @@ async function getSelfData(){
           <div class="dropdown">
             <button type="button" class="btn btn-primary btne"
              data-bs-toggle="modal"
-             data-bs-target="#modalCenter" data-id="${data.id}">修改</button>
+             data-bs-target="#modalCenter" data-id="${data.parentgroup}">修改</button>
           </div>
         </td>
         </tr>`)
