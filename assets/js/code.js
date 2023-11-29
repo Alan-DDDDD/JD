@@ -18,6 +18,7 @@ async function getSelfData(){
   if(sysdata.Status){
     let tbody = $(`#systbody`);
     let syspg = $(`#syspg`);
+    $(`#syspg`).html("<option>請選擇</option>")
     datalist = sysdata.Data
     $.each(datalist,(index,data)=>{
       tbody.append(`<tr>
@@ -143,6 +144,7 @@ $(`#syssend`).on('click',async function(){
     let data = {
       compid : "JD",
       datagroup : "SYS",
+      parentgroup : $(`#syspg option:selected`).val(),
       dataid : $(`#sysdataid`).val() || "",
       data : $(`#sysvalue`).val() || ""
     }
