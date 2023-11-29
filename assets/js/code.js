@@ -91,6 +91,7 @@ $(`#systbody`).on(`click`,`.btne`,async function(){
       <td style="width:20%"><small class="badge bg-label-danger datadel">刪除</small></td>
       </tr>`)
     });
+    
   }
 })
 //確認送出
