@@ -23,6 +23,7 @@ async function getSelfData(){
       tbody.append(`<tr>
         <td>金帝國際</td>
         <td>SYS</td>
+        <td>${data.parentgroup}</td>
         <td>${data.dataid}</td>
         <td>${data.data}</td>
         <td>
