@@ -220,27 +220,6 @@ $(`#parentgroup`).on(`change`,async function(){
   let pg = $(`#parentgroup option:selected`).val();
   let dg = $(`#sysid`).html();
   getDetail(dg,pg);
-  // let tbody = $(`#ddatetable tbody`);
-  // tbody.empty();
-  // let response = await fetch(url+"/api/Code?datagroup=" + dg +"&parentgroup=" + pg,{
-  //   method : "get",
-  //   headers : new Headers({
-  //     "ngrok-skip-browser-warning": "69420",
-  //   })
-  // })
-  // let datas = await response.json();
-  // if(datas.Status){
-  //   $.each(datas.Data,(index,data)=>{
-  //     tbody.append(`<tr>
-  //     <td style="width:30%">${data.dataid}</td>
-  //     <td style="width:40%">${data.data}</td>
-  //     <td style="width:30%">
-  //       <small class="badge bg-label-warning dataedit" style="cursor:pointer;">編輯</small>
-  //       <small class="badge bg-label-danger datadel" style="cursor:pointer;">刪除</small>
-  //     </td>
-  //     </tr>`)
-  //   });
-  // }
 });
 //取得細節資料
 async function getDetail(dg,pg){
