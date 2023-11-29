@@ -94,15 +94,12 @@ $(`#send`).on(`click`,async ()=>{
   };
   //組資料
   $.each($(`#ddatetable tbody tr`),(index,data)=>{
-    console.log($(data).children()[0]);
-    console.log($(data).children()[1]);
     let item = {
       dataid : $($(data).children()[0]).html(),
       data : $($(data).children()[1]).html()
     }
     codetable.datas.push(item);
   });
-  console.log(codetable);
 
   var response = await fetch(url + "/api/Code/updateTable?user=" + curruntid,{
     method : "POST",
