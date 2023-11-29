@@ -141,3 +141,11 @@ $(`#syssend`).on('click',async function(){
     alert("請輸入資料!!")
   }
 })
+
+$(`#dbtn`).on('click',()=>{
+  let dataid = $(`#dataid`).val() || "";
+  let data = $(`#data`).val() || "";
+  if(dataid != "" && data != ""){
+    $(`#ddatetable`).parent().css("display","");
+  }
+})
