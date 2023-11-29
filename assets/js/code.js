@@ -54,16 +54,16 @@ function select(){
   });
 }
 //新增
-$(`.btni`).on(`click`,function(){
-  $(`.modal input`).val("");
-  $(`#send`).data("id","");
-  $(`#emplist option`).removeAttr("selected");
-  $(`#status option`).removeAttr("selected").filter(`[value=P]`).attr("selected",true);
-  $(`#emplist`).removeAttr("disabled");
-  $(`#status`).attr("disabled","disabled");
-  $(`#memo`).val("初次設定");
-  $(`#memo`).parent().css("display","none");
-})
+// $(`.btni`).on(`click`,function(){
+//   $(`.modal input`).val("");
+//   $(`#send`).data("id","");
+//   $(`#emplist option`).removeAttr("selected");
+//   $(`#status option`).removeAttr("selected").filter(`[value=P]`).attr("selected",true);
+//   $(`#emplist`).removeAttr("disabled");
+//   $(`#status`).attr("disabled","disabled");
+//   $(`#memo`).val("初次設定");
+//   $(`#memo`).parent().css("display","none");
+// })
 //修改
 $(`#systbody`).on(`click`,`.btne`,function(){
   let id = $(this).data("id")
@@ -150,7 +150,7 @@ $(`#dbtn`).on('click',()=>{
   if(dataid != "" && data != ""){
     $(`#ddatetable`).parent().css("display","");
     let tbody = $(`#ddatetable tbody`);
-    tbody.append(`<tr>
+    tbody.prepend(`<tr>
       <td style="width:40%">${dataid}</td>
       <td style="width:40%">${data}</td>
       <td style="width:20%"><small class="badge bg-label-danger datadel">刪除</small></td>
