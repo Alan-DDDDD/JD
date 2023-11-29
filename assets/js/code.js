@@ -87,36 +87,35 @@ $(`#systbody`).on(`click`,`.btne`,async function(){
 })
 //確認送出
 $(`#send`).on(`click`,async ()=>{
-  let id = $(`#send`).data("id") || $(`#emplist option:selected`).val();
-  let budget = {//組物件
-    empid : id,
-    payment : $(`#status option:selected`).val(),
-    amount : $(`#empbudget`).val(),
-    memo :$(`#memo`).val(),
+  let id = $(`#sysid`).html();
+  let codetable = {//組物件
+    datagroup : id,
+    datas : []
   };
-  let empid = $(`#send`).data("id");
-  if(!empid){//新增
-    var response = await fetch(url + "/api/Amount_D/create?user=" + curruntid,{
-      method : "POST",
-      headers : new Headers({
-        "ngrok-skip-browser-warning": "69420",
-        "Content-Type":"application/json"
-      }),
-      body : JSON.stringify(budget)
-    });
-    var body = await response.json();
-    console.log(body);
-    if(body.status){
-      if(body.error){//資料邏輯錯誤
-        alert("");
-      }else{
-        alert("設定成功!!");
-        getSelfData();
-      }
-    }else{//系統錯誤
-      alert(body.error.ErrorMsg);
+  //組資料
+  $.each($(`#ddatetable tbody tr`),(index,data)=>{
+    console.log(data);
+  });
+
+  var response = await fetch(url + "/api/Code/updateTable?user=" + curruntid,{
+    method : "POST",
+    headers : new Headers({
+      "ngrok-skip-browser-warning": "69420",
+      "Content-Type":"application/json"
+    }),
+    body : JSON.stringify(codetable)
+  });
+  var body = await response.json();
+  console.log(body);
+  if(body.status){
+    if(body.error){//資料邏輯錯誤
+      alert("");
+    }else{
+      alert("設定成功!!");
+      getSelfData();
     }
-  }else{//修改
+  }else{//系統錯誤
+    alert(body.error.ErrorMsg);
   }
   $(`.btn-close`).click();
 })
