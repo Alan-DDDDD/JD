@@ -9,7 +9,7 @@ async function getSelfData(){
     <span class="visually-hidden">Lodding....</span>
   </div>`);
     //取得CODE->SYS資料
-  var sys = await fetch(url+"/api/Code/get?datagroup=SYS",{
+  var sys = await fetch(url+"/api/Code?datagroup=SYS",{
     method: "get",
     headers: new Headers({
       "ngrok-skip-browser-warning": "69420",
@@ -67,7 +67,7 @@ $(`#systbody`).on(`click`,`.btne`,async function(){
   $(`#data`).val("");
   console.log(pg);
   if(pg != "null"){
-    let pd = await fetch(url +"/api/Code/"+pg+"?datagroup=" + pg,{
+    let pd = await fetch(url +"/api/Code?datagroup=" + pg,{
       method : "get",
       headers : new Headers({
         "ngrok-skip-browser-warning": "69420",
@@ -84,7 +84,7 @@ $(`#systbody`).on(`click`,`.btne`,async function(){
   //取得細節資料
   let tbody = $(`#ddatetable tbody`);
   tbody.empty();
-  let response = await fetch(url+"/api/Code/get?datagroup=" + $(`#sysid`).html(),{
+  let response = await fetch(url+"/api/Code?datagroup=" + $(`#sysid`).html(),{
     method : "get",
     headers : new Headers({
       "ngrok-skip-browser-warning": "69420",
