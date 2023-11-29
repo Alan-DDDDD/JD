@@ -153,5 +153,7 @@ $(`#dbtn`).on('click',()=>{
       <td>${data}</td>
       <td>刪除</td>
       </tr>`)
+    $(`#dataid`).val("");
+    $(`#data`).val("");
   }
 })
