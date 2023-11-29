@@ -1,3 +1,4 @@
+var detailList;
 getSelfData();
 $(async function(){
   
@@ -65,7 +66,7 @@ function select(){
 //   $(`#memo`).parent().css("display","none");
 // })
 //修改
-$(`#systbody`).on(`click`,`.btne`,function(){
+$(`#systbody`).on(`click`,`.btne`,async function(){
   let id = $(this).data("id")
   $.each(datalist,(index,data)=>{
     if(data.id == id){
@@ -73,8 +74,24 @@ $(`#systbody`).on(`click`,`.btne`,function(){
       $(`#sysname`).html(data.data);
     }
   });
-  $(`#ddatetable tbody`).empty();
-  $(`#ddatetable`).parent().css("display","none");
+  let tbody = $(`#ddatetable tbody`);
+  tbody.empty();
+  let response = await fetch(url+"/api/Code?datagroup=" + $(`#sysid`).val(),{
+    method : "get",
+    headers : new Headers({
+      "ngrok-skip-browser-warning": "69420",
+    })
+  })
+  let datas = await response.json();
+  if(datas.Status){
+    $.each(datas.Data,(index,data)=>{
+      tbody.append(`<tr>
+      <td style="width:40%">${data.dataid}</td>
+      <td style="width:40%">${data.data}</td>
+      <td style="width:20%"><small class="badge bg-label-danger datadel">刪除</small></td>
+      </tr>`)
+    });
+  }
 })
 //確認送出
 $(`#send`).on(`click`,async ()=>{
@@ -148,7 +165,6 @@ $(`#dbtn`).on('click',()=>{
   let dataid = $(`#dataid`).val() || "";
   let data = $(`#data`).val() || "";
   if(dataid != "" && data != ""){
-    $(`#ddatetable`).parent().css("display","");
     let tbody = $(`#ddatetable tbody`);
     tbody.prepend(`<tr>
       <td style="width:40%">${dataid}</td>
