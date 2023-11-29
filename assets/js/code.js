@@ -83,7 +83,7 @@ $(`#systbody`).on(`click`,`.btne`,async function(){
   });
   let tbody = $(`#ddatetable tbody`);
   tbody.empty();
-  let response = await fetch(url+"/api/Code?datagroup=" + $(`#sysid`).html,{
+  let response = await fetch(url+"/api/Code?datagroup=" + $(`#sysid`).html(),{
     method : "get",
     headers : new Headers({
       "ngrok-skip-browser-warning": "69420",
