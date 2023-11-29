@@ -69,6 +69,7 @@ $(`#systbody`).on(`click`,`.btne`,async function(){
   $(`#dataid`).val("");
   $(`#data`).val("");
   if(pg != null){
+    //設定子視窗父層下拉選單
     let pd = await fetch(url +"/api/Code?datagroup=" + pg,{
       method : "get",
       headers : new Headers({
