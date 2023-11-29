@@ -49,6 +49,7 @@ async function getSelfData(){
   }else{
     console.log("SYS資料取得失敗")
   }
+  $(`#mainwait`).remove();
 }
 //搜尋
 function select(){
