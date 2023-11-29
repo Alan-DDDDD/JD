@@ -1,6 +1,9 @@
 getSelfData();
 async function getSelfData(){
   $(`#empltbody`).empty();
+  $(`#empltbody`).append(`<div class="spinner-border text-primary" role="status" id="mainwait">
+    <span class="visually-hidden">Lodding....</span>
+  </div>`);
     var response = await fetch(url + "/EMPL/getAllEMPL?user=" + localStorage.getItem(`currid`), {
         method: "get",
         headers: new Headers({
@@ -31,6 +34,7 @@ async function getSelfData(){
     else{
       //openLogin();
     }
+    $(`#mainwait`).remove();
 }
 //搜尋
 function select(){

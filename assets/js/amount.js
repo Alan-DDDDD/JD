@@ -51,6 +51,9 @@ $(async function(){
 })
 async function getSelfData(){
   $(`#budgettbody`).empty();
+  $(`#budgettbody`).append(`<div class="spinner-border text-primary" role="status" id="mainwait">
+    <span class="visually-hidden">Lodding....</span>
+  </div>`);
     var response = await fetch(url + "/api/Amount_D?user=" + localStorage.getItem(`currid`) 
                 + "&empid=" + localStorage.getItem("amountparame"), {
         method: "get",
@@ -79,6 +82,7 @@ async function getSelfData(){
     else{
       //openLogin();
     }
+    $(`#mainwait`).remove();
 }
 //搜尋
 function select(){
