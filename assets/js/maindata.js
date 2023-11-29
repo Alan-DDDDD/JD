@@ -1,4 +1,4 @@
-var url = "https://f070-61-230-137-57.ngrok-free.app";
+var url = "https://c997-1-162-39-166.ngrok-free.app";
 //var url = "https://localhost:7226";
 var fronturl = "https://alan-ddddd.github.io/JD/html";
 var datalist;
