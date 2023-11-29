@@ -71,9 +71,9 @@ function select(){
 // })
 //修改
 $(`#systbody`).on(`click`,`.btne`,async function(){
-  $(`#ddatetable tbody`).append(`<div class="spinner-border text-primary" role="status" id="mainwait">
+  $(`#ddatetable tbody`).append(`<tr id="mainwait"><div class="spinner-border text-primary" role="status">
     <span class="visually-hidden">Lodding....</span>
-  </div>`);
+  </div></tr>`);
   let id = $(this).data("id")
   $.each(datalist,(index,data)=>{
     if(data.id == id){
