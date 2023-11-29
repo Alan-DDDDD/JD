@@ -161,5 +161,5 @@ $(`#dbtn`).on('click',()=>{
 })
 
 $(`#ddatetable tbody`).on('click','.datadel',function(){
-  console.log($(this));
+  console.log($(this).parent());
 });
