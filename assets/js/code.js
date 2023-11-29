@@ -49,11 +49,14 @@ function select(){
 //新增
 //修改
 $(`#systbody`).on(`click`,`.btne`,async function(){
+  //設定畫面
   $(`#ddatetable`).before(`<div class="spinner-border text-primary" role="status" id="mainwait">
     <span class="visually-hidden">Lodding....</span>
   </div>`);
   $(`#ddatetable`).css("display","none");
-  let id = $(this).data("id")
+  let id = $(this).data("id");
+  let pg = $(this).data("pg");
+
   $.each(datalist,(index,data)=>{
     if(data.id == id){
       $(`#sysid`).html(data.dataid);
@@ -62,6 +65,23 @@ $(`#systbody`).on(`click`,`.btne`,async function(){
   });
   $(`#dataid`).val("");
   $(`#data`).val("");
+  console.log(pg);
+  if(pg != "null"){
+    let pd = await fetch(url +"/api/Code?datagroup=" + pg,{
+      method : "get",
+      headers : new Headers({
+        "ngrok-skip-browser-warning": "69420",
+      })
+    })
+    let datas = await pd.json();
+    if(datas.Status){
+      let pgele = $(`#parentgroup`);
+      $.each(datas.Data,(index,item)=>{
+        pgele.append(`<option value="${item.dataid}">${item.data}<option>`);
+      });
+    }
+  }
+  //取得細節資料
   let tbody = $(`#ddatetable tbody`);
   tbody.empty();
   let response = await fetch(url+"/api/Code?datagroup=" + $(`#sysid`).html(),{
