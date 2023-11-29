@@ -2,18 +2,6 @@ var detailList;
 getSelfData();
 $(async function(){
   
-  //取得EMP資料
-  // var emp = await fetch(url+"/EMPL/getAllEMPL?user=" + localStorage.getItem(`currid`) + "&flag=Y",{
-  //   method: "get",
-  //   headers: new Headers({
-  //     "ngrok-skip-browser-warning": "69420",
-  //   }),
-  // })
-  // var empdata = await emp.json();
-  // if(empdata.Status){
-  // }else{
-  //   console.log("EMP資料取得失敗")
-  // }
 })
 async function getSelfData(){
   $(`#systbody`).empty();
@@ -59,16 +47,6 @@ function select(){
   });
 }
 //新增
-// $(`.btni`).on(`click`,function(){
-//   $(`.modal input`).val("");
-//   $(`#send`).data("id","");
-//   $(`#emplist option`).removeAttr("selected");
-//   $(`#status option`).removeAttr("selected").filter(`[value=P]`).attr("selected",true);
-//   $(`#emplist`).removeAttr("disabled");
-//   $(`#status`).attr("disabled","disabled");
-//   $(`#memo`).val("初次設定");
-//   $(`#memo`).parent().css("display","none");
-// })
 //修改
 $(`#systbody`).on(`click`,`.btne`,async function(){
   $(`#ddatetable`).before(`<div class="spinner-border text-primary" role="status" id="mainwait">
