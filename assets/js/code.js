@@ -106,25 +106,6 @@ $(`#send`).on(`click`,async ()=>{
       alert(body.error.ErrorMsg);
     }
   }else{//修改
-    // var response = await fetch(url + "/api/Budget/edit?user=" + curruntid,{
-    //   method : "POST",
-    //   headers : new Headers({
-    //     "ngrok-skip-browser-warning": "69420",
-    //     "Content-Type":"application/json"
-    //   }),
-    //   body : JSON.stringify(empl)
-    // });
-    // var body = await response.json();
-    // if(body.status){
-    //   if(body.error){//資料邏輯錯誤
-    //     alert("");
-    //   }else{
-    //     alert("編輯成功!!");
-    //     getSelfData();
-    //   }
-    // }else{//系統錯誤
-    //   alert(body.error.errorMsg);
-    // }
   }
   $(`.btn-close`).click();
 })
