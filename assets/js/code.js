@@ -106,6 +106,9 @@ $(`#systbody`).on(`click`,`.btne`,async function(){
     });
 
   }
+  if(pg != null){
+    $(`#parentgroup`).change();
+  }
   $(`#mainwait`).remove();
   $(`#ddatetable`).css("display","");
 })
