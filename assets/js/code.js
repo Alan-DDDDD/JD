@@ -187,6 +187,7 @@ $(`#syssend`).on('click',async function(){
 $(`#dbtn`).on('click',()=>{
   let dataid = $(`#dataid`).val() || "";
   let data = $(`#data`).val() || "";
+  $(`#parentgroup`).attr("disabled",true);
   if(dataid != "" && data != ""){
     let tbody = $(`#ddatetable tbody`);
     tbody.prepend(`<tr>
