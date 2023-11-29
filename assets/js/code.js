@@ -153,7 +153,7 @@ $(`#send`).on(`click`,async ()=>{
   }
   $(`.btn-close`).click();
 })
-
+//新增主檔
 $(`#syssend`).on('click',async function(){
   let dataid = $(`#sysdataid`).val();
   let value = $(`#sysvalue`).val();
