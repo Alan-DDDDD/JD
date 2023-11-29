@@ -115,6 +115,7 @@ $(`#send`).on(`click`,async ()=>{
   let id = $(`#sysid`).html();
   let codetable = {//組物件
     datagroup : id,
+    parentgroup : $(`#parentgroup option:selected`).val(),
     datas : []
   };
   //組資料
