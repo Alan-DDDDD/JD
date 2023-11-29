@@ -85,7 +85,7 @@ $(`.btni`).on(`click`,function(){
   $(`#send`).data("id","");
   $(`#emplist option`).removeAttr("selected");
   $(`#status option`).removeAttr("selected").filter(`[value=P]`).attr("selected",true);
-  $(`#status`).parent().css("display","none");
+  // $(`#status`).parent().css("display","none");
   $(`#emplist`).removeAttr("disabled");
   $(`#status`).attr("disabled","disabled");
   $(`#memo`).val("初次設定");
@@ -99,7 +99,7 @@ $(`#budgettbody`).on(`click`,`.btne`,function(){
     return e.EMPID == curruntid
   });
   $(`#memo`).parent().css("display","");
-  $(`#status`).parent().css("display","");
+  // $(`#status`).parent().css("display","");
   $(`#status`).removeAttr("disabled");
   $(`#status option`).removeAttr("selected");
   $(`#emplist option`).removeAttr("selected").filter(`[value=${id}]`).attr("selected",true);
@@ -116,9 +116,9 @@ $(`#send`).on(`click`,async ()=>{
     amount : $(`#empbudget`).val(),
     memo :$(`#memo`).val(),
   };
-  if($(`#send`).data("id")==""){
-    budget.payment = "P"
-  }
+  // if($(`#send`).data("id")==""){
+  //   budget.payment = "P"
+  // }
   let empid = $(`#send`).data("id");
   if(!empid){//新增
     var response = await fetch(url + "/api/Amount_D/create?user=" + curruntid,{
