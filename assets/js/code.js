@@ -97,8 +97,8 @@ $(`#send`).on(`click`,async ()=>{
     console.log($(data).children()[0]);
     console.log($(data).children()[1]);
     let item = {
-      dataid : $($(data).children())[0].html(),
-      data : $($(data).children())[1].html()
+      dataid : $(data).children()[0].html(),
+      data : $($($(data).children())[1]).html()
     }
     codetable.datas.push(item);
   });
