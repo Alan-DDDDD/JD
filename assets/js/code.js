@@ -187,7 +187,8 @@ $(`#dbtn`).on('click',()=>{
         <small class="badge bg-label-warning dataedit" style="cursor:pointer;">編輯</small>
         <small class="badge bg-label-danger datadel" style="cursor:pointer;">刪除</small>
       </td>
-      </tr>`)
+      </tr>`);
+    $(`#dataid`).removeAttr("disabled");
     $(`#dataid`).val("");
     $(`#data`).val("");
   }
@@ -195,4 +196,10 @@ $(`#dbtn`).on('click',()=>{
 
 $(`#ddatetable tbody`).on('click','.datadel',function(){
   $(this).parent().parent().remove();
+});
+$(`#ddatetable tbody`).on('click','.dataedit',function(){
+  let thistr = $(this).parent();
+  $(`#dataid`).val(thistr.prev().prev().html());
+  $(`#dataid`).attr("disabled","disables");
+  $(`#data`).val(thistr.prev().html());
 });
