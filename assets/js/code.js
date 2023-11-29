@@ -225,7 +225,7 @@ $(`#parentgroup`).on(`change`,async function(){
 async function getDetail(dg,pg){
   let tbody = $(`#ddatetable tbody`);
   tbody.empty();
-  let response = await fetch(url+"/api/Code?datagroup=" + dg +"&parentgroup=" + pg,{
+  let response = await fetch(url+"/api/Code?datagroup=" + dg +"&parentgroup=" + pg || "",{
     method : "get",
     headers : new Headers({
       "ngrok-skip-browser-warning": "69420",
