@@ -9,7 +9,7 @@ async function getSelfData(){
     <span class="visually-hidden">Lodding....</span>
   </div>`);
     //取得CODE->SYS資料
-  var sys = await fetch(url+"/api/Code?datagroup=SYS",{
+  var sys = await fetch(url+"/api/Code/get?datagroup=SYS",{
     method: "get",
     headers: new Headers({
       "ngrok-skip-browser-warning": "69420",
