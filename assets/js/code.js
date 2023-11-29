@@ -94,7 +94,8 @@ $(`#send`).on(`click`,async ()=>{
   };
   //組資料
   $.each($(`#ddatetable tbody tr`),(index,data)=>{
-    console.log(data);
+    console.log($(data).children()[0]);
+    console.log($(data).children()[1]);
   });
 
   var response = await fetch(url + "/api/Code/updateTable?user=" + curruntid,{
