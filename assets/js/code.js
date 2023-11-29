@@ -86,7 +86,7 @@ $(`#systbody`).on(`click`,`.btne`,async function(){
     }
   }
   //取得細節資料
-  getDetail($(`#sysid`).html(),null);
+  getDetail($(`#sysid`).html());
   // let tbody = $(`#ddatetable tbody`);
   // tbody.empty();
   // let response = await fetch(url+"/api/Code?datagroup=" + $(`#sysid`).html(),{
