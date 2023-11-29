@@ -150,9 +150,9 @@ $(`#dbtn`).on('click',()=>{
     $(`#ddatetable`).parent().css("display","");
     let tbody = $(`#ddatetable tbody`);
     tbody.append(`<tr>
-      <td>${dataid}</td>
-      <td>${data}</td>
-      <td>刪除</td>
+      <td style="width:40%">${dataid}</td>
+      <td style="width:40%">${data}</td>
+      <td style="width:20%"><small>刪除</small></td>
       </tr>`)
     $(`#dataid`).val("");
     $(`#data`).val("");
