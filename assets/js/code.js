@@ -1,7 +1,6 @@
 var detailList;
 getSelfData();
 $(async function(){
-  
 })
 async function getSelfData(){
   $(`#systbody`).empty();
@@ -18,6 +17,7 @@ async function getSelfData(){
   var sysdata = await sys.json();
   if(sysdata.Status){
     let tbody = $(`#systbody`);
+    let syspg = $(`#syspg`);
     datalist = sysdata.Data
     $.each(datalist,(index,data)=>{
       tbody.append(`<tr>
@@ -33,7 +33,9 @@ async function getSelfData(){
              data-bs-target="#modalCenter" data-id="${data.id}" data-pg="${data.parentgroup}">修改</button>
           </div>
         </td>
-        </tr>`)
+        </tr>`);
+      //設定父層下拉選單
+      syspg.append(`<option value="${data.dataid}">${data.data}</option>`)
     })
   }else{
     console.log("SYS資料取得失敗")
