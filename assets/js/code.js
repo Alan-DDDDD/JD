@@ -71,9 +71,10 @@ function select(){
 // })
 //修改
 $(`#systbody`).on(`click`,`.btne`,async function(){
-  $(`#ddatetable tbody`).append(`<tr id="mainwait"><div class="spinner-border text-primary" role="status">
+  $(`#ddatetable`).before(`<div class="spinner-border text-primary" role="status" id="mainwait">
     <span class="visually-hidden">Lodding....</span>
-  </div></tr>`);
+  </div>`);
+  $(`#ddatetable`).css("display","none");
   let id = $(this).data("id")
   $.each(datalist,(index,data)=>{
     if(data.id == id){
@@ -101,6 +102,7 @@ $(`#systbody`).on(`click`,`.btne`,async function(){
 
   }
   $(`#mainwait`).remove();
+  $(`#ddatetable`).css("display","");
 })
 //確認送出
 $(`#send`).on(`click`,async ()=>{
