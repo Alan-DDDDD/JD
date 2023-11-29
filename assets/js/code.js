@@ -73,6 +73,7 @@ $(`#systbody`).on(`click`,`.btne`,function(){
       $(`#sysname`).html(data.data);
     }
   });
+  $(`#ddatetable`).parent().css("display","none");
 })
 //確認送出
 $(`#send`).on(`click`,async ()=>{
@@ -147,7 +148,7 @@ $(`#dbtn`).on('click',()=>{
   let data = $(`#data`).val() || "";
   if(dataid != "" && data != ""){
     $(`#ddatetable`).parent().css("display","");
-    let tbodt = $(`#ddatetable tbody`);
+    let tbody = $(`#ddatetable tbody`);
     tbody.append(`<tr>
       <td>${dataid}</td>
       <td>${data}</td>
