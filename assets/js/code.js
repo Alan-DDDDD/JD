@@ -153,9 +153,13 @@ $(`#dbtn`).on('click',()=>{
     tbody.append(`<tr>
       <td style="width:40%">${dataid}</td>
       <td style="width:40%">${data}</td>
-      <td style="width:20%"><small class="badge bg-label-danger">刪除</small></td>
+      <td style="width:20%"><small class="badge bg-label-danger datadel">刪除</small></td>
       </tr>`)
     $(`#dataid`).val("");
     $(`#data`).val("");
   }
 })
+
+$(`#ddatetable tbody`).on('click','.datadel',()=>{
+  console.log($(this).parent().parent());
+});
