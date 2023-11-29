@@ -55,6 +55,7 @@ $(`#systbody`).on(`click`,`.btne`,async function(){
   </div>`);
   $(`#ddatetable`).css("display","none");
   $(`#parentgroup`).parent().parent().css("display","none");
+  $(`#parentgroup`).html("");
   let id = $(this).data("id");
   let pg = $(this).data("pg");
 
@@ -78,7 +79,6 @@ $(`#systbody`).on(`click`,`.btne`,async function(){
     if(datas.Status){
       let pgele = $(`#parentgroup`);
       pgele.parent().parent().css("display","");
-      pgele.html("");
       $.each(datas.Data,(index,item)=>{
         pgele.append(`<option value="${item.dataid}">${item.data}</option>`);
       });
