@@ -242,7 +242,7 @@ $(`#parentgroup`).on(`change`,async function(){
   //   });
   // }
 });
-
+//取得細節資料
 async function getDetail(dg,pg){
   let tbody = $(`#ddatetable tbody`);
   tbody.empty();
