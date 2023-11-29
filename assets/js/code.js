@@ -96,7 +96,10 @@ $(`#send`).on(`click`,async ()=>{
   $.each($(`#ddatetable tbody tr`),(index,data)=>{
     console.log($(data).children()[0]);
     console.log($(data).children()[1]);
-    let item = [$(data).children()[0],$(data).children()[1]]
+    let item = {
+      dataid : $(data).children()[0],
+      data : $(data).children()[1]
+    }
     codetable.datas.push(item);
   });
   console.log(codetable);
