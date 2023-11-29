@@ -132,7 +132,7 @@ $(`#send`).on(`click`,async ()=>{
 $(`#syssend`).on('click',async function(){
   let dataid = $(`#sysdataid`).val();
   let value = $(`#sysvalue`).val();
-  if(dataid || value){
+  if(dataid == "" || value == ""){
     let data = {
       compid : "JD",
       datagroup : "SYS",
