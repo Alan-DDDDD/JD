@@ -160,6 +160,6 @@ $(`#dbtn`).on('click',()=>{
   }
 })
 
-$(`#ddatetable tbody`).on('click','.datadel',()=>{
+$(`#ddatetable tbody`).on('click','.datadel',function(){
   console.log($(this));
 });
