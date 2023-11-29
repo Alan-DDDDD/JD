@@ -60,6 +60,8 @@ $(`#systbody`).on(`click`,`.btne`,async function(){
       $(`#sysname`).html(data.data);
     }
   });
+  $(`#dataid`).val("");
+  $(`#data`).val("");
   let tbody = $(`#ddatetable tbody`);
   tbody.empty();
   let response = await fetch(url+"/api/Code?datagroup=" + $(`#sysid`).html(),{
