@@ -1,5 +1,7 @@
 getSelfData();
 $(async function(){
+  //初始化畫面
+  $(`.empinput`).attr("disabled","disabled");
   //$(`#casepanel input`).attr("disabled","disabled");
   //取得BS資料
   var BS = await fetch(url+"/api/Code/BS",{
