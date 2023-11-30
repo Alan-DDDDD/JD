@@ -2,7 +2,7 @@ getSelfData();
 $(async function(){
   //初始化畫面
   $(`.empinput`).attr("disabled","disabled");
-  $(`#mainpanel`).hide(300);
+  $(`#mainpanel`).hide();
   //$(`#casepanel input`).attr("disabled","disabled");
   //取得BS資料
   var BS = await fetch(url+"/api/Code/BS",{
