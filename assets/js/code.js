@@ -59,6 +59,7 @@ $(`#systbody`).on(`click`,`.btne`,async function(){
   </div>`);
   $(`#ddatetable`).css("display","none");
   $(`#parentgroup`).parent().parent().css("display","none");
+  $(`#dataid`).removeAttr("disabled");
   $(`#parentgroup`).html("");
   let id = $(this).data("id");
   let pg = $(this).data("pg");
