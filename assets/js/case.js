@@ -1,5 +1,6 @@
 getSelfData();
 $(async function(){
+  $(`#casepanel input`).attr("disabled","disabled");
   //取得BS資料
   var BS = await fetch(url+"/api/Code/BS",{
     method: "get",
