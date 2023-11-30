@@ -170,7 +170,9 @@ $(`#send`).on(`click`,async ()=>{
   $(`.btn-close`).click();
 })
 
-function detail(empid){
-  localStorage.setItem("amountparame",empid);
-  open(fronturl + "/amount.html","_self");
-}
+
+$(`#addcase`).on(`click`,()=>{
+  //清除畫面
+  let caseinput = $(`#casepanel input`);
+  caseinput.val("X");
+})
