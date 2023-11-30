@@ -360,6 +360,28 @@
               </div>
             
               <!-- 主畫面 -->
+              <div class="card mb-3" id="listpanel">
+                <div class=" p-3 card-body">
+                  <div class="table-responsive text-nowrap">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>案件編號</th>
+                          <th>分類</th>
+                          <th>業務</th>
+                          <th>狀態</th>
+                          <th>車輛</th>
+                        </tr>
+                      </thead>
+                      <tbody class="table-border-bottom-0" id="caselist">
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+
               <div class="card mb-3" id="mainpanel">
                 <div class=" p-3 card-body">
                   <div class="row">
@@ -437,71 +459,7 @@
                   </div>
                 </div>
               </div>
-              <div class="card" id="testpanel">
-                <div class=" p-3 card-body">
-                  <div class="row">
-                    <div class="col mb-3">
-                      案件進度
-                    </div>
-                  </div>
-                  <div class="divider text-start">
-                    <div class="divider-text">
-                      案件資料
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <label for="empid" class="form-label">業務員工編號</label>
-                      <input
-                      type="text"
-                      id="empid"
-                      class="form-control"
-                      placeholder=""
-                      />
-                    </div>
-                    <div class="col">
-                      <label for="empid" class="form-label">業務姓名</label>
-                      <input
-                      type="text"
-                      id="empid"
-                      class="form-control"
-                      placeholder=""
-                      />
-                    </div>
-                    <div class="col">
-                      <label for="custname" class="form-label">客戶名稱</label>
-                      <input
-                      type="text"
-                      id="custname"
-                      class="form-control"
-                      placeholder=""
-                      />
-                    </div>
-                    <div class="col">
-                      <label for="custphone" class="form-label">客戶電話</label>
-                      <input
-                      type="text"
-                      id="custphone"
-                      class="form-control"
-                      placeholder=""
-                      />
-                    </div>
-                  </div>
-                  <div class="row"> 
-                    <div class="col">
-                      <label for="syspg" class="form-label">父層設定</label>
-                      <select class="form-select" id="syspg" aria-label="Default select example">
-                      </select>
-                    </div> 
-                    <div class="col">
-                      <label class="form-label"></label>
-                      <div>
-                        <button class="btn btn-primary " type="button" id="syssend" style="max-width: 100px;">儲存</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
 
 
             </div>
