@@ -104,11 +104,11 @@
 }
 
 .bg-primary {
-  background-color: #696cff !important;
+  background-color: #072D57 !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus {
-  background-color: #6467f2 !important;
+  background-color: #072D57 !important;
 }
 
 .dropdown-notifications-item:not(.mark-as-read) .dropdown-notifications-read span {
