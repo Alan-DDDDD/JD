@@ -181,8 +181,17 @@ $(`#addcase`).on(`click`,()=>{
 })
 
 //初始化事件
+//list
+$(`#listbar`).on(`click`,()=>{
+  $(`#listpanel`).slideToggle();
+});
 //list tr click
-$(`#caselist`).on(`click`,`.listdata`,()=>{
+$(`#caselist`).on(`click`,`.listdata`,function(){
   console.log($(this));
+  $(`#listpanel tr`).removeClass("bg-secondary");
+  $(`#listpanel tr`).css("color","");
+  $(this).addClass("bg-secondary");
+  $(this).css("color","white");
   $(`#mainpanel`).show(300);
+  $(`#listpanel`).slideToggle();
 })

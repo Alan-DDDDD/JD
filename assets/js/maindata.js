@@ -1,6 +1,6 @@
 var url = "https://18f7-1-162-39-166.ngrok-free.app";
 //var url = "https://localhost:7226";
-//var fronturl = "https://alan-ddddd.github.io/JD/html";
+var fronturl = "https://alan-ddddd.github.io/JD/html";
 var datalist;
 var curruntuser;
 var curruntid;
