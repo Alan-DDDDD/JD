@@ -179,3 +179,9 @@ $(`#addcase`).on(`click`,()=>{
   let caseinput = $(`#casepanel input`);
   caseinput.val("X");
 })
+
+//初始化事件
+//list tr click
+$(`#caselist`).on(`click`,`.listdata`,()=>{
+  console.log($(this));
+})
