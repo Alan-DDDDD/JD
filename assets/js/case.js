@@ -2,7 +2,7 @@ getSelfData();
 $(async function(){
   //初始化畫面
   $(`.empinput`).attr("disabled","disabled");
-  $(`#mainpanel`).hide();
+  $(`#mainpanel`).hide(300);
   //$(`#casepanel input`).attr("disabled","disabled");
   //取得BS資料
   var BS = await fetch(url+"/api/Code/BS",{
@@ -184,4 +184,5 @@ $(`#addcase`).on(`click`,()=>{
 //list tr click
 $(`#caselist`).on(`click`,`.listdata`,()=>{
   console.log($(this));
+  $(`#mainpanel`).show(300);
 })
