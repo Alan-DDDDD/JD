@@ -176,7 +176,7 @@ $(`#send`).on(`click`,async ()=>{
 
 $(`#addcase`).on(`click`,()=>{
   //清除畫面
-  let caseinput = $(`#casepanel input`);
+  let caseinput = $(`#mainpanel input`);
   caseinput.val("X");
 })
 
