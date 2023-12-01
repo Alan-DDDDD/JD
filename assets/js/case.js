@@ -1,7 +1,7 @@
 getSelfData();
 $(async function(){
   //初始化畫面
-  $(`.empinput`).attr("disabled","disabled");
+  $(`.casefix`).attr("disabled","disabled");
   $(`#mainpanel`).hide();
   //$(`#casepanel input`).attr("disabled","disabled");
   //取得BS資料
