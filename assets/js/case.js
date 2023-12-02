@@ -42,6 +42,10 @@ $(async function(){
   }else{
     console.log("EMP資料取得失敗")
   }
+  //圖檔瀏覽
+  $(`#carkeybtn`).on(`click`,function(){
+    readUrl(this);
+  });
 })
 async function getSelfData(){
   $(`#budgettbody`).empty();
@@ -195,3 +199,14 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
   $(`#mainpanel`).show(300);
   $(`#listpanel`).slideToggle();
 })
+
+//圖檔瀏覽
+function readUrl(input){
+  if(input.files && input.files[0]){
+    var reader = new FileReader();
+    reader.onload = function(e){
+      $(`#viewImg`).attr("src",e.target.result);
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+}
