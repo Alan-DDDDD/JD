@@ -204,10 +204,14 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
 //圖檔瀏覽
 function readUrl(input){
   if(input.files && input.files[0]){
+    let view = $(`#viewImg`);
     var reader = new FileReader();
     reader.onload = function(e){
-      $(`#viewImg`).attr("src",e.target.result);
-    }
+      view.attr("src",e.target.result);
+    };
+    view.css("max-heigth","100%");
+    view.css("max-width","100%");
+    view.css("object-fit","contain");
     reader.readAsDataURL(input.files[0]);
   }
 }
