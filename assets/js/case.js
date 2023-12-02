@@ -209,6 +209,7 @@ function readUrl(input){
     reader.onload = function(e){
       view.attr("src",e.target.result);
     };
+    console.log($(view).parent().css("heigth"))
     view.css("max-heigth","100%");
     view.css("max-width","100%");
     view.css("object-fit","contain");
