@@ -43,8 +43,8 @@ $(async function(){
   //   console.log("EMP資料取得失敗")
   // }
   //圖檔瀏覽
-  $(`#carkeybtn`).on(`click`,function(){
-    var input = document.getElementById("carkeyinput");
+  $(`.filebtn`).on(`click`,function(){
+    var input = document.getElementById($(this).data("id"));
       readUrl(input);
   });
 })
