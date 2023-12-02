@@ -46,7 +46,7 @@ $(async function(){
   $(`#carkeybtn`).on(`click`,function(){
     setTimeout(()=>{
 
-      readUrl(this);
+      readUrl($(`#carkeyinput`));
     },500);
   });
 })
