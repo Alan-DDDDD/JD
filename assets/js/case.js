@@ -44,7 +44,8 @@ $(async function(){
   // }
   //圖檔瀏覽
   $(`#carkeybtn`).on(`click`,function(){
-      readUrl($(`#carkeyinput`));
+    var input = document.getElementById("carkeyinput");
+      readUrl(input);
   });
 })
 async function getSelfData(){
@@ -203,7 +204,7 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
 //圖檔瀏覽
 function readUrl(input){
   console.log(input)
-  if($(input).files && $(input).files[0]){
+  if(input.files && input.files[0]){
     var reader = new FileReader();
     reader.onload = function(e){
       $(`#viewImg`).attr("src",e.target.result);
