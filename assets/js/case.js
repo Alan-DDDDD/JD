@@ -212,3 +212,7 @@ function readUrl(input){
     reader.readAsDataURL(input.files[0]);
   }
 }
+
+$(`#carkeyinput`).on('change',()=>{
+  console.log($(this).val())
+})
