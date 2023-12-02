@@ -214,5 +214,5 @@ function readUrl(input){
 }
 
 $(`#carkeyinput`).on('change',()=>{
-  console.log($(this).val())
+  console.log($(`#carkeyinput`).val())
 })
