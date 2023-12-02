@@ -44,10 +44,7 @@ $(async function(){
   // }
   //圖檔瀏覽
   $(`#carkeybtn`).on(`click`,function(){
-    setTimeout(()=>{
-
       readUrl($(`#carkeyinput`));
-    },500);
   });
 })
 async function getSelfData(){
