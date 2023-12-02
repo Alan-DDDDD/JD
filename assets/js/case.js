@@ -209,6 +209,7 @@ function readUrl(input){
     var reader = new FileReader();
     reader.onload = function(e){
       $(`#viewImg`).attr("src",e.target.result);
+      console.log(e.target.result);
     }
     reader.readAsDataURL(input.files[0]);
   }
