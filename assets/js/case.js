@@ -249,11 +249,11 @@ $(`#send`).on(`click`,function(){
 });
 
 function modelbindcar(carObject){
-  $(`#carnumber`).val($(`#modelcarnumber`).val());
-  $(`#carkm`).val($(`#modelkm`).val());
-  $(`#cardate`).val($(`#modeldate`).val());
-  $(`#carstatus`).val($(`#modelstatus`).val());
-  $(`#carmemo`).val($(`#modelmemo`).val());
+  $(`#carnumber`).val(carObject.Number);
+  $(`#carkm`).val(carObject.Km);
+  $(`#cardate`).val(carObject.Date);
+  $(`#carstatus`).val(carObject.Status);
+  $(`#carmemo`).val(carObject.Memo);
 }
 
 //圖檔瀏覽
