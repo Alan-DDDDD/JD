@@ -295,6 +295,32 @@
               <!-- 表單 -->
               <div class="col-lg-4 col-md-6">
                 <div class="mt-3">
+                  <!-- Log View -->
+                  <div class="modal fade" id="LogCenter" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="LogCenterTitle">案件聯絡紀錄</h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="modal-body" style="max-width: 500px;overflow-y: scroll;">
+                          <div class="row">
+                            <div class="col mb-3">
+                              <label for="logmemo" class="form-label">紀錄</label>
+                              <textarea class="form-control" id="logmemo" rows="3"></textarea>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <!-- Paper View -->
                   <div class="modal fade" id="ViewCenter" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -486,7 +512,9 @@
                       <div class="divider-text">
                         <div style="display: flex;">
                           <h4>案件資料</h4>
-                          <button type="button" data-caseid="" class="btn btn-primary" id="addDeitail" style="padding: 0.25rem;font-size: 11px; margin-left: 0.75rem;">
+                          <button type="button" data-caseid="" class="btn btn-primary" 
+                                  id="addDeitail" style="padding: 0.25rem;font-size: 11px; margin-left: 0.75rem;"
+                                  data-bs-toggle="modal" data-bs-target="#LogCenter">
                             新增聯絡紀錄
                           </button>
                         </div>
