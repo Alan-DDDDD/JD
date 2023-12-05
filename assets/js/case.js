@@ -211,7 +211,6 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
   $(`#listpanel tr`).css("color","");
   $(this).addClass("bg-secondary");
   $(this).css("color","white");
-  console.log($($(this).children()[0]).html());
   $(`#addDeitail`).data("caseid",$($(this).children()[0]).html());
   $(`#addDeitail`).removeAttr("disabled");
   $(`#mainpanel`).show(300);
