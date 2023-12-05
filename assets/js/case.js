@@ -226,3 +226,7 @@ function readUrl(input){
     reader.readAsDataURL(input.files[0]);
   }
 }
+
+$(`#addDeitail`).on(`click`,function(){
+  alert($(this).data("caseid"))
+})
