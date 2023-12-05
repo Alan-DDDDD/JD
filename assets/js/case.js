@@ -216,6 +216,36 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
   $(`#mainpanel`).show(300);
   $(`#listpanel`).slideToggle();
 })
+//CAR INSERT AND EDIT
+$(`.caredit`).on(`click`,function(){
+  let carid = $(this).data(`id`);//車輛(產品)編號
+  $(`#modelcarnumber`).val($(`#carnumber`).val());
+  $(`#modelbrand`);
+  $(`#modelseries`);
+  $(`#modelmodel`);
+  $(`#modelcolor`);
+  $(`#modelkm`).val($(`#carkm`).val());
+  $(`#modeldate`).val($(`#cardate`).val());
+  $(`#modelstatus`).val($(`#carstatus`).val());
+  $(`#modelmemo`).val($(`#carmemo`).val());
+
+});
+
+$(`#send`).on(`click`,function(){
+  let id = $(this).data(`id`);
+  let carObject={
+    Number : $(`#modelcarnumber`).val(),
+    Brand : $(`#modelbrand option:selected`).val(),
+    Series : $(`#modelseries option:selected`).val(),
+    model : $(`#modelmodel option:selected`).val(),
+    Color : $(`#modelcolor option:selected`).val(),
+    Km : $(`#modelkm`).val(),
+    Date : $(`#modeldate`).val(),
+    Status : $(`#modelstatus`).val(),
+    Memo : $(`#modelmemo`).val()
+  }
+  console.log(carObject);
+});
 
 //圖檔瀏覽
 function readUrl(input){
