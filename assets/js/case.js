@@ -190,6 +190,7 @@ $(`#addcase`).on(`click`,()=>{
   let caseinput = $(`#mainpanel input`);
   caseinput.val("");
   $(`#addDeitail`).data("caseid","");
+  $(`#addDeitail`).attr("disabled","disabled")
   $(`#empid`).val(curruntid);
   $(`#empname`).val(curruntuser);
 })
