@@ -189,6 +189,7 @@ $(`#addcase`).on(`click`,()=>{
   //清除畫面
   let caseinput = $(`#mainpanel input`);
   caseinput.val("");
+  $(`#addDeitail`).data("caseid") = "";
   $(`#empid`).val(curruntid);
   $(`#empname`).val(curruntuser);
 })
