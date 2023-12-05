@@ -205,6 +205,7 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
   $(`#listpanel tr`).css("color","");
   $(this).addClass("bg-secondary");
   $(this).css("color","white");
+  $(this + " td")
   $(`#mainpanel`).show(300);
   $(`#listpanel`).slideToggle();
 })
