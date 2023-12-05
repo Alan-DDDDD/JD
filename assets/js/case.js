@@ -206,6 +206,7 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
   $(this).addClass("bg-secondary");
   $(this).css("color","white");
   console.log($($(this).children()[0]).html());
+  $(`#addDeitail`).data("caseid") = $($(this).children()[0]).html();
   $(`#mainpanel`).show(300);
   $(`#listpanel`).slideToggle();
 })
