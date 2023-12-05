@@ -3,6 +3,12 @@ $(async function(){
   //初始化畫面
   $(`.casefix`).attr("disabled","disabled");
   $(`#mainpanel`).hide();
+  $(`.carinput`).attr("disabled","disabled");
+  //依據階段禁止修改資料
+  //1.進件完成禁止修改客戶資料
+  //2.報價後簽約後禁止修改成交價格、車輛資料
+  //3.過戶後禁止修改過戶資料
+  //4.撥款後禁止修改所有資料
   //$(`#casepanel input`).attr("disabled","disabled");
   //取得BS資料
   // var BS = await fetch(url+"/api/Code/BS",{
@@ -182,7 +188,9 @@ $(`#send`).on(`click`,async ()=>{
 $(`#addcase`).on(`click`,()=>{
   //清除畫面
   let caseinput = $(`#mainpanel input`);
-  caseinput.val("X");
+  caseinput.val("");
+  $(`#empid`).val(curruntid);
+  $(`#empname`).val(curruntuser);
 })
 
 //初始化事件
@@ -209,7 +217,6 @@ function readUrl(input){
     reader.onload = function(e){
       view.attr("src",e.target.result);
     };
-    console.log($(view).parent().css("heigth"))
     view.css("max-heigth","100%");
     view.css("max-width","100%");
     view.css("object-fit","contain");
