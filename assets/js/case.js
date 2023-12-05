@@ -193,6 +193,8 @@ $(`#addcase`).on(`click`,()=>{
   $(`#addDeitail`).attr("disabled","disabled")
   $(`#empid`).val(curruntid);
   $(`#empname`).val(curruntuser);
+  $(`#mainpanel`).show(300);
+  $(`#listpanel`).slideToggle();
 })
 
 //初始化事件
