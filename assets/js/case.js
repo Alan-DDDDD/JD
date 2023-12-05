@@ -194,6 +194,7 @@ $(`#addcase`).on(`click`,()=>{
   $(`#empid`).val(curruntid);
   $(`#empname`).val(curruntuser);
   $(`#mainpanel`).show(300);
+  console.log($(`#listpanel`).css("display"))
   $(`#listpanel`).slideToggle();
 })
 
