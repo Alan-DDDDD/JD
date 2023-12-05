@@ -127,62 +127,62 @@ $(`#budgettbody`).on(`click`,`.btne`,function(){
   $(`#memo`).val("");
 })
 //確認送出
-$(`#send`).on(`click`,async ()=>{
-  let id = $(`#send`).data("id") || $(`#emplist option:selected`).val();
-  let budget = {//組物件
-    empid : id,
-    payment : $(`#status option:selected`).val(),
-    amount : $(`#empbudget`).val(),
-    memo :$(`#memo`).val(),
-  };
-  // if($(`#send`).data("id")==""){
-  //   budget.payment = "P"
-  // }
-  let empid = $(`#send`).data("id");
-  if(!empid){//新增
-    var response = await fetch(url + "/api/Amount_D/create?user=" + curruntid,{
-      method : "POST",
-      headers : new Headers({
-        "ngrok-skip-browser-warning": "69420",
-        "Content-Type":"application/json"
-      }),
-      body : JSON.stringify(budget)
-    });
-    var body = await response.json();
-    console.log(body);
-    if(body.status){
-      if(body.error){//資料邏輯錯誤
-        alert("");
-      }else{
-        alert("設定成功!!");
-        getSelfData();
-      }
-    }else{//系統錯誤
-      alert(body.error.ErrorMsg);
-    }
-  }else{//修改
-    // var response = await fetch(url + "/api/Budget/edit?user=" + curruntid,{
-    //   method : "POST",
-    //   headers : new Headers({
-    //     "ngrok-skip-browser-warning": "69420",
-    //     "Content-Type":"application/json"
-    //   }),
-    //   body : JSON.stringify(empl)
-    // });
-    // var body = await response.json();
-    // if(body.status){
-    //   if(body.error){//資料邏輯錯誤
-    //     alert("");
-    //   }else{
-    //     alert("編輯成功!!");
-    //     getSelfData();
-    //   }
-    // }else{//系統錯誤
-    //   alert(body.error.errorMsg);
-    // }
-  }
-  $(`.btn-close`).click();
-})
+// $(`#send`).on(`click`,async ()=>{
+//   let id = $(`#send`).data("id") || $(`#emplist option:selected`).val();
+//   let budget = {//組物件
+//     empid : id,
+//     payment : $(`#status option:selected`).val(),
+//     amount : $(`#empbudget`).val(),
+//     memo :$(`#memo`).val(),
+//   };
+//   // if($(`#send`).data("id")==""){
+//   //   budget.payment = "P"
+//   // }
+//   let empid = $(`#send`).data("id");
+//   if(!empid){//新增
+//     var response = await fetch(url + "/api/Amount_D/create?user=" + curruntid,{
+//       method : "POST",
+//       headers : new Headers({
+//         "ngrok-skip-browser-warning": "69420",
+//         "Content-Type":"application/json"
+//       }),
+//       body : JSON.stringify(budget)
+//     });
+//     var body = await response.json();
+//     console.log(body);
+//     if(body.status){
+//       if(body.error){//資料邏輯錯誤
+//         alert("");
+//       }else{
+//         alert("設定成功!!");
+//         getSelfData();
+//       }
+//     }else{//系統錯誤
+//       alert(body.error.ErrorMsg);
+//     }
+//   }else{//修改
+//     // var response = await fetch(url + "/api/Budget/edit?user=" + curruntid,{
+//     //   method : "POST",
+//     //   headers : new Headers({
+//     //     "ngrok-skip-browser-warning": "69420",
+//     //     "Content-Type":"application/json"
+//     //   }),
+//     //   body : JSON.stringify(empl)
+//     // });
+//     // var body = await response.json();
+//     // if(body.status){
+//     //   if(body.error){//資料邏輯錯誤
+//     //     alert("");
+//     //   }else{
+//     //     alert("編輯成功!!");
+//     //     getSelfData();
+//     //   }
+//     // }else{//系統錯誤
+//     //   alert(body.error.errorMsg);
+//     // }
+//   }
+//   $(`.btn-close`).click();
+// })
 
 
 $(`#addcase`).on(`click`,()=>{
