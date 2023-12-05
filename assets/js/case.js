@@ -234,5 +234,5 @@ function readUrl(input){
 }
 
 $(`#addDeitail`).on(`click`,function(){
-  alert($(this).data("caseid"))
+  $(`#logcaseid`).val($(this).data("caseid"));
 })
