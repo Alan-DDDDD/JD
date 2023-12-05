@@ -245,7 +245,16 @@ $(`#send`).on(`click`,function(){
     Memo : $(`#modelmemo`).val()
   }
   console.log(carObject);
+  modelbindcar(carObject);
 });
+
+function modelbindcar(carObject){
+  $(`#carnumber`).val($(`#modelcarnumber`).val());
+  $(`#carkm`).val($(`#modelkm`).val());
+  $(`#cardate`).val($(`#modeldate`).val());
+  $(`#carstatus`).val($(`#modelstatus`).val());
+  $(`#carmemo`).val($(`#modelmemo`).val());
+}
 
 //圖檔瀏覽
 function readUrl(input){
