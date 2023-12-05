@@ -248,9 +248,9 @@ $(`#send`).on(`click`,function(){
     Memo : $(`#modelmemo`).val()
   }
   if(carObject.Carid){
-
+//寫修改
   }else{
-
+//寫新增
   }
   console.log(carObject);
   modelbindcar(carObject);
