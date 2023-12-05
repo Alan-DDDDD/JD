@@ -194,8 +194,9 @@ $(`#addcase`).on(`click`,()=>{
   $(`#empid`).val(curruntid);
   $(`#empname`).val(curruntuser);
   $(`#mainpanel`).show(300);
-  console.log($(`#listpanel`).css("display"))
-  $(`#listpanel`).slideToggle();
+  if($(`#listpanel`).css("display") != "none"){
+    $(`#listpanel`).slideToggle();
+  }
 })
 
 //初始化事件
