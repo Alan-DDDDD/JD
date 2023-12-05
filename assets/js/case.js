@@ -217,6 +217,8 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
   $(`#listpanel`).slideToggle();
 })
 //CAR INSERT AND EDIT
+$(`.carinsert`).on(`click`,function(){
+});
 $(`.caredit`).on(`click`,function(){
   let carid = $(this).data(`id`);//車輛(產品)編號
   $(`#modelcarnumber`).val($(`#carnumber`).val());
@@ -234,15 +236,21 @@ $(`.caredit`).on(`click`,function(){
 $(`#send`).on(`click`,function(){
   let id = $(this).data(`id`);
   let carObject={
+    Carid : id,
     Number : $(`#modelcarnumber`).val(),
     Brand : $(`#modelbrand option:selected`).val(),
     Series : $(`#modelseries option:selected`).val(),
-    model : $(`#modelmodel option:selected`).val(),
+    Model : $(`#modelmodel option:selected`).val(),
     Color : $(`#modelcolor option:selected`).val(),
     Km : $(`#modelkm`).val(),
     Date : $(`#modeldate`).val(),
     Status : $(`#modelstatus`).val(),
     Memo : $(`#modelmemo`).val()
+  }
+  if(carObject.Carid){
+
+  }else{
+
   }
   console.log(carObject);
   modelbindcar(carObject);
@@ -250,6 +258,10 @@ $(`#send`).on(`click`,function(){
 
 function modelbindcar(carObject){
   $(`#carnumber`).val(carObject.Number);
+  $(`#carbrand`).val($(`modelbrand option:selected`).html());
+  $(`#carseries`).val($(`modelseries option:selected`).html());
+  $(`#carmodel`).val($(`modelmodel option:selected`).html());
+  $(`#carcolor`).val($(`modelcolor option:selected`).html());
   $(`#carkm`).val(carObject.Km);
   $(`#cardate`).val(carObject.Date);
   $(`#carstatus`).val(carObject.Status);
