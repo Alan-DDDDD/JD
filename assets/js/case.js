@@ -189,7 +189,7 @@ $(`#addcase`).on(`click`,()=>{
   //清除畫面
   let caseinput = $(`#mainpanel input`);
   caseinput.val("");
-  $(`#addDeitail`).data("caseid") = "";
+  $(`#addDeitail`).data("caseid","");
   $(`#empid`).val(curruntid);
   $(`#empname`).val(curruntuser);
 })
@@ -207,7 +207,7 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
   $(this).addClass("bg-secondary");
   $(this).css("color","white");
   console.log($($(this).children()[0]).html());
-  $(`#addDeitail`).data("caseid") = $($(this).children()[0]).html();
+  $(`#addDeitail`).data("caseid",$($(this).children()[0]).html());
   $(`#mainpanel`).show(300);
   $(`#listpanel`).slideToggle();
 })
