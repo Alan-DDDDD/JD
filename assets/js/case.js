@@ -188,7 +188,7 @@ $(`#budgettbody`).on(`click`,`.btne`,function(){
 
 $(`#addcase`).on(`click`,()=>{
   //清除畫面
-  let caseinput = $(`#mainpanel input,textarea`);
+  let caseinput = $(`#mainpanel,#formtable input,textarea`);
   caseinput.val("");
   $(`#addDeitail`).data("caseid","");
   $(`#addDeitail`).attr("disabled","disabled")
