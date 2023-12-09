@@ -214,12 +214,15 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
       $(`#price`).val(value.OrderCase.price || "");
       $(`#dealprice`).val(value.OrderCase.dealprice || "");
       $(`#casedate`).val(value.OrderCase.a_sysdt.substring(0,10));
-      let caredit = $(`.caredit`)
+      let caredit = $(`.caredit`);
+      let carinsert = $(`.carinsert`);
       if(value.Car){
         caredit.removeAttr("disabled");
-        cardatabind(value.Car);
+        carinsert.attr("disabled","disabled");
+        cardatabind(value.Car); 
       }else{
         caredit.attr("disabled","disabled");
+        carinsert.removeAttr("disabled")
       }
     }
   })
