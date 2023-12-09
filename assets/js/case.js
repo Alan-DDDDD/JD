@@ -78,7 +78,7 @@ async function getSelfData(){
                             <td>${data.EMPL.EMPNAME}</td>
                             <td>${data.Code}</td>
                             <td>${data.Car == null? "" : data.Car.carnumber}</td>
-                            <td>${data.OrderCase.a_sysdt.substring(0,9)}</td>
+                            <td>${data.OrderCase.a_sysdt.substring(0,10)}</td>
                         </tr>`);
       });
     }
