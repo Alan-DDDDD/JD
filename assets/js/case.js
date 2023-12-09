@@ -311,7 +311,9 @@ $(`#modelbrand`).on(`change`,function(){
   SS.empty();
   SS.append(`<option selected>請選擇</option>`)
   $.each(ddllist.SS,(index,item)=>{
-    SS.append(`<option value="${item.dataid}">${item.data}</option>`);
+    if(item.parentgroup == value){
+      SS.append(`<option value="${item.dataid}">${item.data}</option>`);
+    }
   })
 });
 $(`#modelseries`).on(`change`,function(){
@@ -320,7 +322,9 @@ $(`#modelseries`).on(`change`,function(){
   CMD.empty();
   CMD.append(`<option selected>請選擇</option>`)
   $.each(ddllist.CMD,(index,item)=>{
-    CMD.append(`<option value="${item.dataid}">${item.data}</option>`);
+    if(item.parentgroup == value){
+      CMD.append(`<option value="${item.dataid}">${item.data}</option>`);
+    }
   })
 });
 
