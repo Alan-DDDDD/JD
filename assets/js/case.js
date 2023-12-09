@@ -218,15 +218,6 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
       if(value.Car){
         caredit.removeAttr("disabled");
         cardatabind(value.Car);
-        // $(`#carbrand`).val($(`#modelbrand option[value:${value.Car.brand}]`).html());
-        // $(`#carseries`).val($(`#modelseries option[value:${value.Car.series}]`).html());
-        // $(`#carmodel`).val($(`#modelmodel option[value:${value.Car.model}]`).html());
-        // $(`#carcolor`).val($(`#modelcolor option[value:${value.Car.color}]`).html());
-        // $(`#carnumber`).val($(`#modelcarnumber`).val());
-        // $(`#carkm`).val($(`#modelkm`).val());
-        // $(`#cardate`).val($(`#modeldate`).val());
-        // $(`#carstatus`).val($(`#modelstatus`).val());
-        // $(`#carmemo`).val($(`#modelmemo`).val());
       }else{
         caredit.attr("disabled","disabled");
       }
@@ -250,6 +241,15 @@ function cardatabind(car){
   $(`#modeldate`).val(car.date);
   $(`#modelstatus`).val(car.carstatus);
   $(`#modelmemo`).val(car.memo);
+  $(`#carbrand`).val($(`#modelbrand option[value:${value.Car.brand}]`).html());
+  $(`#carseries`).val($(`#modelseries option[value:${value.Car.series}]`).html());
+  $(`#carmodel`).val($(`#modelmodel option[value:${value.Car.model}]`).html());
+  $(`#carcolor`).val($(`#modelcolor option[value:${value.Car.color}]`).html());
+  $(`#carnumber`).val($(`#modelcarnumber`).val());
+  $(`#carkm`).val($(`#modelkm`).val());
+  $(`#cardate`).val($(`#modeldate`).val());
+  $(`#carstatus`).val($(`#modelstatus`).val());
+  $(`#carmemo`).val($(`#modelmemo`).val());
 }
 $(`.carinsert`).on(`click`,function(){
 });
