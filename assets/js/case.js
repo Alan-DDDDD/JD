@@ -235,7 +235,9 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
   })
   //開啟頁面
   $(`#mainpanel`).show(300);
-  $(`#listpanel`).slideToggle();
+  if($(`#listpanel`).css("display") != "none"){
+    $(`#listpanel`).slideToggle();
+  }
 })
 //CAR INSERT AND EDIT AND EVENT
 function cardatabind(car){
