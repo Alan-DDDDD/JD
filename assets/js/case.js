@@ -219,7 +219,6 @@ $(`.casesave`).on('click',async function(){
       alert(body.error.errorMsg);
     }
   }
-  $(`.btn-close`).click();
 });
 
 
