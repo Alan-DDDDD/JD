@@ -236,7 +236,7 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
   $(`#mainpanel`).show(300);
   $(`#listpanel`).slideToggle();
 })
-//CAR INSERT AND EDIT
+//CAR INSERT AND EDIT AND EVENT
 function cardatabind(car){
   $(`#send`).data('carid',car.carid);
   $(`#modelcarnumber`).val(car.carnumber);
@@ -301,6 +301,26 @@ function modelbindcar(carObject){
   $(`#carstatus`).val(carObject.Status);
   $(`#carmemo`).val(carObject.Memo);
 }
+
+$(`#modelbrand`).on(`change`,function(){
+  let value = $(`#modelbrand option:selected`);
+  let SS = $(`#modelseries`);
+  SS.append(`<option selected>請選擇</option>`)
+  $.each(ddllist.Data.SS,(index,item)=>{
+    SS.empty();
+    SS.append(`<option value="${item.dataid}">${item.data}</option>`);
+  })
+});
+$(`#modelseries`).on(`change`,function(){
+  let value = $(`#modelseries option:selected`);
+  let CMD = $(`#modelmodel`);
+  CMD.append(`<option selected>請選擇</option>`)
+  $.each(ddllist.Data.CMD,(index,item)=>{
+    CMD.empty();
+    CMD.append(`<option value="${item.dataid}">${item.data}</option>`);
+  })
+});
+
 
 //圖檔瀏覽
 function readUrl(input){
