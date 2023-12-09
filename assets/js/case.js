@@ -156,13 +156,72 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
   $(`#mainpanel`).show(300);
   $(`#listpanel`).slideToggle();
 })
+
+
+
+
 //CASE INSERT AND EDIT AND
 $(`.casesave`).on('click',async function(){
   let caseid = $(this).data("caseid");
   let caseObject = {
-
+    caseid : caseid,
+    emplid : $(`#empid`).val(),
+    custname : $(`#custname`).val(),
+    custphone : $(`#custphone`).val(),
+    carid : $(`#send`).data("carid"),
+    price : $(`#price`).val(),
+    dealprice : $(`#dealprice`).val(),
+    status : $(`#casestatus`).val()
   }
+  if(caseid){
+    //修改
+    var response = await fetch(url + "/api/OrderCase/edit?user=" + curruntid,{
+      method : "POST",
+      headers : new Headers({
+        "ngrok-skip-browser-warning": "69420",
+        "Content-Type":"application/json"
+      }),
+      body : JSON.stringify(caseObject)
+    });
+    var body = await response.json();
+    if(body.status){
+      if(body.error){//資料邏輯錯誤
+        alert("");
+      }else{
+        alert("編輯成功!!");
+        getSelfData();
+      }
+    }else{//系統錯誤
+      alert(body.error.errorMsg);
+    }
+  }else{
+    var response = await fetch(url + "/api/OrderCase/create?user=" + curruntid,{
+      method : "POST",
+      headers : new Headers({
+        "ngrok-skip-browser-warning": "69420",
+        "Content-Type":"application/json"
+      }),
+      body : JSON.stringify(carObject)
+    });
+    var body = await response.json();
+    if(body.status){
+      if(body.error){//資料邏輯錯誤
+        alert("");
+      }else{
+        $(this).data("carid",body.data);
+        alert("新增成功!!");
+        getSelfData();
+      }
+    }else{//系統錯誤
+      alert(body.error.errorMsg);
+    }
+  }
+  $(`.btn-close`).click();
 });
+
+
+
+
 //CAR INSERT AND EDIT AND EVENT
 function cardatabind(car){
   $(`#send`).data('carid',car.carid);
@@ -243,6 +302,7 @@ $(`#send`).on(`click`,async function(){
       if(body.error){//資料邏輯錯誤
         alert("");
       }else{
+        $(this).data("carid",body.data);
         alert("新增成功!!");
         getSelfData();
       }
