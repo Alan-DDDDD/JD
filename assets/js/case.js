@@ -304,6 +304,8 @@ $(`#send`).on(`click`,async function(){
         alert("");
       }else{
         $(this).data("carid",body.data);
+        $(`.caredit`).removeAttr("disabled");
+        $(`.carinsert`).attr("disabled","disabled");
         alert("新增成功!!");
         getSelfData();
       }
