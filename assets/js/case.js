@@ -19,11 +19,19 @@ $(async function(){
     }),
   })
   var carddldata = await carddl.json();
-  if(BSdata.Status){
-    let status = $(`#status`);
-    status.append(`<option selected>請選擇</option>`)
-    $.each(BSdata.Data,(index,item)=>{
-      status.append(`
+  if(carddldata.Status){
+    ddllist = carddldata.Data;
+    let brand = $(`#modelbrand`);
+    let color = $(`#modelcolor`);
+    brand.append(`<option selected>請選擇</option>`);
+    color.append(`<option selected>請選擇</option>`);
+    $.each(ddllist.Data.BD,(index,item)=>{
+      brand.append(`
+          <option value="${item.dataid}">${item.data}</option>
+      `)
+    })
+    $.each(ddllist.Data.CL,(index,item)=>{
+      color.append(`
           <option value="${item.dataid}">${item.data}</option>
       `)
     })
