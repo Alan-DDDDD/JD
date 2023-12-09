@@ -273,7 +273,6 @@ $(`.caredit`).on(`click`,function(){
   // $(`#modeldate`).val($(`#cardate`).val());
   // $(`#modelstatus`).val($(`#carstatus`).val());
   // $(`#modelmemo`).val($(`#carmemo`).val());
-
 });
 
 $(`#send`).on(`click`,async function(){
