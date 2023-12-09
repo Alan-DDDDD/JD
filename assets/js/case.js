@@ -257,14 +257,14 @@ $(`#send`).on(`click`,async function(){
   let id = $(this).data(`carid`);
   let carObject={
     Carid : id,
-    Number : $(`#modelcarnumber`).val(),
+    carnumber : $(`#modelcarnumber`).val(),
     Brand : $(`#modelbrand option:selected`).val(),
     Series : $(`#modelseries option:selected`).val(),
     Model : $(`#modelmodel option:selected`).val(),
     Color : $(`#modelcolor option:selected`).val(),
     Km : $(`#modelkm`).val(),
     Date : $(`#modeldate`).val(),
-    Status : $(`#modelstatus`).val(),
+    carstatus : $(`#modelstatus`).val(),
     Memo : $(`#modelmemo`).val()
   }
   if(carObject.Carid){
