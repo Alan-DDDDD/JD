@@ -77,7 +77,7 @@ async function getSelfData(){
                             <td>採購</td>
                             <td>${data.EMPL.EMPNAME}</td>
                             <td>${data.Code}</td>
-                            <td>${data.Car.carnumber == null? "" : data.Car.carnumber}</td>
+                            <td>${data.Car == null? "" : data.Car.carnumber}</td>
                             <td>${data.OrderCase.a_sysdt}</td>
                             <td>
                               <div class="dropdown">
