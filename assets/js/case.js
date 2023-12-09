@@ -11,44 +11,25 @@ $(async function(){
   //3.過戶後禁止修改過戶資料
   //4.撥款後禁止修改所有資料
   //$(`#casepanel input`).attr("disabled","disabled");
-  //取得BS資料
-  // var BS = await fetch(url+"/api/Code/BS",{
-  //   method: "get",
-  //   headers: new Headers({
-  //     "ngrok-skip-browser-warning": "69420",
-  //   }),
-  // })
-  // var BSdata = await BS.json();
-  // if(BSdata.Status){
-  //   let status = $(`#status`);
-  //   status.append(`<option selected>請選擇</option>`)
-  //   $.each(BSdata.Data,(index,item)=>{
-  //     status.append(`
-  //         <option value="${item.dataid}">${item.data}</option>
-  //     `)
-  //   })
-  // }else{
-  //   console.log("BS資料取得失敗")
-  // }
-  // //取得EMP資料
-  // var emp = await fetch(url+"/EMPL/getAllEMPL?user=" + localStorage.getItem(`currid`) + "&flag=Y",{
-  //   method: "get",
-  //   headers: new Headers({
-  //     "ngrok-skip-browser-warning": "69420",
-  //   }),
-  // })
-  // var empdata = await emp.json();
-  // if(empdata.Status){
-  //   let emplist = $(`#emplist`);
-  //   emplist.append(`<option selected>請選擇</option>`)
-  //   $.each(empdata.Data,(index,item)=>{
-  //     emplist.append(`
-  //         <option value="${item.EMPID}">${item.EMPID}  ${item.EMPNAME}</option>
-  //     `)
-  //   })
-  // }else{
-  //   console.log("EMP資料取得失敗")
-  // }
+  //取得ddl資料
+  var carddl = await fetch(url+"/api/Code/carddl",{
+    method: "get",
+    headers: new Headers({
+      "ngrok-skip-browser-warning": "69420",
+    }),
+  })
+  var carddldata = await carddl.json();
+  if(BSdata.Status){
+    let status = $(`#status`);
+    status.append(`<option selected>請選擇</option>`)
+    $.each(BSdata.Data,(index,item)=>{
+      status.append(`
+          <option value="${item.dataid}">${item.data}</option>
+      `)
+    })
+  }else{
+    console.log("CODE資料取得失敗")
+  }
   //圖檔瀏覽
   $(`.filebtn`).on(`click`,function(){
     var input = document.getElementById($(this).data("id"));

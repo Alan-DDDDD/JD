@@ -2,6 +2,7 @@ var url = "https://0185-124-218-106-67.ngrok-free.app";
 //var url = "https://localhost:7226";
 var fronturl = "https://alan-ddddd.github.io/JD/html";
 var datalist;
+var ddllist;
 var curruntuser;
 var curruntid;
 var curruntlevel;
