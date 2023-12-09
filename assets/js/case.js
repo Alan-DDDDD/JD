@@ -104,10 +104,12 @@ function clearPage(){//清除畫面
   frominput.val("");
   formselect.empty().append(`<option selected>請選擇</option>`);
   clearselect.removeAttr("selected");
+  $(`.casesave`).data("caseid","");
   $(`#addDeitail`).data("caseid","");
   $(`#addDeitail`).attr("disabled","disabled")
   $(`.caredit`).attr("disabled","disabled");
   $(`.carinsert`).removeAttr("disabled");
+  $(`#send`).data('carid',"");
 }
 //list
 $(`#listbar`).on(`click`,()=>{
@@ -124,6 +126,7 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
   $(this).addClass("bg-secondary");
   $(this).css("color","white");
   //設定頁面元件
+  $(`.casesave`).data("caseid",caseid);
   $(`#addDeitail`).data("caseid",caseid);
   $(`#addDeitail`).removeAttr("disabled");
   //綁定頁面
@@ -154,7 +157,12 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
   $(`#listpanel`).slideToggle();
 })
 //CASE INSERT AND EDIT AND
+$(`.casesave`).on('click',async function(){
+  let caseid = $(this).data("caseid");
+  let caseObject = {
 
+  }
+});
 //CAR INSERT AND EDIT AND EVENT
 function cardatabind(car){
   $(`#send`).data('carid',car.carid);
