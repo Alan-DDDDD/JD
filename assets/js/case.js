@@ -205,12 +205,29 @@ $(`#listbar`).on(`click`,()=>{
 //list tr click
 $(`#caselist`).on(`click`,`.listdata`,function(){
   console.log($(this));
+  let caseid = $($(this).children()[0]).html();
+  //設定table樣式
   $(`#listpanel tr`).removeClass("bg-secondary");
   $(`#listpanel tr`).css("color","");
   $(this).addClass("bg-secondary");
   $(this).css("color","white");
-  $(`#addDeitail`).data("caseid",$($(this).children()[0]).html());
+  //設定頁面元件
+  $(`#addDeitail`).data("caseid",caseid);
   $(`#addDeitail`).removeAttr("disabled");
+  //綁定頁面
+  $.each(datalist,(index,value)=>{
+    if(value.OrderCase.caseid == caseid){
+      $(`#empid`).val(value.OrderCase.emplid);
+      $(`#empname`).val(value.EMPL.EMPNAME);
+      $(`#casestatus`).val(value.Code);
+      $(`#custname`).val(value.OrderCase.custname);
+      $(`#custphone`).val(value.OrderCase.custphone);
+      $(`#price`).val(value.OrderCase.price || "");
+      $(`#dealprice`).val(value.OrderCase.dealprice || "");
+      $(`#casedate`).val(value.OrderCase.a_sysdt.substring(0,10));
+    }
+  })
+  //開啟頁面
   $(`#mainpanel`).show(300);
   $(`#listpanel`).slideToggle();
 })
