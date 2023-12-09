@@ -79,13 +79,6 @@ async function getSelfData(){
                             <td>${data.Code}</td>
                             <td>${data.Car == null? "" : data.Car.carnumber}</td>
                             <td>${data.OrderCase.a_sysdt.substring(0,9)}</td>
-                            <td>
-                              <div class="dropdown">
-                                <button type="button" class="btn btn-primary btne"
-                                 data-bs-toggle="modal"
-                                 data-bs-target="#modalCenter" data-id="${data.OrderCase.caseid}">修改</button>
-                              </div>
-                            </td>
                         </tr>`);
       });
     }
