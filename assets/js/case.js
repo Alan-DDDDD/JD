@@ -78,7 +78,7 @@ async function getSelfData(){
                             <td>${data.EMPL.EMPNAME}</td>
                             <td>${data.Code}</td>
                             <td>${data.Car == null? "" : data.Car.carnumber}</td>
-                            <td>${data.OrderCase.a_sysdt}</td>
+                            <td>${data.OrderCase.a_sysdt.substring(0,9)}</td>
                             <td>
                               <div class="dropdown">
                                 <button type="button" class="btn btn-primary btne"
