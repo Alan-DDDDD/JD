@@ -225,6 +225,20 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
       $(`#price`).val(value.OrderCase.price || "");
       $(`#dealprice`).val(value.OrderCase.dealprice || "");
       $(`#casedate`).val(value.OrderCase.a_sysdt.substring(0,10));
+      let caredit = $(`.caredit`)
+      if(value.Car){
+        caredit.removeAttr("disabled");
+        $(`#carbrand`).val($(`#modelbrand option[value:${value.Car.brand}]`).html());
+        $(`#carseries`).val($(`#modelseries option[value:${value.Car.series}]`).html());
+        $(`#carmodel`).val($(`#modelmodel option[value:${value.Car.model}]`).html());
+        $(`#carcolor`).val($(`#modelcolor option[value:${value.Car.color}]`).html());
+        $(`#carkm`).val($(`#modelkm`).val());
+        $(`#cardate`).val($(`#modeldate`).val());
+        $(`#carstatus`).val($(`#modelstatus`).val());
+        $(`#carmemo`).val($(`#modelmemo`).val());
+      }else{
+        caredit.attr("disabled","disabled");
+      }
     }
   })
   //開啟頁面
