@@ -244,6 +244,7 @@ $(`#send`).on(`click`,async function(){
   }
   console.log(carObject);
   modelbindcar(carObject);
+  $(`.btn-close`).click();
 });
 
 function modelbindcar(carObject){//儲存完綁資料回畫面
