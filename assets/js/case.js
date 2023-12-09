@@ -56,11 +56,11 @@ $(async function(){
   });
 })
 async function getSelfData(){
-  $(`#budgettbody`).empty();
-  $(`#budgettbody`).append(`<div class="spinner-border text-primary" role="status" id="mainwait">
+  $(`#caselist`).empty();
+  $(`#caselist`).append(`<div class="spinner-border text-primary" role="status" id="mainwait">
     <span class="visually-hidden">Lodding....</span>
   </div>`);
-    var response = await fetch(url + "/api/Budget?user=" + localStorage.getItem(`currid`), {
+    var response = await fetch(url + "/api/OrderCase?user=" + localStorage.getItem(`currid`), {
         method: "get",
         headers: new Headers({
           "ngrok-skip-browser-warning": "69420",
@@ -68,15 +68,17 @@ async function getSelfData(){
       });
     var body = await response.json();
     console.log(body);
-    var table = $(`#budgettbody`);
+    var table = $(`#caselist`);
     if(body.Status){
       datalist = body.Data
       $.each(datalist,function(index,data){
-          table.append(`<tr>
-                            <td onclick="detail('${data.empid}');" style="cursor:pointer;">${data.empname}</td>
-                            <td>${data.pb.balance.numberFormat(0,".",",")}</td>
-                            <td>${data.pb.keep.numberFormat(0,".",",")}</td>
-                            <td>${data.pb.total.numberFormat(0,".",",")}</td>
+          table.append(`<tr style="cursor:pointer;">
+                            <td>${data.OrderCase.caseid}</td>
+                            <td>採購</td>
+                            <td>${data.EMPL.EMPNAME}</td>
+                            <td>${data.OrderCase.status}</td>
+                            <td>${data.Car.carnumber}</td>
+                            <td>${data.OrderCase.a_sysdt}</td>
                             <td>
                               <div class="dropdown">
                                 <button type="button" class="btn btn-primary btne"
