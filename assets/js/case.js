@@ -241,10 +241,10 @@ function cardatabind(car){
   $(`#modeldate`).val(car.date);
   $(`#modelstatus`).val(car.carstatus);
   $(`#modelmemo`).val(car.memo);
-  $(`#carbrand`).val($(`#modelbrand option[value:${value.Car.brand}]`).html());
-  $(`#carseries`).val($(`#modelseries option[value:${value.Car.series}]`).html());
-  $(`#carmodel`).val($(`#modelmodel option[value:${value.Car.model}]`).html());
-  $(`#carcolor`).val($(`#modelcolor option[value:${value.Car.color}]`).html());
+  $(`#carbrand`).val($(`#modelbrand option[value:${car.brand}]`).html());
+  $(`#carseries`).val($(`#modelseries option[value:${car.series}]`).html());
+  $(`#carmodel`).val($(`#modelmodel option[value:${car.model}]`).html());
+  $(`#carcolor`).val($(`#modelcolor option[value:${car.color}]`).html());
   $(`#carnumber`).val($(`#modelcarnumber`).val());
   $(`#carkm`).val($(`#modelkm`).val());
   $(`#cardate`).val($(`#modeldate`).val());
