@@ -306,7 +306,7 @@ function modelbindcar(carObject){
 }
 
 $(`#modelbrand`).on(`change`,function(){
-  let value = $(`#modelbrand option:selected`);
+  let value = $(`#modelbrand option:selected`).val();
   let SS = $(`#modelseries`);
   SS.empty();
   SS.append(`<option selected>請選擇</option>`)
@@ -317,7 +317,7 @@ $(`#modelbrand`).on(`change`,function(){
   })
 });
 $(`#modelseries`).on(`change`,function(){
-  let value = $(`#modelseries option:selected`);
+  let value = $(`#modelseries option:selected`).val();
   let CMD = $(`#modelmodel`);
   CMD.empty();
   CMD.append(`<option selected>請選擇</option>`)
