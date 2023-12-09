@@ -83,92 +83,6 @@ function select(){
     $(this).toggle($(this).text().toLowerCase().indexOf(key) > -1)
   });
 }
-//新增
-$(`.btni`).on(`click`,function(){
-  $(`.modal input`).val("");
-  $(`#send`).data("id","");
-  $(`#emplist option`).removeAttr("selected");
-  $(`#status option`).removeAttr("selected").filter(`[value=P]`).attr("selected",true);
-  // $(`#status`).parent().css("display","none");
-  $(`#emplist`).removeAttr("disabled");
-  $(`#status`).attr("disabled","disabled");
-  $(`#memo`).val("初次設定");
-  $(`#memo`).parent().css("display","none");
-})
-//修改
-$(`#budgettbody`).on(`click`,`.btne`,function(){
-  let id = $(this).data("id");
-  $(`#empid`).attr("readonly","readonly");
-  let current = $.grep(datalist,function(e){
-    return e.EMPID == curruntid
-  });
-  $(`#memo`).parent().css("display","");
-  // $(`#status`).parent().css("display","");
-  $(`#status`).removeAttr("disabled");
-  $(`#status option`).removeAttr("selected");
-  $(`#emplist option`).removeAttr("selected").filter(`[value=${id}]`).attr("selected",true);
-  $(`#emplist`).attr("disabled","disabled");
-  $(`#empbudget`).val("");
-  $(`#memo`).val("");
-})
-//確認送出
-// $(`#send`).on(`click`,async ()=>{
-//   let id = $(`#send`).data("id") || $(`#emplist option:selected`).val();
-//   let budget = {//組物件
-//     empid : id,
-//     payment : $(`#status option:selected`).val(),
-//     amount : $(`#empbudget`).val(),
-//     memo :$(`#memo`).val(),
-//   };
-//   // if($(`#send`).data("id")==""){
-//   //   budget.payment = "P"
-//   // }
-//   let empid = $(`#send`).data("id");
-//   if(!empid){//新增
-//     var response = await fetch(url + "/api/Amount_D/create?user=" + curruntid,{
-//       method : "POST",
-//       headers : new Headers({
-//         "ngrok-skip-browser-warning": "69420",
-//         "Content-Type":"application/json"
-//       }),
-//       body : JSON.stringify(budget)
-//     });
-//     var body = await response.json();
-//     console.log(body);
-//     if(body.status){
-//       if(body.error){//資料邏輯錯誤
-//         alert("");
-//       }else{
-//         alert("設定成功!!");
-//         getSelfData();
-//       }
-//     }else{//系統錯誤
-//       alert(body.error.ErrorMsg);
-//     }
-//   }else{//修改
-//     // var response = await fetch(url + "/api/Budget/edit?user=" + curruntid,{
-//     //   method : "POST",
-//     //   headers : new Headers({
-//     //     "ngrok-skip-browser-warning": "69420",
-//     //     "Content-Type":"application/json"
-//     //   }),
-//     //   body : JSON.stringify(empl)
-//     // });
-//     // var body = await response.json();
-//     // if(body.status){
-//     //   if(body.error){//資料邏輯錯誤
-//     //     alert("");
-//     //   }else{
-//     //     alert("編輯成功!!");
-//     //     getSelfData();
-//     //   }
-//     // }else{//系統錯誤
-//     //   alert(body.error.errorMsg);
-//     // }
-//   }
-//   $(`.btn-close`).click();
-// })
-
 
 $(`#addcase`).on(`click`,()=>{
   clearPage();
@@ -181,8 +95,7 @@ $(`#addcase`).on(`click`,()=>{
 })
 
 //初始化事件
-function clearPage(){
-  //清除畫面
+function clearPage(){//清除畫面
   let caseinput = $(`#mainpanel input,textarea`);
   let frominput = $(`#formtable input,textarea`);
   let formselect = $(`.modelselect`);
@@ -240,6 +153,8 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
   $(`#mainpanel`).show(300);
   $(`#listpanel`).slideToggle();
 })
+//CASE INSERT AND EDIT AND
+
 //CAR INSERT AND EDIT AND EVENT
 function cardatabind(car){
   $(`#send`).data('carid',car.carid);
@@ -268,17 +183,8 @@ $(`.carinsert`).on(`click`,function(){
 });
 $(`.caredit`).on(`click`,function(){
   let carid = $(this).data(`id`);//車輛(產品)編號
-  // $(`#modelcarnumber`).val($(`#carnumber`).val());
-  // $(`#modelbrand`);
-  // $(`#modelseries`);
-  // $(`#modelmodel`);
-  // $(`#modelcolor`);
-  // $(`#modelkm`).val($(`#carkm`).val());
-  // $(`#modeldate`).val($(`#cardate`).val());
-  // $(`#modelstatus`).val($(`#carstatus`).val());
-  // $(`#modelmemo`).val($(`#carmemo`).val());
 });
-
+//車輛資料新增儲存
 $(`#send`).on(`click`,async function(){
   let id = $(this).data(`carid`);
   let carObject={
@@ -340,7 +246,7 @@ $(`#send`).on(`click`,async function(){
   modelbindcar(carObject);
 });
 
-function modelbindcar(carObject){
+function modelbindcar(carObject){//儲存完綁資料回畫面
   $(`#carnumber`).val(carObject.Number);
   $(`#carbrand`).val($(`#modelbrand option:selected`).html());
   $(`#carseries`).val($(`#modelseries option:selected`).html());
