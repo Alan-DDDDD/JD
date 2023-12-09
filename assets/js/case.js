@@ -171,6 +171,17 @@ $(`#budgettbody`).on(`click`,`.btne`,function(){
 
 
 $(`#addcase`).on(`click`,()=>{
+  clearPage();
+  $(`#empid`).val(curruntid);
+  $(`#empname`).val(curruntuser);
+  $(`#mainpanel`).show(300);
+  if($(`#listpanel`).css("display") != "none"){
+    $(`#listpanel`).slideToggle();
+  }
+})
+
+//初始化事件
+function clearPage(){
   //清除畫面
   let caseinput = $(`#mainpanel input,textarea`);
   let frominput = $(`#formtable input,textarea`);
@@ -182,17 +193,9 @@ $(`#addcase`).on(`click`,()=>{
   clearselect.removeAttr("selected");
   $(`#addDeitail`).data("caseid","");
   $(`#addDeitail`).attr("disabled","disabled")
-  $(`#empid`).val(curruntid);
-  $(`#empname`).val(curruntuser);
-  $(`#mainpanel`).show(300);
-  if($(`#listpanel`).css("display") != "none"){
-    $(`#listpanel`).slideToggle();
-  }
   $(`.caredit`).attr("disabled","disabled");
   $(`.carinsert`).removeAttr("disabled");
-})
-
-//初始化事件
+}
 //list
 $(`#listbar`).on(`click`,()=>{
   $(`#listpanel`).slideToggle();
@@ -200,7 +203,7 @@ $(`#listbar`).on(`click`,()=>{
 //list tr click
 $(`#caselist`).on(`click`,`.listdata`,function(){
   console.log($(this));
-  $(`#addcase`).click();
+  clearPage();
   let caseid = $($(this).children()[0]).html();
   //設定table樣式
   $(`#listpanel tr`).removeClass("bg-secondary");
@@ -235,9 +238,7 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
   })
   //開啟頁面
   $(`#mainpanel`).show(300);
-  if($(`#listpanel`).css("display") != "none"){
-    $(`#listpanel`).slideToggle();
-  }
+  $(`#listpanel`).slideToggle();
 })
 //CAR INSERT AND EDIT AND EVENT
 function cardatabind(car){
