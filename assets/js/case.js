@@ -200,6 +200,7 @@ $(`#listbar`).on(`click`,()=>{
 //list tr click
 $(`#caselist`).on(`click`,`.listdata`,function(){
   console.log($(this));
+  $(`#addcase`).click();
   let caseid = $($(this).children()[0]).html();
   //設定table樣式
   $(`#listpanel tr`).removeClass("bg-secondary");
