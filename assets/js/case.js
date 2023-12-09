@@ -188,8 +188,8 @@ $(`#addcase`).on(`click`,()=>{
   if($(`#listpanel`).css("display") != "none"){
     $(`#listpanel`).slideToggle();
   }
-  caredit.attr("disabled","disabled");
-  carinsert.removeAttr("disabled");
+  $(`.caredit`).attr("disabled","disabled");
+  $(`.carinsert`).removeAttr("disabled");
 })
 
 //初始化事件
