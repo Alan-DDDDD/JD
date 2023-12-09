@@ -208,7 +208,7 @@ $(`.casesave`).on('click',async function(){
       if(body.error){//資料邏輯錯誤
         alert("");
       }else{
-        $(this).data("carid",body.data);
+        $(this).data("caseid",body.data);
         alert("新增成功!!");
         getSelfData();
       }
