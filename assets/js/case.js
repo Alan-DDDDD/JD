@@ -25,12 +25,12 @@ $(async function(){
     let color = $(`#modelcolor`);
     brand.append(`<option selected>請選擇</option>`);
     color.append(`<option selected>請選擇</option>`);
-    $.each(ddllist.Data.BD,(index,item)=>{
+    $.each(ddllist.BD,(index,item)=>{
       brand.append(`
           <option value="${item.dataid}">${item.data}</option>
       `)
     })
-    $.each(ddllist.Data.CL,(index,item)=>{
+    $.each(ddllist.CL,(index,item)=>{
       color.append(`
           <option value="${item.dataid}">${item.data}</option>
       `)
@@ -306,7 +306,7 @@ $(`#modelbrand`).on(`change`,function(){
   let value = $(`#modelbrand option:selected`);
   let SS = $(`#modelseries`);
   SS.append(`<option selected>請選擇</option>`)
-  $.each(ddllist.Data.SS,(index,item)=>{
+  $.each(ddllist.SS,(index,item)=>{
     SS.empty();
     SS.append(`<option value="${item.dataid}">${item.data}</option>`);
   })
@@ -315,7 +315,7 @@ $(`#modelseries`).on(`change`,function(){
   let value = $(`#modelseries option:selected`);
   let CMD = $(`#modelmodel`);
   CMD.append(`<option selected>請選擇</option>`)
-  $.each(ddllist.Data.CMD,(index,item)=>{
+  $.each(ddllist.CMD,(index,item)=>{
     CMD.empty();
     CMD.append(`<option value="${item.dataid}">${item.data}</option>`);
   })
