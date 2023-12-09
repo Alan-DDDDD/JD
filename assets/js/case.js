@@ -204,7 +204,7 @@ $(`.casesave`).on('click',async function(){
         "ngrok-skip-browser-warning": "69420",
         "Content-Type":"application/json"
       }),
-      body : JSON.stringify(carObject)
+      body : JSON.stringify(caseObject)
     });
     var body = await response.json();
     if(body.status){
