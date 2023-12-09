@@ -195,6 +195,7 @@ $(`.casesave`).on('click',async function(){
       alert(body.error.errorMsg);
     }
   }else{
+    //新增
     var response = await fetch(url + "/api/OrderCase/create?user=" + curruntid,{
       method : "POST",
       headers : new Headers({
