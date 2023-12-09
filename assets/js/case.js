@@ -169,8 +169,8 @@ $(`.casesave`).on('click',async function(){
     custname : $(`#custname`).val(),
     custphone : $(`#custphone`).val(),
     carid : $(`#send`).data("carid"),
-    price : $(`#price`).val(),
-    dealprice : $(`#dealprice`).val(),
+    price : $(`#price`).val() || 0,
+    dealprice : $(`#dealprice`).val() || 0,
     status : $(`#casestatus`).val()
   }
   if(caseid){
