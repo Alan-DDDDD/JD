@@ -174,8 +174,10 @@ $(`#addcase`).on(`click`,()=>{
   //清除畫面
   let caseinput = $(`#mainpanel input,textarea`);
   let frominput = $(`#formtable input,textarea`);
+  let formselect = $(`.modelselect`);
   caseinput.val("");
   frominput.val("");
+  formselect.empty();
   $(`#addDeitail`).data("caseid","");
   $(`#addDeitail`).attr("disabled","disabled")
   $(`#empid`).val(curruntid);
