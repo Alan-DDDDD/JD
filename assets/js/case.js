@@ -77,13 +77,13 @@ async function getSelfData(){
                             <td>採購</td>
                             <td>${data.EMPL.EMPNAME}</td>
                             <td>${data.OrderCase.status}</td>
-                            <td>${data.Car.carnumber}</td>
+                            <td>${data.Car.carnumber || ""}</td>
                             <td>${data.OrderCase.a_sysdt}</td>
                             <td>
                               <div class="dropdown">
                                 <button type="button" class="btn btn-primary btne"
                                  data-bs-toggle="modal"
-                                 data-bs-target="#modalCenter" data-id="${data.empid}">修改</button>
+                                 data-bs-target="#modalCenter" data-id="${data.OrderCase.caseid}">修改</button>
                               </div>
                             </td>
                         </tr>`);
