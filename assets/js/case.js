@@ -255,15 +255,15 @@ $(`.carinsert`).on(`click`,function(){
 });
 $(`.caredit`).on(`click`,function(){
   let carid = $(this).data(`id`);//車輛(產品)編號
-  $(`#modelcarnumber`).val($(`#carnumber`).val());
-  $(`#modelbrand`);
-  $(`#modelseries`);
-  $(`#modelmodel`);
-  $(`#modelcolor`);
-  $(`#modelkm`).val($(`#carkm`).val());
-  $(`#modeldate`).val($(`#cardate`).val());
-  $(`#modelstatus`).val($(`#carstatus`).val());
-  $(`#modelmemo`).val($(`#carmemo`).val());
+  // $(`#modelcarnumber`).val($(`#carnumber`).val());
+  // $(`#modelbrand`);
+  // $(`#modelseries`);
+  // $(`#modelmodel`);
+  // $(`#modelcolor`);
+  // $(`#modelkm`).val($(`#carkm`).val());
+  // $(`#modeldate`).val($(`#cardate`).val());
+  // $(`#modelstatus`).val($(`#carstatus`).val());
+  // $(`#modelmemo`).val($(`#carmemo`).val());
 
 });
 
@@ -292,10 +292,10 @@ $(`#send`).on(`click`,function(){
 
 function modelbindcar(carObject){
   $(`#carnumber`).val(carObject.Number);
-  $(`#carbrand`).val($(`modelbrand option:selected`).html());
-  $(`#carseries`).val($(`modelseries option:selected`).html());
-  $(`#carmodel`).val($(`modelmodel option:selected`).html());
-  $(`#carcolor`).val($(`modelcolor option:selected`).html());
+  $(`#carbrand`).val($(`#modelbrand option:selected`).html());
+  $(`#carseries`).val($(`#modelseries option:selected`).html());
+  $(`#carmodel`).val($(`#modelmodel option:selected`).html());
+  $(`#carcolor`).val($(`#modelcolor option:selected`).html());
   $(`#carkm`).val(carObject.Km);
   $(`#cardate`).val(carObject.Date);
   $(`#carstatus`).val(carObject.Status);
