@@ -88,6 +88,8 @@ $(`#addcase`).on(`click`,()=>{
   clearPage();
   $(`#empid`).val(curruntid);
   $(`#empname`).val(curruntuser);
+  $(`#casestatus`).val("進件中");
+  $(`#casedate`).val(new Date());
   $(`#mainpanel`).show(300);
   if($(`#listpanel`).css("display") != "none"){
     $(`#listpanel`).slideToggle();
