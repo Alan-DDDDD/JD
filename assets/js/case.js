@@ -175,9 +175,12 @@ $(`#addcase`).on(`click`,()=>{
   let caseinput = $(`#mainpanel input,textarea`);
   let frominput = $(`#formtable input,textarea`);
   let formselect = $(`.modelselect`);
+  let clearselect = $(`.clearselect option`);
   caseinput.val("");
   frominput.val("");
-  formselect.empty();
+  formselect.empty().append(`<option selected>請選擇</option>`);
+  clearselect.removeAttr("selected");
+  clearselect[0].attr("selected",true);
   $(`#addDeitail`).data("caseid","");
   $(`#addDeitail`).attr("disabled","disabled")
   $(`#empid`).val(curruntid);
