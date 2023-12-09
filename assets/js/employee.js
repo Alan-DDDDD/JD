@@ -104,7 +104,6 @@ $(`#send`).on(`click`,async ()=>{
       body : JSON.stringify(empl)
     });
     var body = await response.json();
-    console.log(body);
     if(body.status){
       if(body.error){//資料邏輯錯誤
         alert("");

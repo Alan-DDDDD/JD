@@ -276,7 +276,7 @@ $(`.caredit`).on(`click`,function(){
 
 });
 
-$(`#send`).on(`click`,function(){
+$(`#send`).on(`click`,async function(){
   let id = $(this).data(`carid`);
   let carObject={
     Carid : id,
@@ -291,9 +291,47 @@ $(`#send`).on(`click`,function(){
     Memo : $(`#modelmemo`).val()
   }
   if(carObject.Carid){
-//寫修改
+    //寫修改
+    var response = await fetch(url + "/api/Car/edit?user=" + curruntid,{
+      method : "POST",
+      headers : new Headers({
+        "ngrok-skip-browser-warning": "69420",
+        "Content-Type":"application/json"
+      }),
+      body : JSON.stringify(empl)
+    });
+    var body = await response.json();
+    if(body.status){
+      if(body.error){//資料邏輯錯誤
+        alert("");
+      }else{
+        alert("編輯成功!!");
+        getSelfData();
+      }
+    }else{//系統錯誤
+      alert(body.error.errorMsg);
+    }
   }else{
-//寫新增
+    //寫新增
+    var response = await fetch(url + "/api/Car/create?user=" + curruntid,{
+      method : "POST",
+      headers : new Headers({
+        "ngrok-skip-browser-warning": "69420",
+        "Content-Type":"application/json"
+      }),
+      body : JSON.stringify(empl)
+    });
+    var body = await response.json();
+    if(body.status){
+      if(body.error){//資料邏輯錯誤
+        alert("");
+      }else{
+        alert("新增成功!!");
+        getSelfData();
+      }
+    }else{//系統錯誤
+      alert(body.error.errorMsg);
+    }
   }
   console.log(carObject);
   modelbindcar(carObject);
