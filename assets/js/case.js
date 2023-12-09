@@ -228,10 +228,12 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
       let caredit = $(`.caredit`)
       if(value.Car){
         caredit.removeAttr("disabled");
+        cardatabind(value.Car);
         $(`#carbrand`).val($(`#modelbrand option[value:${value.Car.brand}]`).html());
         $(`#carseries`).val($(`#modelseries option[value:${value.Car.series}]`).html());
         $(`#carmodel`).val($(`#modelmodel option[value:${value.Car.model}]`).html());
         $(`#carcolor`).val($(`#modelcolor option[value:${value.Car.color}]`).html());
+        $(`#carnumber`).val($(`#modelcarnumber`).val());
         $(`#carkm`).val($(`#modelkm`).val());
         $(`#cardate`).val($(`#modeldate`).val());
         $(`#carstatus`).val($(`#modelstatus`).val());
@@ -246,6 +248,20 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
   $(`#listpanel`).slideToggle();
 })
 //CAR INSERT AND EDIT
+function cardatabind(car){
+  $(`#send`).data('carid',car.carid);
+  $(`#modelcarnumber`).val(car.carnumber);
+  $(`#modelbrand option`).removeAttr('selected').filter(`[value=${car.brand}]`).attr("selected",true);
+  $(`#modelbrand`).change();
+  $(`#modelseries option`).removeAttr('selected').filter(`[value=${car.series}]`).attr("selected",true);
+  $(`#modelseries`).change();
+  $(`#modelmodel option`).removeAttr('selected').filter(`[value=${car.model}]`).attr("selected",true);
+  $(`#modelcolor option`).removeAttr('selected').filter(`[value=${car.color}]`).attr("selected",true);
+  $(`#modelkm`).val(car.km);
+  $(`#modeldate`).val(car.date);
+  $(`#modelstatus`).val(car.carstatus);
+  $(`#modelmemo`).val(car.memo);
+}
 $(`.carinsert`).on(`click`,function(){
 });
 $(`.caredit`).on(`click`,function(){
