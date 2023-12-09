@@ -180,7 +180,6 @@ $(`#addcase`).on(`click`,()=>{
   frominput.val("");
   formselect.empty().append(`<option selected>請選擇</option>`);
   clearselect.removeAttr("selected");
-  clearselect[0].attr("selected",true);
   $(`#addDeitail`).data("caseid","");
   $(`#addDeitail`).attr("disabled","disabled")
   $(`#empid`).val(curruntid);
