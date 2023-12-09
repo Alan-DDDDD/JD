@@ -319,14 +319,14 @@ $(`#send`).on(`click`,async function(){
 });
 
 function modelbindcar(carObject){//儲存完綁資料回畫面
-  $(`#carnumber`).val(carObject.Number);
+  $(`#carnumber`).val(carObject.carnumber);
   $(`#carbrand`).val($(`#modelbrand option:selected`).html());
   $(`#carseries`).val($(`#modelseries option:selected`).html());
   $(`#carmodel`).val($(`#modelmodel option:selected`).html());
   $(`#carcolor`).val($(`#modelcolor option:selected`).html());
   $(`#carkm`).val(carObject.Km);
   $(`#cardate`).val(carObject.Date);
-  $(`#carstatus`).val(carObject.Status);
+  $(`#carstatus`).val(carObject.carstatus);
   $(`#carmemo`).val(carObject.Memo);
 }
 
