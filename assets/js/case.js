@@ -44,6 +44,9 @@ $(async function(){
       readUrl(input);
   });
 })
+
+
+
 async function getSelfData(){
   $(`#caselist`).empty();
   $(`#caselist`).append(`<div class="spinner-border text-primary" role="status" id="mainwait">
@@ -175,6 +178,7 @@ $(`.casesave`).on('click',async function(){
     dealprice : $(`#dealprice`).val() || 0,
     status : $(`#casestatus`).val()
   }
+  //案件基本資料API
   if(caseid){
     //修改
     var response = await fetch(url + "/api/OrderCase/edit?user=" + curruntid,{
@@ -221,7 +225,11 @@ $(`.casesave`).on('click',async function(){
   }
 });
 
-
+//案件檔案傳送
+function casefiles(){
+  let files = $(`#carkeyinput`).val();
+  console.log(files);
+}
 
 
 //CAR INSERT AND EDIT AND EVENT
