@@ -228,8 +228,8 @@ $(`.casesave`).on('click',async function(){
 
 //案件檔案傳送
 function casefiles(){
-  let files = $(`#carkeyinput`).val();
-  console.log(files);
+  let carkey = $(`#carkeyinput`).val();
+  console.log(carkey.files);
 }
 
 
