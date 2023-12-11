@@ -195,6 +195,7 @@ $(`.casesave`).on('click',async function(){
         alert("");
       }else{
         alert("編輯成功!!");
+        casefiles();
         getSelfData();
       }
     }else{//系統錯誤
