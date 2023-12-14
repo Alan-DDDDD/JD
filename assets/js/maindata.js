@@ -1,5 +1,5 @@
-var url = "https://7bdd-1-162-10-35.ngrok-free.app";
-//var url = "https://localhost:7226";
+//var url = "https://7bdd-1-162-10-35.ngrok-free.app";
+var url = "https://localhost:5002";
 var fronturl = "https://alan-ddddd.github.io/JD/html";
 var datalist;
 var ddllist;
