@@ -244,7 +244,7 @@ async function casefiles(){
   form.append("idcardR",idcardR.files[0])
   form.append("bank",bank.files[0])
   console.log(form);
-  var response = await fetch(url + "/api/OrderCase/saveImg?user=" + curruntid,{
+  var response = await fetch(url + "/api/OrderCase/saveImg?user=" + curruntid + "&carid=" + $(`#send`).data("carid"),{
     method : "POST",
     headers : new Headers({
       "ngrok-skip-browser-warning": "69420"
