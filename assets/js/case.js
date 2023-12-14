@@ -228,7 +228,7 @@ $(`.casesave`).on('click',async function(){
 
 //案件檔案傳送
 function casefiles(){
-  let carkey = $(`#carkeyinput`);
+  let carkey = document.getElementById("carkeyinput");
   console.log(carkey.files);
 }
 
