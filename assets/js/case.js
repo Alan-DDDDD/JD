@@ -235,7 +235,8 @@ async function casefiles(){
   var response = await fetch(url + "/api/OrderCase/saveImg?user=" + curruntid,{
     method : "POST",
     headers : new Headers({
-      "ngrok-skip-browser-warning": "69420"
+      "ngrok-skip-browser-warning": "69420",
+      "Content-Type":"multipart/form-data"
     }),
     body : form
   });
