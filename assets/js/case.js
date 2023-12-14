@@ -227,9 +227,20 @@ $(`.casesave`).on('click',async function(){
 });
 
 //案件檔案傳送
-function casefiles(){
+async function casefiles(){
   let carkey = document.getElementById("carkeyinput");
   console.log(carkey.files);
+  let form = new FormData();
+  form.append("carkey",carkey.files[0])
+  var response = await fetch(url + "/api/OrderCase/saveImg?user=" + curruntid,{
+    method : "POST",
+    headers : new Headers({
+      "ngrok-skip-browser-warning": "69420",
+      "Content-Type":"multipart/form-data"
+    }),
+    body : JSON.stringify(carkey)
+  });
+  var body = await response.json();
 }
 
 
