@@ -229,9 +229,9 @@ $(`.casesave`).on('click',async function(){
 //案件檔案傳送
 async function casefiles(){
   let carkey = document.getElementById("carkeyinput");
-  console.log(carkey.files);
   let form = new FormData();
   form.append("carkey",carkey.files[0])
+  console.log(form);
   var response = await fetch(url + "/api/OrderCase/saveImg?user=" + curruntid,{
     method : "POST",
     headers : new Headers({
