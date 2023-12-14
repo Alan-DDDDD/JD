@@ -228,15 +228,18 @@ $(`.casesave`).on('click',async function(){
 
 //案件檔案傳送
 async function casefiles(caseid){
-  let carkey = document.getElementById("carkeyinput");
-  let paper1 = document.getElementById("carpaper1input");
-  let paper2 = document.getElementById("carpaper2input");
-  let paper3 = document.getElementById("carpaper3input");
-  let idcardF = document.getElementById("idcardFinput");
-  let idcardR = document.getElementById("idcardRinput");
-  let bank = document.getElementById("bankinput");
+  let files = {
+  carkey : document.getElementById("carkeyinput").files[0],
+  paper1 : document.getElementById("carpaper1input").files[0],
+  paper2 : document.getElementById("carpaper2input").files[0],
+  paper3 : document.getElementById("carpaper3input").files[0],
+  idcardF : document.getElementById("idcardFinput").files[0],
+  idcardR : document.getElementById("idcardRinput").files[0],
+  bank : document.getElementById("bankinput").files[0]
+  }
   let form = new FormData();
-  form.append("carkey",carkey.files[0])
+  
+  form.append("files",files)
   // form.append("paper1",paper1.files[0])
   // form.append("paper2",paper2.files[0])
   // form.append("paper3",paper3.files[0])
