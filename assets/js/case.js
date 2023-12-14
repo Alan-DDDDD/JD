@@ -239,7 +239,7 @@ async function casefiles(caseid){
   }
   let form = new FormData();
   
-  form.append("files",files)
+  form.append("files",document.getElementById("carkeyinput").files[0])
   // form.append("paper1",paper1.files[0])
   // form.append("paper2",paper2.files[0])
   // form.append("paper3",paper3.files[0])
