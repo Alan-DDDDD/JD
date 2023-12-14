@@ -228,7 +228,7 @@ $(`.casesave`).on('click',async function(){
 
 //案件檔案傳送
 async function casefiles(caseid){
-  let key = document.getElementById("carkeyinput");
+  let carkey = document.getElementById("carkeyinput");
   let paper1 = document.getElementById("carpaper1input");
   let paper2 = document.getElementById("carpaper2input");
   let paper3 = document.getElementById("carpaper3input");
@@ -236,12 +236,12 @@ async function casefiles(caseid){
   let idcardR = document.getElementById("idcardRinput");
   let bank = document.getElementById("bankinput");
   let form = new FormData();
-  form.append("key",key.files[0])
+  form.append("carkey",carkey.files[0])
   form.append("paper1",paper1.files[0])
   form.append("paper2",paper2.files[0])
   form.append("paper3",paper3.files[0])
-  form.append("idcardF",idcardF.files[0])
-  form.append("idcardR",idcardR.files[0])
+  form.append("idcardf",idcardF.files[0])
+  form.append("idcardr",idcardR.files[0])
   form.append("bank",bank.files[0])
   console.log(form);
   var response = await fetch(url + "/api/OrderCase/saveImg?user=" + curruntid + "&caseid=" + caseid,{
