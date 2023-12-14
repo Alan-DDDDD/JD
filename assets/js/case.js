@@ -238,7 +238,7 @@ async function casefiles(){
       "ngrok-skip-browser-warning": "69420",
       "Content-Type":"multipart/form-data"
     }),
-    body : JSON.stringify(form)
+    body : form
   });
   var body = await response.json();
 }
