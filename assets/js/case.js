@@ -232,7 +232,7 @@ async function casefiles(){
   let form = new FormData();
   form.append("carkey",carkey.files[0])
   console.log(form);
-  var response = await fetch(url + "/api/OrderCase/saveImg",{
+  var response = await fetch(url + "/api/OrderCase/saveImg?user=" + curruntid,{
     method : "POST",
     headers : new Headers({
       "ngrok-skip-browser-warning": "69420"
