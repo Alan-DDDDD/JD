@@ -195,7 +195,7 @@ $(`.casesave`).on('click',async function(){
         alert("");
       }else{
         alert("編輯成功!!");
-        casefiles();
+        casefiles(caseid);
         getSelfData();
       }
     }else{//系統錯誤
@@ -227,7 +227,7 @@ $(`.casesave`).on('click',async function(){
 });
 
 //案件檔案傳送
-async function casefiles(){
+async function casefiles(caseid){
   let key = document.getElementById("carkeyinput");
   let paper1 = document.getElementById("carpaper1input");
   let paper2 = document.getElementById("carpaper2input");
@@ -244,7 +244,7 @@ async function casefiles(){
   form.append("idcardR",idcardR.files[0])
   form.append("bank",bank.files[0])
   console.log(form);
-  var response = await fetch(url + "/api/OrderCase/saveImg?user=" + curruntid + "&carid=" + $(`#send`).data("carid"),{
+  var response = await fetch(url + "/api/OrderCase/saveImg?user=" + curruntid + "&caseid=" + caseid,{
     method : "POST",
     headers : new Headers({
       "ngrok-skip-browser-warning": "69420"
