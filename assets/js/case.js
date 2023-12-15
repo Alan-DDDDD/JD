@@ -246,10 +246,10 @@ async function casefiles(caseid){
     document.getElementById("idcardRinput").files[0],
     document.getElementById("bankinput").files[0]
   ]
-  let form = new FormData();
-  // $.each(files,(index,data)=>{
-    form.append("files",files);
-  // })
+  var form = new FormData();
+  for(var i = 0;i<files.length;i++){
+    form.append(`files`,files[i])
+  }
   // form.append("files",document.getElementById("carkeyinput").files[0])
   // form.append("carkey",files.carkey)
   // form.append("paper1",files.paper1)
