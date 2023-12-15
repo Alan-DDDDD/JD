@@ -211,7 +211,6 @@ $(`.casesave`).on('click',async function(){
       }else{
         alert("編輯成功!!");
         casefiles(caseid);
-        getSelfData();
       }
     }else{//系統錯誤
       alert(body.error.errorMsg);
@@ -277,6 +276,7 @@ async function casefiles(caseid){
   });
   var body = await response;
   //alert(response);
+  getSelfData();
 }
 
 
