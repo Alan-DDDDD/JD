@@ -153,13 +153,13 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
       $(`#idcardFinput`).data("path",value.OrderCase.idcardf);
       $(`#idcardRinput`).data("path",value.OrderCase.idcardr);
       $(`#bankinput`).data("path",value.OrderCase.bank);
-      $(`#carkeyinput`).parent().prev().html(value.OrderCase.carkey ? "鑰匙 ❌":"鑰匙 ✔️");
-      $(`#carpaper1input`).parent().prev().html(value.OrderCase.paper1 ? "行照 ❌":"行照 ✔️");
-      $(`#carpaper2input`).parent().prev().html(value.OrderCase.paper2 ? "牌照登記書 ❌":"牌照登記書 ✔️");
-      $(`#carpaper3input`).parent().prev().html(value.OrderCase.paper3 ? "出廠證 ❌":"出廠證 ✔️");
-      $(`#idcardFinput`).parent().prev().html(value.OrderCase.idcardf ? "身分證正面 ❌":"身分證正面 ✔️");
-      $(`#idcardRinput`).parent().prev().html(value.OrderCase.idcardr ? "身分證反面 ❌":"身分證反面 ✔️");
-      $(`#bankinput`).parent().prev().html( value.OrderCase.bank ? "銀行存摺 ❌":"銀行存摺 ✔️");
+      $(`#carkeyinput`).parent().prev().html(value.OrderCase.carkey == null ? "鑰匙 ❌":"鑰匙 ✔️");
+      $(`#carpaper1input`).parent().prev().html(value.OrderCase.paper1 == null ? "行照 ❌":"行照 ✔️");
+      $(`#carpaper2input`).parent().prev().html(value.OrderCase.paper2 == null ? "牌照登記書 ❌":"牌照登記書 ✔️");
+      $(`#carpaper3input`).parent().prev().html(value.OrderCase.paper3 == null ? "出廠證 ❌":"出廠證 ✔️");
+      $(`#idcardFinput`).parent().prev().html(value.OrderCase.idcardf == null ? "身分證正面 ❌":"身分證正面 ✔️");
+      $(`#idcardRinput`).parent().prev().html(value.OrderCase.idcardr == null ? "身分證反面 ❌":"身分證反面 ✔️");
+      $(`#bankinput`).parent().prev().html( value.OrderCase.bank == null ? "銀行存摺 ❌":"銀行存摺 ✔️");
       let caredit = $(`.caredit`);
       let carinsert = $(`.carinsert`);
       if(value.Car){
