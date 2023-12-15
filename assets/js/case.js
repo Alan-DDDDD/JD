@@ -424,6 +424,9 @@ async function readUrl(input){
     let path = $(input).data("path");
     var response = await fetch(url + "/api/OrderCase/getFile?fileString="+path+"&user="+curruntid,{
       method : "Get",
+      headers : new Headers({
+        "ngrok-skip-browser-warning": "69420",
+      }),
     })
     var file = await response.json();
     console.log(file)
