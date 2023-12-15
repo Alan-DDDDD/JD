@@ -247,7 +247,7 @@ async function casefiles(caseid){
     headers : new Headers({
       "ngrok-skip-browser-warning": "69420"
     }),
-    body : form
+    body : JSON.stringify(form)
   });
   var body = await response.json();
 }
