@@ -413,10 +413,12 @@ async function readUrl(input){
     })
     var file = await response.json();
     console.log(file)
-    view.attr("src",e.target.result);
-    view.css("max-heigth","100%");
-    view.css("max-width","100%");
-    view.css("object-fit","contain");
+    if(file.Status){
+      view.attr("src",file.Data);
+      view.css("max-heigth","100%");
+      view.css("max-width","100%");
+      view.css("object-fit","contain");
+    }
   }
 }
 
