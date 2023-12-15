@@ -267,7 +267,7 @@ async function casefiles(caseid){
       form.append(`files`,files[i],fileName[i])
     }
   }
-  console.log(form);
+  //console.log(form);
   var response = await fetch(url + "/api/OrderCase/saveFile?user=" + curruntid + "&caseid=" + caseid,{
     method : "POST",
     headers : new Headers({
@@ -276,7 +276,7 @@ async function casefiles(caseid){
     body : form
   });
   var body = await response.json();
-  alert(response);
+  //alert(response);
 }
 
 
