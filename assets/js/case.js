@@ -408,7 +408,7 @@ async function readUrl(input){
     reader.readAsDataURL(input.files[0]);
   }else if($(input).data("path")){
     let path = $(input).data("path");
-    var response = await fetch(url + "/api/OrderCase/getFile?fileString="+path+"user="+curruntid,{
+    var response = await fetch(url + "/api/OrderCase/getFile?fileString="+path+"&user="+curruntid,{
       method : "Get",
     })
     var file = await response.json();
