@@ -448,6 +448,17 @@ async function readUrl(input){
   }
 }
 
+//詳細資料元素控制
+function detailControl(action){
+  switch (action){
+    case "open":
+      break;
+    case "close":
+      
+      break;
+  }
+}
+
 $(`#addDeitail`).on(`click`,function(){
   $(`#logcaseid`).val($(this).data("caseid"));
 })
