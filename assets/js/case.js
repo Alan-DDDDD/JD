@@ -145,7 +145,14 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
       $(`#price`).val(value.OrderCase.price || "");
       $(`#dealprice`).val(value.OrderCase.dealprice || "");
       $(`#casedate`).val(value.OrderCase.a_sysdt.substring(0,10));
-      $(`#carkeyinput`).data("path",value.OrderCase.carkey);//綁定檔案路徑
+      //綁定檔案路徑與顯示資料
+      $(`#carkeyinput`).data("path",value.OrderCase.carkey);
+      $(`#carpaper1input`).data("path",value.OrderCase.paper1);
+      $(`#carpaper2input`).data("path",value.OrderCase.paper2);
+      $(`#carpaper3input`).data("path",value.OrderCase.paper3);
+      $(`#idcardFinput`).data("path",value.OrderCase.idcardf);
+      $(`#idcardRinput`).data("path",value.OrderCase.idcardr);
+      $(`#bankinput`).data("path",value.OrderCase.bank);
       let caredit = $(`.caredit`);
       let carinsert = $(`.carinsert`);
       if(value.Car){
