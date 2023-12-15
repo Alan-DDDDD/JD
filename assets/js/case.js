@@ -239,13 +239,8 @@ async function casefiles(caseid){
   }
   let form = new FormData();
   
-  form.append("files",document.getElementById("carkeyinput").files[0])
-  // form.append("paper1",paper1.files[0])
-  // form.append("paper2",paper2.files[0])
-  // form.append("paper3",paper3.files[0])
-  // form.append("idcardf",idcardF.files[0])
-  // form.append("idcardr",idcardR.files[0])
-  // form.append("bank",bank.files[0])
+  // form.append("files",document.getElementById("carkeyinput").files[0])
+  form.append("files",files)
   console.log(form);
   var response = await fetch(url + "/api/OrderCase/saveImg?user=" + curruntid + "&caseid=" + caseid,{
     method : "POST",
