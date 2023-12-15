@@ -153,6 +153,8 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
       $(`#idcardFinput`).data("path",value.OrderCase.idcardf);
       $(`#idcardRinput`).data("path",value.OrderCase.idcardr);
       $(`#bankinput`).data("path",value.OrderCase.bank);
+      let key = "鑰匙" + value.OrderCase.carkey ? "❌":"✔️";
+      console.log(key)
       $(`#carkeyinput`).parent().prev().html("鑰匙" + value.OrderCase.carkey ? "❌":"✔️");
       $(`#carpaper1input`).parent().prev().html("行照" + value.OrderCase.paper1 ? "❌":"✔️");
       $(`#carpaper2input`).parent().prev().html("牌照登記書" + value.OrderCase.paper2 ? "❌":"✔️");
