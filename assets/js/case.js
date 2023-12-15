@@ -396,8 +396,8 @@ $(`#modelseries`).on(`change`,function(){
 
 //圖檔瀏覽
 async function readUrl(input){
+  let view = $(`#viewImg`);
   if(input.files && input.files[0]){
-    let view = $(`#viewImg`);
     var reader = new FileReader();
     reader.onload = function(e){
       view.attr("src",e.target.result);
@@ -413,6 +413,10 @@ async function readUrl(input){
     })
     var file = await response.json();
     console.log(file)
+    view.attr("src",e.target.result);
+    view.css("max-heigth","100%");
+    view.css("max-width","100%");
+    view.css("object-fit","contain");
   }
 }
 
