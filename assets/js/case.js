@@ -414,7 +414,7 @@ $(`#modelseries`).on(`change`,function(){
 //圖檔瀏覽
 async function readUrl(input){
   let view = $(`#viewImg`);
-  view.attr("src","/assets/img/favicon/coming_soon.jpg")
+  view.attr("src","../assets/img/favicon/coming_soon.jpg")
   if(input.files && input.files[0]){
     var reader = new FileReader();
     reader.onload = function(e){
