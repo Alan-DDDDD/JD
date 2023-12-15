@@ -228,15 +228,6 @@ $(`.casesave`).on('click',async function(){
 
 //案件檔案傳送
 async function casefiles(caseid){
-  // let files = {
-  // carkey : document.getElementById("carkeyinput").files[0],
-  // paper1 : document.getElementById("carpaper1input").files[0],
-  // paper2 : document.getElementById("carpaper2input").files[0],
-  // paper3 : document.getElementById("carpaper3input").files[0],
-  // idcardF : document.getElementById("idcardFinput").files[0],
-  // idcardR : document.getElementById("idcardRinput").files[0],
-  // bank : document.getElementById("bankinput").files[0]
-  // }
   let files = [
     document.getElementById("carkeyinput").files[0],
     document.getElementById("carpaper1input").files[0],
@@ -246,18 +237,19 @@ async function casefiles(caseid){
     document.getElementById("idcardRinput").files[0],
     document.getElementById("bankinput").files[0]
   ]
+  let fileName = [
+    "carkey",
+    "carpaper1",
+    "carpaper2",
+    "carpaper3",
+    "idcardF",
+    "idcardR",
+    "bank"
+  ]
   var form = new FormData();
   for(var i = 0;i<files.length;i++){
-    form.append(`files`,files[i])
+    form.append(`files`,files[i],fileName[i])
   }
-  // form.append("files",document.getElementById("carkeyinput").files[0])
-  // form.append("carkey",files.carkey)
-  // form.append("paper1",files.paper1)
-  // form.append("paper2",files.paper2)
-  // form.append("paper3",files.paper3)
-  // form.append("idcardf",files.idcardF)
-  // form.append("idcardr",files.idcardR)
-  // form.append("bank",files.bank)
   console.log(form);
   var response = await fetch(url + "/api/OrderCase/saveImg?user=" + curruntid + "&caseid=" + caseid,{
     method : "POST",
