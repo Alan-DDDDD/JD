@@ -239,11 +239,11 @@ async function casefiles(caseid){
   ]
   let fileName = [
     "carkey",
-    "carpaper1",
-    "carpaper2",
-    "carpaper3",
-    "idcardF",
-    "idcardR",
+    "paper1",
+    "paper2",
+    "paper3",
+    "idcardf",
+    "idcardr",
     "bank"
   ]
   var form = new FormData();
