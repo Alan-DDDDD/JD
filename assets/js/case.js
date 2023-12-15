@@ -240,14 +240,20 @@ async function casefiles(caseid){
   let form = new FormData();
   
   // form.append("files",document.getElementById("carkeyinput").files[0])
-  form.append("files",files)
+  form.append("carkey",files.carkey)
+  form.append("paper1",files.paper1)
+  form.append("paper2",files.paper2)
+  form.append("paper3",files.paper3)
+  form.append("idcardf",files.idcardF)
+  form.append("idcardr",files.idcardR)
+  form.append("bank",files.bank)
   console.log(form);
   var response = await fetch(url + "/api/OrderCase/saveImg?user=" + curruntid + "&caseid=" + caseid,{
     method : "POST",
     headers : new Headers({
       "ngrok-skip-browser-warning": "69420"
     }),
-    body : JSON.stringify(form)
+    body : form
   });
   var body = await response.json();
 }
