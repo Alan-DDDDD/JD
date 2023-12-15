@@ -39,9 +39,9 @@ $(async function(){
     console.log("CODE資料取得失敗")
   }
   //圖檔瀏覽
-  $(`.filebtn`).on(`click`,function(){
+  $(`.filebtn`).on(`click`,async function(){
     var input = document.getElementById($(this).data("id"));
-      readUrl(input);
+      await readUrl(input);
   });
 })
 
@@ -145,6 +145,7 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
       $(`#price`).val(value.OrderCase.price || "");
       $(`#dealprice`).val(value.OrderCase.dealprice || "");
       $(`#casedate`).val(value.OrderCase.a_sysdt.substring(0,10));
+      $(`#carkeyinput`).data("path",value.OrderCase.carkey);//綁定檔案路徑
       let caredit = $(`.caredit`);
       let carinsert = $(`.carinsert`);
       if(value.Car){
@@ -394,7 +395,7 @@ $(`#modelseries`).on(`change`,function(){
 
 
 //圖檔瀏覽
-function readUrl(input){
+async function readUrl(input){
   if(input.files && input.files[0]){
     let view = $(`#viewImg`);
     var reader = new FileReader();
@@ -405,6 +406,13 @@ function readUrl(input){
     view.css("max-width","100%");
     view.css("object-fit","contain");
     reader.readAsDataURL(input.files[0]);
+  }else if($(input).data("path")){
+    let path = $(input).data("path");
+    var response = await fetch(url + "/api/OrderCase/getFile?fileString="+path+"user="+currid,{
+      method : "Get",
+    })
+    var file = await response.json();
+    console.log(file)
   }
 }
 
