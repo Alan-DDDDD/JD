@@ -160,6 +160,8 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
       $(`#idcardFinput`).parent().prev().html(value.OrderCase.idcardf == null ? "❌  身分證正面":"✔️  身分證正面");
       $(`#idcardRinput`).parent().prev().html(value.OrderCase.idcardr == null ? "❌  身分證反面":"✔️  身分證反面");
       $(`#bankinput`).parent().prev().html( value.OrderCase.bank == null ? "❌  銀行存摺":"✔️  銀行存摺");
+      //根據資料修改畫面
+      let sendcase = $(`#sendcase`);
       let caredit = $(`.caredit`);
       let carinsert = $(`.carinsert`);
       if(value.Car){
@@ -169,6 +171,9 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
       }else{
         caredit.attr("disabled","disabled");
         carinsert.removeAttr("disabled");
+      }
+      if(value.OrderCase.status == "05"){
+        sendcase.removeAttr("disabled");
       }
     }
   })
