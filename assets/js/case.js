@@ -172,8 +172,10 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
         caredit.attr("disabled","disabled");
         carinsert.removeAttr("disabled");
       }
-      if(value.OrderCase.status == "05"){
+      if(value.OrderCase.status >= "05"){
         sendcase.removeAttr("disabled");
+      }else{
+        sendcase.attr("disabled","disabled");
       }
     }
   })
@@ -454,7 +456,7 @@ function detailControl(action){
     case "open":
       break;
     case "close":
-      
+
       break;
   }
 }
