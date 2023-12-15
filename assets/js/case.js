@@ -275,7 +275,7 @@ async function casefiles(caseid){
     }),
     body : form
   });
-  var body = await response.json();
+  var body = await response;
   //alert(response);
 }
 
