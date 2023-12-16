@@ -183,9 +183,11 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
   $(`#mainpanel`).show(300);
   $(`#listpanel`).slideToggle();
 })
-
-
-
+//ToolBar btn event
+$(`#sendcase`).on(`click`,async function(){
+  let caseid = $(`.casesave`).data(`caseid`);
+  SCASE(caseid,"spaper");
+});
 
 //CASE INSERT AND EDIT AND
 $(`.casesave`).on('click',async function(){
@@ -285,7 +287,6 @@ async function casefiles(caseid){
   //alert(response);
   getSelfData();
 }
-
 
 //CAR INSERT AND EDIT AND EVENT
 function cardatabind(car){
@@ -394,7 +395,7 @@ function modelbindcar(carObject){//儲存完綁資料回畫面
   $(`#carmemo`).val(carObject.Memo);
 }
 
-$(`#modelbrand`).on(`change`,function(){
+$(`#modelbrand`).on(`change`,function(){//廠牌下拉選單更變
   let value = $(`#modelbrand option:selected`).val();
   let SS = $(`#modelseries`);
   SS.empty();
@@ -405,7 +406,7 @@ $(`#modelbrand`).on(`change`,function(){
     }
   })
 });
-$(`#modelseries`).on(`change`,function(){
+$(`#modelseries`).on(`change`,function(){//系列下拉選單更變
   let value = $(`#modelseries option:selected`).val();
   let CMD = $(`#modelmodel`);
   CMD.empty();
@@ -456,7 +457,7 @@ function detailControl(action){
     case "open":
       break;
     case "close":
-
+      $(`#mainpanel input,button,textarea`).attr("disabled");
       break;
   }
 }
@@ -464,3 +465,19 @@ function detailControl(action){
 $(`#addDeitail`).on(`click`,function(){
   $(`#logcaseid`).val($(this).data("caseid"));
 })
+
+async function SCASE(caseid,flag){
+  var response = await fetch(url + "/api/OrderCase/SCASE?user="+curruntid+"&caseid="+caseid+"&flag="+flag,{
+    method : "Get",
+    headers : new Headers({
+      "ngrok-skip-browser-warning": "69420",
+    }),
+  })
+  var data = await response.json();
+  if(data.Status){
+    detailControl("close");
+    alert(data.Data);
+  }else{
+
+  }
+}
