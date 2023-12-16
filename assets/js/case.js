@@ -122,6 +122,7 @@ $(`#listbar`).on(`click`,()=>{
 });
 //list tr click
 $(`#caselist`).on(`click`,`.listdata`,function(){
+  detailControl("open");
   console.log($(this));
   clearPage();
   let caseid = $($(this).children()[0]).html();
@@ -455,6 +456,7 @@ async function readUrl(input){
 function detailControl(action){
   switch (action){
     case "open":
+      $(`.casepanel input,button,textarea`).removeAttr("disabled");
       break;
     case "close":
       $(`.casepanel input,button,textarea`).attr("disabled","disabled");
