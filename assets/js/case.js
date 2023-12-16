@@ -187,6 +187,10 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
           sendcase.attr("disabled","disabled");
         }
       }
+      if(value.OrderCase.status == "99"){
+        detailControl("close");
+        $(`#casesave`).attr("disabled","disabled");
+      }
     }
   })
   //開啟頁面
@@ -516,6 +520,7 @@ async function SCASE(caseid,flag){
         break;
       case "gu":
         $(`#bankinput`).attr("disabled","disabled");
+        $(`#casesave`).attr("disabled","disabled");
         break;
     }
     alert(data.Data);
