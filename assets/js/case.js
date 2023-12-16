@@ -431,7 +431,12 @@ $(`#modelseries`).on(`change`,function(){//系列下拉選單更變
 //圖檔瀏覽
 async function readUrl(input){
   let view = $(`#viewImg`);
-  view.attr("src","../assets/img/favicon/coming_soon.jpg")
+  // view.attr("src","../assets/img/favicon/coming_soon.jpg")
+  view.css("height","0");
+  view.css("weight","0");
+  view.append(`<div class="spinner-border text-primary" role="status" id="mainwait">
+      <span class="visually-hidden">Lodding....</span>
+      </div>`);
   if(input.files && input.files[0]){
     var reader = new FileReader();
     reader.onload = function(e){
@@ -441,6 +446,7 @@ async function readUrl(input){
     view.css("max-width","100%");
     view.css("object-fit","contain");
     reader.readAsDataURL(input.files[0]);
+    $(`#mainwait`).remove();
   }else if($(input).data("path")){
     let path = $(input).data("path");
     var response = await fetch(url + "/api/OrderCase/getFile?fileString="+path+"&user="+curruntid,{
@@ -456,6 +462,9 @@ async function readUrl(input){
       view.css("max-heigth","100%");
       view.css("max-width","100%");
       view.css("object-fit","contain");
+      $(`#mainwait`).remove();
+    }else{
+      $(`#mainwait`).remove();
     }
   }
 }
