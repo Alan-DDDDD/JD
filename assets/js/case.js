@@ -448,7 +448,7 @@ async function readUrl(input){
     view.css("object-fit","contain");
     reader.readAsDataURL(input.files[0]);
     $(`#imgmainwait`).remove();
-    view.css("display",);
+    view.css("display","");
   }else if($(input).data("path")){
     let path = $(input).data("path");
     var response = await fetch(url + "/api/OrderCase/getFile?fileString="+path+"&user="+curruntid,{
@@ -465,7 +465,7 @@ async function readUrl(input){
       view.css("max-width","100%");
       view.css("object-fit","contain");
       $(`#imgmainwait`).remove();
-      view.css("display",);
+      view.css("display","");
     }else{
       $(`#imgmainwait`).remove();
     }
