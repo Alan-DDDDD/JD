@@ -434,7 +434,7 @@ async function readUrl(input){
   // view.attr("src","../assets/img/favicon/coming_soon.jpg")
   view.css("height","0");
   view.css("weight","0");
-  view.append(`<div class="spinner-border text-primary" role="status" id="imgmainwait">
+  view.parent().append(`<div class="spinner-border text-primary" role="status" id="imgmainwait">
       <span class="visually-hidden">Lodding....</span>
       </div>`);
   if(input.files && input.files[0]){
