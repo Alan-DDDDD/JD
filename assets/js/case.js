@@ -473,6 +473,9 @@ function detailControl(action){
       break;
     case "close":
       $(`.casepanel input,button,textarea`).attr("disabled","disabled");
+      $(`.filebtn`).removeAttr("disabled");
+      $(`#addcase`).removeAttr("disabled");
+      $(`#casesave`).removeAttr("disabled");
       break;
   }
 }
