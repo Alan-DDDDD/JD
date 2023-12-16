@@ -165,14 +165,6 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
       let sendcase = $(`#sendcase`);
       let caredit = $(`.caredit`);
       let carinsert = $(`.carinsert`);
-      if(value.Car){
-        caredit.removeAttr("disabled");
-        carinsert.attr("disabled","disabled");
-        cardatabind(value.Car); 
-      }else{
-        caredit.attr("disabled","disabled");
-        carinsert.removeAttr("disabled");
-      }
       if(value.OrderCase.status >= "05"){
         sendcase.removeAttr("disabled");
       }else{
@@ -185,6 +177,14 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
       }
       else{
         detailControl("open");
+        if(value.Car){
+          caredit.removeAttr("disabled");
+          carinsert.attr("disabled","disabled");
+          cardatabind(value.Car); 
+        }else{
+          caredit.attr("disabled","disabled");
+          carinsert.removeAttr("disabled");
+        }
       }
     }
   })
