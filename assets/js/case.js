@@ -441,6 +441,7 @@ $(`#modelseries`).on(`change`,function(){//系列下拉選單更變
 //圖檔瀏覽
 async function readUrl(input){
   let view = $(`#viewImg`);
+  $(`#imgmainwait`).remove();
   view.parent().append(`<div class="spinner-border text-primary" role="status" id="imgmainwait">
       <span class="visually-hidden">Lodding....</span>
       </div>`);
