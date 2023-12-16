@@ -123,11 +123,6 @@ $(`#listbar`).on(`click`,()=>{
 //list tr click
 $(`#caselist`).on(`click`,`.listdata`,function(){
   detailControl("open");
-  //初始化畫面
-  $(`.casefix`).attr("disabled","disabled");
-  $(`#mainpanel`).hide();
-  $(`.carinput`).attr("disabled","disabled");
-  $(`.toolbar`).attr("disabled","disabled");
   console.log($(this));
   clearPage();
   let caseid = $($(this).children()[0]).html();
@@ -182,6 +177,12 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
         sendcase.removeAttr("disabled");
       }else{
         sendcase.attr("disabled","disabled");
+      }
+      if(value.OrderCase.sckdt != null){
+        detailControl("close");
+      }
+      else{
+        detailControl("open");
       }
     }
   })
@@ -462,6 +463,11 @@ function detailControl(action){
   switch (action){
     case "open":
       $(`.casepanel input,button,textarea`).removeAttr("disabled");
+      //初始化畫面
+      $(`.casefix`).attr("disabled","disabled");
+      $(`#mainpanel`).hide();
+      $(`.carinput`).attr("disabled","disabled");
+      $(`.toolbar`).attr("disabled","disabled");
       break;
     case "close":
       $(`.casepanel input,button,textarea`).attr("disabled","disabled");
