@@ -166,11 +166,7 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
       let sendcase = $(`#sendcase`);
       let caredit = $(`.caredit`);
       let carinsert = $(`.carinsert`);
-      if(value.OrderCase.status >= "05"){
-        sendcase.removeAttr("disabled");
-      }else{
-        sendcase.attr("disabled","disabled");
-      }
+      
       if(value.OrderCase.sckdt != null){
         detailControl("close");
         $(`#bankinput`).removeAttr("disabled");
@@ -184,6 +180,11 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
         }else{
           caredit.attr("disabled","disabled");
           carinsert.removeAttr("disabled");
+        }
+        if(value.OrderCase.status >= "05"){
+          sendcase.removeAttr("disabled");
+        }else{
+          sendcase.attr("disabled","disabled");
         }
       }
     }
