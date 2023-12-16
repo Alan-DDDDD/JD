@@ -180,6 +180,8 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
       }
       if(value.OrderCase.sckdt != null){
         detailControl("close");
+        $(`#bankinput`).removeAttr("disabled");
+        $(`#bankbtn`).removeAttr("disabled");
       }
       else{
         detailControl("open");
@@ -489,6 +491,8 @@ async function SCASE(caseid,flag){
   var data = await response.json();
   if(data.Status){
     detailControl("close");
+    $(`#bankinput`).removeAttr("disabled");
+    $(`#bankbtn`).removeAttr("disabled");
     alert(data.Data);
   }else{
     alert(data.error.ErrorMsg)
