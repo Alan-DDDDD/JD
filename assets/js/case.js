@@ -524,6 +524,7 @@ async function SCASE(caseid,flag){
         $(`#casesave`).attr("disabled","disabled");
         break;
     }
+    getSelfData();
     alert(data.Data);
   }else{
     alert(data.error.ErrorMsg)
