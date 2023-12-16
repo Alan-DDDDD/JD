@@ -146,6 +146,7 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
       $(`#price`).val(value.OrderCase.price || "");
       $(`#dealprice`).val(value.OrderCase.dealprice || "");
       $(`#casedate`).val(value.OrderCase.a_sysdt.substring(0,10));
+      if(value.Car) cardatabind(value.Car); 
       //綁定檔案路徑與顯示資料
       $(`#carkeyinput`).data("path",value.OrderCase.carkey);
       $(`#carpaper1input`).data("path",value.OrderCase.paper1);
@@ -167,23 +168,19 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
       let carinsert = $(`.carinsert`);
       if(value.OrderCase.status >= "05"){
         sendcase.removeAttr("disabled");
-        cardatabind(value.Car); 
       }else{
         sendcase.attr("disabled","disabled");
-        cardatabind(value.Car); 
       }
       if(value.OrderCase.sckdt != null){
         detailControl("close");
         $(`#bankinput`).removeAttr("disabled");
         $(`#bankbtn`).removeAttr("disabled");
-        cardatabind(value.Car); 
       }
       else{
         detailControl("open");
         if(value.Car){
           caredit.removeAttr("disabled");
           carinsert.attr("disabled","disabled");
-          cardatabind(value.Car); 
         }else{
           caredit.attr("disabled","disabled");
           carinsert.removeAttr("disabled");
