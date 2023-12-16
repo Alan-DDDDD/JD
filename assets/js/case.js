@@ -478,6 +478,6 @@ async function SCASE(caseid,flag){
     detailControl("close");
     alert(data.Data);
   }else{
-
+    alert(data.error.errorMsg)
   }
 }
