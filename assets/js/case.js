@@ -199,6 +199,11 @@ $(`#sendcase`).on(`click`,async function(){
   SCASE(caseid,"spaper");
 });
 
+$(`#giveup`).on(`click`,function(){
+  let caseid = $(`.casesave`).data(`caseid`);
+  SCASE(caseid,"gu");
+});
+
 //CASE INSERT AND EDIT AND
 $(`.casesave`).on('click',async function(){
   let caseid = $(this).data("caseid");
@@ -506,6 +511,13 @@ async function SCASE(caseid,flag){
     detailControl("close");
     $(`#bankinput`).removeAttr("disabled");
     $(`#bankbtn`).removeAttr("disabled");
+    switch (flag){
+      case "spaper":
+        break;
+      case "gu":
+        $(`#bankinput`).attr("disabled","disabled");
+        break;
+    }
     alert(data.Data);
   }else{
     alert(data.error.ErrorMsg)
