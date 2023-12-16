@@ -123,6 +123,11 @@ $(`#listbar`).on(`click`,()=>{
 //list tr click
 $(`#caselist`).on(`click`,`.listdata`,function(){
   detailControl("open");
+  //初始化畫面
+  $(`.casefix`).attr("disabled","disabled");
+  $(`#mainpanel`).hide();
+  $(`.carinput`).attr("disabled","disabled");
+  $(`.toolbar`).attr("disabled","disabled");
   console.log($(this));
   clearPage();
   let caseid = $($(this).children()[0]).html();
