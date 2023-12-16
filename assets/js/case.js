@@ -457,7 +457,7 @@ function detailControl(action){
     case "open":
       break;
     case "close":
-      $(`.casepanel input,button,textarea`).attr("disabled");
+      $(`.casepanel input,button,textarea`).attr("disabled","disabled");
       break;
   }
 }
