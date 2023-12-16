@@ -167,13 +167,16 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
       let carinsert = $(`.carinsert`);
       if(value.OrderCase.status >= "05"){
         sendcase.removeAttr("disabled");
+        cardatabind(value.Car); 
       }else{
         sendcase.attr("disabled","disabled");
+        cardatabind(value.Car); 
       }
       if(value.OrderCase.sckdt != null){
         detailControl("close");
         $(`#bankinput`).removeAttr("disabled");
         $(`#bankbtn`).removeAttr("disabled");
+        cardatabind(value.Car); 
       }
       else{
         detailControl("open");
