@@ -77,7 +77,7 @@ async function getSelfData(caseid){
                         </tr>`);
       });
       if(caseid){
-        select("action",caseid);
+        select("auto",caseid);
       }
     }
     else{
