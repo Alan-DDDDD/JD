@@ -76,7 +76,7 @@ async function getSelfData(caseid){
                             <td>${data.OrderCase.a_sysdt.substring(0,10)}</td>
                         </tr>`);
           if(caseid == data.OrderCase.caseid){
-            $(`${caseid}`).click();
+            listclick(caseid);
           }
       });
     }
@@ -132,80 +132,12 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
   console.log($(this));
   clearPage();
   let caseid = $($(this).children()[0]).html();
-  nowcaseid = caseid;
   //設定table樣式
   $(`#listpanel tr`).removeClass("bg-secondary");
   $(`#listpanel tr`).css("color","");
   $(this).addClass("bg-secondary");
   $(this).css("color","white");
-  //設定頁面元件
-  $(`.casesave`).data("caseid",caseid);
-  $(`#addDeitail`).data("caseid",caseid);
-  $(`#addDeitail`).removeAttr("disabled");
-  //綁定頁面
-  $.each(datalist,(index,value)=>{
-    if(value.OrderCase.caseid == caseid){
-      $(`#empid`).val(value.OrderCase.emplid);
-      $(`#empname`).val(value.EMPL.EMPNAME);
-      $(`#casestatus`).val(value.Code);
-      $(`#custname`).val(value.OrderCase.custname);
-      $(`#custphone`).val(value.OrderCase.custphone);
-      $(`#price`).val(value.OrderCase.price || "");
-      $(`#dealprice`).val(value.OrderCase.dealprice || "");
-      $(`#casedate`).val(value.OrderCase.a_sysdt.substring(0,10));
-      if(value.Car) cardatabind(value.Car); 
-      //綁定檔案路徑與顯示資料
-      $(`#carkeyinput`).data("path",value.OrderCase.carkey);
-      $(`#carpaper1input`).data("path",value.OrderCase.paper1);
-      $(`#carpaper2input`).data("path",value.OrderCase.paper2);
-      $(`#carpaper3input`).data("path",value.OrderCase.paper3);
-      $(`#idcardFinput`).data("path",value.OrderCase.idcardf);
-      $(`#idcardRinput`).data("path",value.OrderCase.idcardr);
-      $(`#bankinput`).data("path",value.OrderCase.bank);
-      $(`#carkeyinput`).parent().prev().html(value.OrderCase.carkey == null ? "❌  鑰匙":"✔️  鑰匙");
-      $(`#carpaper1input`).parent().prev().html(value.OrderCase.paper1 == null ? "❌  行照":"✔️  行照");
-      $(`#carpaper2input`).parent().prev().html(value.OrderCase.paper2 == null ? "❌  牌照登記書":"✔️ 牌照登記書");
-      $(`#carpaper3input`).parent().prev().html(value.OrderCase.paper3 == null ? "❌  出廠證":"✔️  出廠證");
-      $(`#idcardFinput`).parent().prev().html(value.OrderCase.idcardf == null ? "❌  身分證正面":"✔️  身分證正面");
-      $(`#idcardRinput`).parent().prev().html(value.OrderCase.idcardr == null ? "❌  身分證反面":"✔️  身分證反面");
-      $(`#bankinput`).parent().prev().html( value.OrderCase.bank == null ? "❌  銀行存摺":"✔️  銀行存摺");
-      //根據資料修改畫面
-      progress(value.OrderCase.status);
-      let sendcase = $(`#sendcase`);
-      let caredit = $(`.caredit`);
-      let carinsert = $(`.carinsert`);
-      let giveup = $(`#giveup`);
-      
-      if(value.OrderCase.sckdt != null){
-        detailControl("close");
-        $(`#bankinput`).removeAttr("disabled");
-        $(`#bankbtn`).removeAttr("disabled");
-      }
-      else{
-        detailControl("open");
-        giveup.removeAttr("disabled");
-        if(value.Car){
-          caredit.removeAttr("disabled");
-          carinsert.attr("disabled","disabled");
-        }else{
-          caredit.attr("disabled","disabled");
-          carinsert.removeAttr("disabled");
-        }
-        if(value.OrderCase.status >= "05"){
-          sendcase.removeAttr("disabled");
-        }else{
-          sendcase.attr("disabled","disabled");
-        }
-      }
-      if(value.OrderCase.status == "99"){
-        detailControl("close");
-        $(`#casesave`).attr("disabled","disabled");
-      }
-    }
-  })
-  //開啟頁面
-  $(`#mainpanel`).show(300);
-  $(`#listpanel`).slideToggle();
+  listclick(caseid);
 })
 //ToolBar btn event
 $(`#sendcase`).on(`click`,async function(){
@@ -595,4 +527,76 @@ function progress(status){
 
 function flash(element){
 
+}
+
+function listclick(caseid){
+  
+  //設定頁面元件
+  $(`.casesave`).data("caseid",caseid);
+  $(`#addDeitail`).data("caseid",caseid);
+  $(`#addDeitail`).removeAttr("disabled");
+  //綁定頁面
+  $.each(datalist,(index,value)=>{
+    if(value.OrderCase.caseid == caseid){
+      $(`#empid`).val(value.OrderCase.emplid);
+      $(`#empname`).val(value.EMPL.EMPNAME);
+      $(`#casestatus`).val(value.Code);
+      $(`#custname`).val(value.OrderCase.custname);
+      $(`#custphone`).val(value.OrderCase.custphone);
+      $(`#price`).val(value.OrderCase.price || "");
+      $(`#dealprice`).val(value.OrderCase.dealprice || "");
+      $(`#casedate`).val(value.OrderCase.a_sysdt.substring(0,10));
+      if(value.Car) cardatabind(value.Car); 
+      //綁定檔案路徑與顯示資料
+      $(`#carkeyinput`).data("path",value.OrderCase.carkey);
+      $(`#carpaper1input`).data("path",value.OrderCase.paper1);
+      $(`#carpaper2input`).data("path",value.OrderCase.paper2);
+      $(`#carpaper3input`).data("path",value.OrderCase.paper3);
+      $(`#idcardFinput`).data("path",value.OrderCase.idcardf);
+      $(`#idcardRinput`).data("path",value.OrderCase.idcardr);
+      $(`#bankinput`).data("path",value.OrderCase.bank);
+      $(`#carkeyinput`).parent().prev().html(value.OrderCase.carkey == null ? "❌  鑰匙":"✔️  鑰匙");
+      $(`#carpaper1input`).parent().prev().html(value.OrderCase.paper1 == null ? "❌  行照":"✔️  行照");
+      $(`#carpaper2input`).parent().prev().html(value.OrderCase.paper2 == null ? "❌  牌照登記書":"✔️ 牌照登記書");
+      $(`#carpaper3input`).parent().prev().html(value.OrderCase.paper3 == null ? "❌  出廠證":"✔️  出廠證");
+      $(`#idcardFinput`).parent().prev().html(value.OrderCase.idcardf == null ? "❌  身分證正面":"✔️  身分證正面");
+      $(`#idcardRinput`).parent().prev().html(value.OrderCase.idcardr == null ? "❌  身分證反面":"✔️  身分證反面");
+      $(`#bankinput`).parent().prev().html( value.OrderCase.bank == null ? "❌  銀行存摺":"✔️  銀行存摺");
+      //根據資料修改畫面
+      progress(value.OrderCase.status);
+      let sendcase = $(`#sendcase`);
+      let caredit = $(`.caredit`);
+      let carinsert = $(`.carinsert`);
+      let giveup = $(`#giveup`);
+      
+      if(value.OrderCase.sckdt != null){
+        detailControl("close");
+        $(`#bankinput`).removeAttr("disabled");
+        $(`#bankbtn`).removeAttr("disabled");
+      }
+      else{
+        detailControl("open");
+        giveup.removeAttr("disabled");
+        if(value.Car){
+          caredit.removeAttr("disabled");
+          carinsert.attr("disabled","disabled");
+        }else{
+          caredit.attr("disabled","disabled");
+          carinsert.removeAttr("disabled");
+        }
+        if(value.OrderCase.status >= "05"){
+          sendcase.removeAttr("disabled");
+        }else{
+          sendcase.attr("disabled","disabled");
+        }
+      }
+      if(value.OrderCase.status == "99"){
+        detailControl("close");
+        $(`#casesave`).attr("disabled","disabled");
+      }
+    }
+  })
+  //開啟頁面
+  $(`#mainpanel`).show(300);
+  $(`#listpanel`).slideToggle();
 }
