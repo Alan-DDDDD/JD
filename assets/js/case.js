@@ -80,11 +80,15 @@ async function getSelfData(){
     $(`#mainwait`).remove();
 }
 //搜尋
-function select(){
-  let key = $(`#search`).val();
-  $("#budgettbody tr").filter(function() {
+var nowcaseid = "";
+function select(action){
+  let key = $(`#search`).val() || nowcaseid;
+  $("#caselist tr").filter(function() {
     $(this).toggle($(this).text().toLowerCase().indexOf(key) > -1)
   });
+  if(action == "auto"){
+    $($("#caselist tr")[0]).click();
+  }
 }
 
 $(`#addcase`).on(`click`,()=>{
@@ -126,6 +130,7 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
   console.log($(this));
   clearPage();
   let caseid = $($(this).children()[0]).html();
+  nowcaseid = caseid;
   //設定table樣式
   $(`#listpanel tr`).removeClass("bg-secondary");
   $(`#listpanel tr`).css("color","");
@@ -237,8 +242,9 @@ $(`.casesave`).on('click',async function(){
       if(body.error){//資料邏輯錯誤
         alert("");
       }else{
-        alert("編輯成功!!");
         casefiles(caseid);
+        select("auto");
+        alert("編輯成功!!");
       }
     }else{//系統錯誤
       alert(body.error.errorMsg);
@@ -259,8 +265,9 @@ $(`.casesave`).on('click',async function(){
         alert("");
       }else{
         $(this).data("caseid",body.data);
-        alert("新增成功!!");
         getSelfData();
+        select("auto");
+        alert("新增成功!!");
       }
     }else{//系統錯誤
       alert(body.error.errorMsg);
@@ -504,6 +511,7 @@ $(`#addDeitail`).on(`click`,function(){
   $(`#logcaseid`).val($(this).data("caseid"));
 })
 
+//案件異動(送審、作廢)
 async function SCASE(caseid,flag){
   var response = await fetch(url + "/api/OrderCase/SCASE?user="+curruntid+"&caseid="+caseid+"&flag="+flag,{
     method : "Get",
@@ -530,3 +538,4 @@ async function SCASE(caseid,flag){
     alert(data.error.ErrorMsg)
   }
 }
+
