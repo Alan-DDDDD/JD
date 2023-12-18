@@ -12,7 +12,7 @@ $(async function(){
   //4.撥款後禁止修改所有資料
   //$(`#casepanel input`).attr("disabled","disabled");
   //取得ddl資料
-  let parames = ["BS","SS","CMD","CL","CS"];
+  let parames = ["BD","SS","CMD","CL","CS"];
   var carddl = await fetch(url+"/api/Code/getMultiddl",{
     method: "post",
     headers: new Headers({
