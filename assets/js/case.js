@@ -277,7 +277,6 @@ $(`.casesave`).on('click',async function(){
       if(body.error){//資料邏輯錯誤
         alert("");
       }else{
-        //casefiles(caseid);
         getSelfData(caseid);
         alert("編輯成功!!");
       }
@@ -301,7 +300,6 @@ $(`.casesave`).on('click',async function(){
         alert("");
       }else{
         $(this).data("caseid",body.data);
-        //casefiles(caseid);
         getSelfData(body.data);
         alert("新增成功!!");
       }
