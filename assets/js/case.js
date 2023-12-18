@@ -259,7 +259,7 @@ $(`.casesave`).on('click',async function(){
       form.append(`files`,files[i],fileName[i])
     }
   }
-  form.append(`orderCase`,caseObject);
+  form.append(`orderCase`,JSON.stringify(caseObject));
   //案件基本資料API
   if(caseid){
     //修改
