@@ -50,7 +50,7 @@ $(async function(){
 
 
 
-async function getSelfData(){
+async function getSelfData(caseid){
   $(`#caselist`).empty();
   $(`#caselist`).append(`<div class="spinner-border text-primary" role="status" id="mainwait">
     <span class="visually-hidden">Lodding....</span>
@@ -76,9 +76,9 @@ async function getSelfData(){
                             <td>${data.OrderCase.a_sysdt.substring(0,10)}</td>
                         </tr>`);
       });
-      // if(nowcaseid != ""){
-      //   select("action");
-      // }
+      if(caseid){
+        select("action");
+      }
     }
     else{
       //openLogin();
@@ -278,7 +278,7 @@ $(`.casesave`).on('click',async function(){
         alert("");
       }else{
         //casefiles(caseid);
-        getSelfData();
+        getSelfData(caseid);
         alert("編輯成功!!");
       }
     }else{//系統錯誤
@@ -302,7 +302,7 @@ $(`.casesave`).on('click',async function(){
       }else{
         $(this).data("caseid",body.data);
         //casefiles(caseid);
-        getSelfData();
+        getSelfData(body.data);
         alert("新增成功!!");
       }
     }else{//系統錯誤
