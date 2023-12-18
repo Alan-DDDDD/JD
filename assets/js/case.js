@@ -243,6 +243,7 @@ $(`.casesave`).on('click',async function(){
         alert("");
       }else{
         casefiles(caseid);
+        getSelfData();
         select("auto");
         alert("編輯成功!!");
       }
