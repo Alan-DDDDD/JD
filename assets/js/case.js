@@ -75,10 +75,10 @@ async function getSelfData(caseid){
                             <td>${data.Car == null? "" : data.Car.carnumber}</td>
                             <td>${data.OrderCase.a_sysdt.substring(0,10)}</td>
                         </tr>`);
+          if(caseid == data.OrderCase.caseid){
+            $(`${caseid}`).click();
+          }
       });
-      if(caseid){
-        $(`${caseid}`).click();
-      }
     }
     else{
       //openLogin();
