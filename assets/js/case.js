@@ -233,7 +233,31 @@ $(`.casesave`).on('click',async function(){
     carid : $(`#send`).data("carid"),
     price : $(`#price`).val() || 0,
     dealprice : $(`#dealprice`).val() || 0,
-    status : $(`#casestatus`).val()
+    status : $(`#casestatus`).val(),
+    files : new FormData()
+  }
+  let files = [
+    document.getElementById("carkeyinput").files[0],
+    document.getElementById("carpaper1input").files[0],
+    document.getElementById("carpaper2input").files[0],
+    document.getElementById("carpaper3input").files[0],
+    document.getElementById("idcardFinput").files[0],
+    document.getElementById("idcardRinput").files[0],
+    document.getElementById("bankinput").files[0]
+  ]
+  let fileName = [
+    "carkey",
+    "paper1",
+    "paper2",
+    "paper3",
+    "idcardf",
+    "idcardr",
+    "bank"
+  ]
+  for(var i = 0;i<files.length;i++){
+    if(files[i]){
+      form.append(`files`,files[i],fileName[i])
+    }
   }
   //案件基本資料API
   if(caseid){
@@ -251,7 +275,7 @@ $(`.casesave`).on('click',async function(){
       if(body.error){//資料邏輯錯誤
         alert("");
       }else{
-        casefiles(caseid);
+        //casefiles(caseid);
         alert("編輯成功!!");
       }
     }else{//系統錯誤
@@ -273,7 +297,7 @@ $(`.casesave`).on('click',async function(){
         alert("");
       }else{
         $(this).data("caseid",body.data);
-        casefiles(caseid);
+        //casefiles(caseid);
         alert("新增成功!!");
       }
     }else{//系統錯誤
