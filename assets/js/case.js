@@ -256,7 +256,7 @@ $(`.casesave`).on('click',async function(){
   ]
   for(var i = 0;i<files.length;i++){
     if(files[i]){
-      form.append(`files`,files[i],fileName[i])
+      caseObject.files.append(`files`,files[i],fileName[i])
     }
   }
   //案件基本資料API
