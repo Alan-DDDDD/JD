@@ -174,7 +174,8 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
       let sendcase = $(`#sendcase`);
       let caredit = $(`.caredit`);
       let carinsert = $(`.carinsert`);
-      
+      let giveup = $(`#giveup`);
+      giveup.removeAttr("disabled");
       if(value.OrderCase.sckdt != null){
         detailControl("close");
         $(`#bankinput`).removeAttr("disabled");
