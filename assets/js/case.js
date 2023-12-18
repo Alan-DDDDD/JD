@@ -73,6 +73,9 @@ async function getSelfData(){
                             <td>${data.OrderCase.a_sysdt.substring(0,10)}</td>
                         </tr>`);
       });
+      if(nowcaseid != ""){
+        select("action");
+      }
     }
     else{
       //openLogin();
@@ -310,7 +313,6 @@ async function casefiles(caseid){
   var body = await response;
   //alert(response);
   getSelfData();
-  select("auto");
 }
 
 //CAR INSERT AND EDIT AND EVENT
