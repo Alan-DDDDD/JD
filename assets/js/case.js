@@ -73,9 +73,9 @@ async function getSelfData(){
                             <td>${data.OrderCase.a_sysdt.substring(0,10)}</td>
                         </tr>`);
       });
-      if(nowcaseid != ""){
-        select("action");
-      }
+      // if(nowcaseid != ""){
+      //   select("action");
+      // }
     }
     else{
       //openLogin();
