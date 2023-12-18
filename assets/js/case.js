@@ -67,7 +67,7 @@ async function getSelfData(caseid){
     if(body.Status){
       datalist = body.Data
       $.each(datalist,function(index,data){
-          table.append(`<tr class="listdata" style="cursor:pointer;">
+          table.append(`<tr class="listdata" style="cursor:pointer;" id="${data.OrderCase.caseid}">
                             <td>${data.OrderCase.caseid}</td>
                             <td>採購</td>
                             <td>${data.EMPL.EMPNAME}</td>
@@ -77,7 +77,7 @@ async function getSelfData(caseid){
                         </tr>`);
       });
       if(caseid){
-        select("auto",caseid);
+        $(`${caseid}`).click();
       }
     }
     else{
