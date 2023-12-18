@@ -77,7 +77,7 @@ async function getSelfData(caseid){
                         </tr>`);
       });
       if(caseid){
-        select("action");
+        select("action",caseid);
       }
     }
     else{
@@ -86,9 +86,8 @@ async function getSelfData(caseid){
     $(`#mainwait`).remove();
 }
 //搜尋
-var nowcaseid = "";
-function select(action){
-  let key = $(`#search`).val() || nowcaseid;
+function select(action,caseid){
+  let key = $(`#search`).val() || caseid;
   $("#caselist tr").filter(function() {
     $(this).toggle($(this).text().toLowerCase().indexOf(key) > -1)
   });
