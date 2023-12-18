@@ -5,6 +5,7 @@ $(async function(){
   $(`#mainpanel`).hide();
   $(`.carinput`).attr("disabled","disabled");
   $(`.toolbar`).attr("disabled","disabled");
+  $(`#casesave`).attr("disabled","disabled");
   //依據階段禁止修改資料
   //1.進件完成禁止修改客戶資料
   //2.報價後簽約後禁止修改成交價格、車輛資料
@@ -95,6 +96,7 @@ function select(){
 
 $(`#addcase`).on(`click`,()=>{
   clearPage();
+  $(`#casesave`).removeAttr("disabled");
   $(`#empid`).val(curruntid);
   $(`#empname`).val(curruntuser);
   $(`#casestatus`).val("進件中");
@@ -490,6 +492,7 @@ function flash(element){
 function listclick(caseid){
   
   //設定頁面元件
+  $(`#casesave`).removeAttr("disabled");
   $(`.casesave`).data("caseid",caseid);
   $(`#addDeitail`).data("caseid",caseid);
   $(`#addDeitail`).removeAttr("disabled");
