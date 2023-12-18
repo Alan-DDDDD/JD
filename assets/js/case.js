@@ -563,6 +563,10 @@ function progress(status){
     stateval.removeClass("bg-primary");
     stateval.removeClass("bg-success");
     stateval.addClass("bg-danger");
+   }else{
+    stateval.removeClass("bg-danger");
+    stateval.removeClass("bg-success");
+    stateval.addClass("bg-primary");
    }
 }
 
