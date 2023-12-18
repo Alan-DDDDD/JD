@@ -195,10 +195,8 @@ $(`.casesave`).on('click',async function(){
       method : "POST",
       headers : new Headers({
         "ngrok-skip-browser-warning": "69420",
-        //"Content-Type":"application/json"
       }),
       body : form
-      // body : JSON.stringify(caseObject)
     });
     var body = await response.json();
     if(body.status){
@@ -217,9 +215,7 @@ $(`.casesave`).on('click',async function(){
       method : "POST",
       headers : new Headers({
         "ngrok-skip-browser-warning": "69420",
-        // "Content-Type":"application/json"
       }),
-      // body : JSON.stringify(caseObject)
       body : form
     });
     var body = await response.json();
@@ -239,44 +235,6 @@ $(`.casesave`).on('click',async function(){
   $(`#listpanel`).slideToggle();
 });
 
-//案件檔案傳送
-// async function casefiles(caseid){
-//   let files = [
-//     document.getElementById("carkeyinput").files[0],
-//     document.getElementById("carpaper1input").files[0],
-//     document.getElementById("carpaper2input").files[0],
-//     document.getElementById("carpaper3input").files[0],
-//     document.getElementById("idcardFinput").files[0],
-//     document.getElementById("idcardRinput").files[0],
-//     document.getElementById("bankinput").files[0]
-//   ]
-//   let fileName = [
-//     "carkey",
-//     "paper1",
-//     "paper2",
-//     "paper3",
-//     "idcardf",
-//     "idcardr",
-//     "bank"
-//   ]
-//   var form = new FormData();
-//   for(var i = 0;i<files.length;i++){
-//     if(files[i]){
-//       form.append(`files`,files[i],fileName[i])
-//     }
-//   }
-//   //console.log(form);
-//   var response = await fetch(url + "/api/OrderCase/saveFile?user=" + curruntid + "&caseid=" + caseid,{
-//     method : "POST",
-//     headers : new Headers({
-//       "ngrok-skip-browser-warning": "69420"
-//     }),
-//     body : form
-//   });
-//   var body = await response;
-//   //alert(response);
-//   getSelfData();
-// }
 
 //CAR INSERT AND EDIT AND EVENT
 function cardatabind(car){
