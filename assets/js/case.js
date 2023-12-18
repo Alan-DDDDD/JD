@@ -552,7 +552,7 @@ function progress(status){
    let statuscount = ddllist.CS.length;
    let s = parseInt(status) + 1;
    let val = (s/statuscount)*100;
-   let stateval = $(`#stateval`);
+   let stateval = $(`#casestatusbar div`);
    stateval.css("width",`${val}%`);
    stateval.data("valuenow",val);
    if(status == "10"){
