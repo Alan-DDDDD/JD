@@ -12,13 +12,14 @@ $(async function(){
   //4.撥款後禁止修改所有資料
   //$(`#casepanel input`).attr("disabled","disabled");
   //取得ddl資料
+  let parames = ["BS","SS","CMD","CL","CS"];
   var carddl = await fetch(url+"/api/Code/getMultiddl",{
     method: "post",
     headers: new Headers({
       "ngrok-skip-browser-warning": "69420",
       "Content-Type": "application/json"
     }),
-    body : JSON.stringify(datas = {parames:["BS","SS","CMD","CL","CS"]})
+    body : JSON.stringify(parames)
   })
   var carddldata = await carddl.json();
   if(carddldata.Status){
