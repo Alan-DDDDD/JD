@@ -86,14 +86,11 @@ async function getSelfData(caseid){
     $(`#mainwait`).remove();
 }
 //搜尋
-function select(action,caseid){
-  let key = $(`#search`).val() || caseid;
+function select(){
+  let key = $(`#search`).val();
   $("#caselist tr").filter(function() {
     $(this).toggle($(this).text().toLowerCase().indexOf(key) > -1)
   });
-  if(action == "auto"){
-    $($("#caselist tr")[0]).click();
-  }
 }
 
 $(`#addcase`).on(`click`,()=>{
