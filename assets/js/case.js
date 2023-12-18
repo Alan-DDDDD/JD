@@ -174,6 +174,7 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
       $(`#idcardRinput`).parent().prev().html(value.OrderCase.idcardr == null ? "❌  身分證反面":"✔️  身分證反面");
       $(`#bankinput`).parent().prev().html( value.OrderCase.bank == null ? "❌  銀行存摺":"✔️  銀行存摺");
       //根據資料修改畫面
+      progress(value.OrderCase.status);
       let sendcase = $(`#sendcase`);
       let caredit = $(`.caredit`);
       let carinsert = $(`.carinsert`);
@@ -547,3 +548,24 @@ async function SCASE(caseid,flag){
   }
 }
 
+function progress(status){
+   let statuscount = ddllist.CS.length;
+   let s = parseInt(status) + 1;
+   let val = (s/statuscount)*100;
+   let stateval = $(`#stateval`);
+   stateval.css("width",`${val}%`);
+   stateval.data("valuenow",val);
+   if(status == "10"){
+    stateval.removeClass("bg-primary");
+    stateval.removeClass("bg-danger");
+    stateval.addClass("bg-success");
+   }else if(status == "99"){
+    stateval.removeClass("bg-primary");
+    stateval.removeClass("bg-success");
+    stateval.addClass("bg-danger");
+   }
+}
+
+function flash(element){
+
+}
