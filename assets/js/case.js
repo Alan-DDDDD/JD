@@ -264,8 +264,7 @@ $(`.casesave`).on('click',async function(){
         alert("");
       }else{
         $(this).data("caseid",body.data);
-        getSelfData();
-        select("auto");
+        casefiles(caseid);
         alert("新增成功!!");
       }
     }else{//系統錯誤
