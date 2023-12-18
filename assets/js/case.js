@@ -274,6 +274,8 @@ $(`.casesave`).on('click',async function(){
       alert(body.error.errorMsg);
     }
   }
+  $(`#mainpanel`).hide(300);
+  $(`#listpanel`).slideToggle();
 });
 
 //案件檔案傳送
