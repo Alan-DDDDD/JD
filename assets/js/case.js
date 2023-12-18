@@ -17,7 +17,7 @@ $(async function(){
     headers: new Headers({
       "ngrok-skip-browser-warning": "69420",
     }),
-    body : ["BS","SS","CMD","CL","CS"]
+    body : JSON.stringify(["BS","SS","CMD","CL","CS"])
   })
   var carddldata = await carddl.json();
   if(carddldata.Status){
