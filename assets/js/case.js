@@ -95,6 +95,7 @@ function select(){
 }
 
 $(`#addcase`).on(`click`,()=>{
+  detailControl("close");
   clearPage();
   $(`#casesave`).removeAttr("disabled");
   $(`#empid`).val(curruntid);
