@@ -243,8 +243,6 @@ $(`.casesave`).on('click',async function(){
         alert("");
       }else{
         casefiles(caseid);
-        getSelfData();
-        select("auto");
         alert("編輯成功!!");
       }
     }else{//系統錯誤
@@ -313,6 +311,7 @@ async function casefiles(caseid){
   var body = await response;
   //alert(response);
   getSelfData();
+  select("auto");
 }
 
 //CAR INSERT AND EDIT AND EVENT
