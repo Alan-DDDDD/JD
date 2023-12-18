@@ -16,6 +16,7 @@ $(async function(){
     method: "post",
     headers: new Headers({
       "ngrok-skip-browser-warning": "69420",
+      "Content-Type": "application/json"
     }),
     body : JSON.stringify({parames:["BS","SS","CMD","CL","CS"]})
   })
