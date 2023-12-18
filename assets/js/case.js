@@ -233,8 +233,7 @@ $(`.casesave`).on('click',async function(){
     carid : $(`#send`).data("carid"),
     price : $(`#price`).val() || 0,
     dealprice : $(`#dealprice`).val() || 0,
-    status : $(`#casestatus`).val(),
-    files : new FormData()
+    status : $(`#casestatus`).val()
   }
   let files = [
     document.getElementById("carkeyinput").files[0],
@@ -254,11 +253,13 @@ $(`.casesave`).on('click',async function(){
     "idcardr",
     "bank"
   ]
+  var form = new FormData();
   for(var i = 0;i<files.length;i++){
     if(files[i]){
-      caseObject.files.append(`files`,files[i],fileName[i])
+      form.append(`files`,files[i],fileName[i])
     }
   }
+  form.append(`orderCase`,caseObject);
   //案件基本資料API
   if(caseid){
     //修改
@@ -266,9 +267,10 @@ $(`.casesave`).on('click',async function(){
       method : "POST",
       headers : new Headers({
         "ngrok-skip-browser-warning": "69420",
-        "Content-Type":"application/json"
+        //"Content-Type":"application/json"
       }),
-      body : JSON.stringify(caseObject)
+      body : form
+      // body : JSON.stringify(caseObject)
     });
     var body = await response.json();
     if(body.status){
