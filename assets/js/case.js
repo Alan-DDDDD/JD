@@ -353,7 +353,7 @@ $(`#sendlog`).on('click',async function(){
     })
     var data = await response.json();
     if(data.Status){
-      $(`#addDeitail`).click();//刷新畫面
+      getContact();//刷新畫面
       alert(data.Data);
     }else{
       alert(data.error.ErrorMsg);
@@ -459,9 +459,20 @@ function detailControl(action){
   }
 }
 
-$(`#addDeitail`).on(`click`,async function(){
+$(`#addDeitail`).on(`click`,function(){
+  getContact()
+})
+$(`#contacttable tbody`).on('click','.dataedit',function(){
+  let thistd = $(this).parent();
+  $(`#logcaseid`).val(thistd.parent().data("id"));
+  $(`#logcaseid`).attr("disabled","disables");
+  $(`#logmemo`).val(thistd.prev().html());
+  //thistd.parent().remove();
+});
+async function getContact(){
+  $(`#logcaseid`).val("");
+  $(`#logmemo`).val("");
   let caseid = $(this).data("caseid");
-  //$(`#logcaseid`).val(caseid);
   var response = await fetch(url + "/api/Contact/getAll?user=" + curruntid + "&caseid=" + caseid,{
     method : "Get",
     headers : new Headers({
@@ -483,14 +494,7 @@ $(`#addDeitail`).on(`click`,async function(){
       </tr>`);
     })
   }
-})
-$(`#contacttable tbody`).on('click','.dataedit',function(){
-  let thistd = $(this).parent();
-  $(`#logcaseid`).val(thistd.parent().data("id"));
-  $(`#logcaseid`).attr("disabled","disables");
-  $(`#logmemo`).val(thistd.prev().html());
-  //thistd.parent().remove();
-});
+}
 
 //案件異動(送審、作廢)
 async function SCASE(caseid,flag){
