@@ -558,7 +558,7 @@ function listclick(caseid){
       $(`#price`).val(value.OrderCase.price || "");
       $(`#dealprice`).val(value.OrderCase.dealprice || "");
       $(`#casedate`).val(value.OrderCase.a_sysdt.substring(0,10));
-      if(value.Car) cardatabind(value.Car); 
+      //if(value.Car) cardatabind(value.Car); 
       //綁定檔案路徑與顯示資料
       $(`#carkeyinput`).data("path",value.OrderCase.carkey);
       $(`#carpaper1input`).data("path",value.OrderCase.paper1);
