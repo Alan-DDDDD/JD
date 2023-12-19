@@ -444,8 +444,8 @@ function detailControl(action){
     case "close":
       $(`.casepanel input,button,textarea`).attr("disabled","disabled");
       $(`.filebtn`).removeAttr("disabled");
-      $(`#addcase`).removeAttr("disabled");
-      $(`#casesave`).removeAttr("disabled");
+      $(`#pass`).removeAttr("disabled");
+      $(`#cancel`).removeAttr("disabled");
       break;
   }
 }
@@ -584,29 +584,29 @@ function listclick(caseid){
       
       if(value.OrderCase.sckdt != null){
         detailControl("close");
-        $(`#bankinput`).removeAttr("disabled");
-        $(`#bankbtn`).removeAttr("disabled");
+        //$(`#bankinput`).removeAttr("disabled");
+        //$(`#bankbtn`).removeAttr("disabled");
       }
       else{
-        detailControl("open");
-        giveup.removeAttr("disabled");
-        if(value.Car){
-          caredit.removeAttr("disabled");
-          carinsert.attr("disabled","disabled");
-        }else{
-          caredit.attr("disabled","disabled");
-          carinsert.removeAttr("disabled");
-        }
-        if(value.OrderCase.status >= "05"){
-          sendcase.removeAttr("disabled");
-        }else{
-          sendcase.attr("disabled","disabled");
-        }
+        // detailControl("open");
+        // giveup.removeAttr("disabled");
+        // if(value.Car){
+        //   caredit.removeAttr("disabled");
+        //   carinsert.attr("disabled","disabled");
+        // }else{
+        //   caredit.attr("disabled","disabled");
+        //   carinsert.removeAttr("disabled");
+        // }
+        // if(value.OrderCase.status >= "05"){
+        //   sendcase.removeAttr("disabled");
+        // }else{
+        //   sendcase.attr("disabled","disabled");
+        // }
       }
-      if(value.OrderCase.status == "99"){
-        detailControl("close");
-        $(`#casesave`).attr("disabled","disabled");
-      }
+      // if(value.OrderCase.status == "99"){
+      //   detailControl("close");
+      //   $(`#casesave`).attr("disabled","disabled");
+      // }
     }
   })
   //開啟頁面
