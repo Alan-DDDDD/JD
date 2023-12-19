@@ -469,7 +469,8 @@ $(`#addDeitail`).on(`click`,async function(){
   var data = await response.json();
   if(data.Status){
     contactlist = data.Data;
-    let table = $(`#contacttable`)
+    let table = $(`#contacttable`);
+    table.empty();
     $.each(contactlist,(index,value)=>{
       table.append(`<tr data-id="${value.contactid}">
       <td style="width:30%">${value.a_sysdt}</td>
