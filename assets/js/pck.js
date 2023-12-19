@@ -1,6 +1,7 @@
 getSelfData();
 $(async function(){
   //初始化畫面
+  $(`#mainpanel`).hide();
   detailControl("close");
   //取得ddl資料
   // let parames = ["BD","SS","CMD","CL","CS"];
