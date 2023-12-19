@@ -2,42 +2,36 @@ getSelfData();
 $(async function(){
   //初始化畫面
   detailControl("close");
-  //依據階段禁止修改資料
-  //1.進件完成禁止修改客戶資料
-  //2.報價後簽約後禁止修改成交價格、車輛資料
-  //3.過戶後禁止修改過戶資料
-  //4.撥款後禁止修改所有資料
-  //$(`#casepanel input`).attr("disabled","disabled");
   //取得ddl資料
-  let parames = ["BD","SS","CMD","CL","CS"];
-  var carddl = await fetch(url+"/api/Code/getMultiddl",{
-    method: "post",
-    headers: new Headers({
-      "ngrok-skip-browser-warning": "69420",
-      "Content-Type": "application/json"
-    }),
-    body : JSON.stringify(parames)
-  })
-  var carddldata = await carddl.json();
-  if(carddldata.Status){
-    ddllist = carddldata.Data;
-    let brand = $(`#modelbrand`);
-    let color = $(`#modelcolor`);
-    brand.append(`<option selected>請選擇</option>`);
-    color.append(`<option selected>請選擇</option>`);
-    $.each(ddllist.BD,(index,item)=>{
-      brand.append(`
-          <option value="${item.dataid}">${item.data}</option>
-      `)
-    })
-    $.each(ddllist.CL,(index,item)=>{
-      color.append(`
-          <option value="${item.dataid}">${item.data}</option>
-      `)
-    })
-  }else{
-    console.log("CODE資料取得失敗")
-  }
+  // let parames = ["BD","SS","CMD","CL","CS"];
+  // var carddl = await fetch(url+"/api/Code/getMultiddl",{
+  //   method: "post",
+  //   headers: new Headers({
+  //     "ngrok-skip-browser-warning": "69420",
+  //     "Content-Type": "application/json"
+  //   }),
+  //   body : JSON.stringify(parames)
+  // })
+  // var carddldata = await carddl.json();
+  // if(carddldata.Status){
+  //   ddllist = carddldata.Data;
+  //   let brand = $(`#modelbrand`);
+  //   let color = $(`#modelcolor`);
+  //   brand.append(`<option selected>請選擇</option>`);
+  //   color.append(`<option selected>請選擇</option>`);
+  //   $.each(ddllist.BD,(index,item)=>{
+  //     brand.append(`
+  //         <option value="${item.dataid}">${item.data}</option>
+  //     `)
+  //   })
+  //   $.each(ddllist.CL,(index,item)=>{
+  //     color.append(`
+  //         <option value="${item.dataid}">${item.data}</option>
+  //     `)
+  //   })
+  // }else{
+  //   console.log("CODE資料取得失敗")
+  // }
   //圖檔瀏覽
   $(`.filebtn`).on(`click`,async function(){
     var input = document.getElementById($(this).data("id"));
@@ -52,7 +46,7 @@ async function getSelfData(caseid){
   $(`#caselist`).append(`<div class="spinner-border text-primary" role="status" id="mainwait">
     <span class="visually-hidden">Lodding....</span>
   </div>`);
-    var response = await fetch(url + "/api/OrderCase?user=" + localStorage.getItem(`currid`), {
+    var response = await fetch(url + "/api/OrderCase?user=" + localStorage.getItem(`currid`) + "&flag=A", {
         method: "get",
         headers: new Headers({
           "ngrok-skip-browser-warning": "69420",
