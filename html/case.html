@@ -345,7 +345,7 @@
                           ></button>
                         </div>
                         <div class="modal-body" style="max-height: 500px;overflow-y: scroll;">
-                          <div class="row">
+                          <div class="row" style="display: none;">
                             <div class="col">
                               <label for="logcaseid" class="form-label">案件編號</label>
                               <input type="text" id="logcaseid" class="form-control casefix" placeholder=""/>
@@ -356,6 +356,19 @@
                               <label for="logmemo" class="form-label">紀錄</label>
                               <textarea class="form-control" id="logmemo" rows="3"></textarea>
                             </div>
+                          </div>
+                          <div class="row" style="max-height: 300px;overflow-y: scroll;">
+                            <table class="table" id="contacttable">
+                              <thead style="position: sticky;top: 0;z-index: 1;background-color: white;">
+                                <tr>
+                                  <th>時間</th>
+                                  <th>內容</th>
+                                  <th></th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              </tbody>
+                            </table>
                           </div>
                         </div>
                         <div class="modal-footer">

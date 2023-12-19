@@ -329,10 +329,34 @@ $(`#send`).on(`click`,async function(){
       alert(body.error.errorMsg);
     }
   }
-  console.log(carObject);
+  //console.log(carObject);
   modelbindcar(carObject);
   $(`.btn-close`).click();
 });
+var contactlist;
+//聯絡紀錄新增修改
+$(`#sendlog`).on('click',async function(){
+  let caseid = $(`#logcaseid`).val();
+  let contact = {
+    caseid : caseid,
+    contmemo : $(`#logmemo`).val()
+  }
+  if(caseid){
+    var response = await fetch(url+ "/api/Contact/Data?user="+curruntid,{
+      method : "Post",
+      headers : new Headers({
+        "ngrok-skip-browser-warning": "69420",
+      }),
+      body : JSON.stringify(contact)
+    })
+    var data = await response.json();
+    if(data.Status){
+      alert(data.Data);
+    }else{
+      alert(data.error.ErrorMsg);
+    }
+  }
+})
 
 function modelbindcar(carObject){//儲存完綁資料回畫面
   $(`#carnumber`).val(carObject.carnumber);
@@ -432,9 +456,36 @@ function detailControl(action){
   }
 }
 
-$(`#addDeitail`).on(`click`,function(){
+$(`#addDeitail`).on(`click`,async function(){
   $(`#logcaseid`).val($(this).data("caseid"));
+  var response = await fetch(url + "/api/Contact/getAll?user=" + curruntid,{
+    method : "Get",
+    headers : new Headers({
+      "ngrok-skip-browser-warning": "69420",
+    })
+  })
+  var data = await response.json();
+  if(data.Status){
+    contactlist = data.Data;
+    let table = $(`#contacttable`)
+    $.each(contactlist,(index,value)=>{
+      table.append(`<tr data-id="${value.contactid}">
+      <td style="width:30%">${value.a_sysdt}</td>
+      <td style="width:40%">${value.contmemo}</td>
+      <td style="width:30%">
+        <small class="badge bg-label-warning dataedit" style="cursor:pointer;">編輯</small>
+      </td>
+      </tr>`);
+    })
+  }
 })
+$(`#contacttable tbody`).on('click','.dataedit',function(){
+  let thistd = $(this).parent();
+  $(`#logcaseid`).val(thistd.parent().data("id"));
+  $(`#logcaseid`).attr("disabled","disables");
+  $(`#logmemo`).val(thistd.prev().html());
+  //thistd.parent().remove();
+});
 
 //案件異動(送審、作廢)
 async function SCASE(caseid,flag){
@@ -491,7 +542,6 @@ function flash(element){
 }
 
 function listclick(caseid){
-  
   //設定頁面元件
   $(`#casesave`).removeAttr("disabled");
   $(`.casesave`).data("caseid",caseid);
