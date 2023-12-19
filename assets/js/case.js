@@ -461,6 +461,7 @@ function detailControl(action){
 
 $(`#addDeitail`).on(`click`,function(){
   let caseid = $(this).data("caseid");
+  $(`#contacttable tbody`).empty();
   getContact(caseid)
 })
 $(`#contacttable tbody`).on('click','.dataedit',function(){
