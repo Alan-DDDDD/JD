@@ -232,21 +232,10 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
 
 //CAR INSERT AND EDIT AND EVENT
 function cardatabind(car){
-  $(`#modelcarnumber`).val(car.carnumber);
-  $(`#modelbrand option`).removeAttr('selected').filter(`[value=${car.brand}]`).attr("selected",true);
-  $(`#modelbrand`).change();
-  $(`#modelseries option`).removeAttr('selected').filter(`[value=${car.series}]`).attr("selected",true);
-  $(`#modelseries`).change();
-  $(`#modelmodel option`).removeAttr('selected').filter(`[value=${car.model}]`).attr("selected",true);
-  $(`#modelcolor option`).removeAttr('selected').filter(`[value=${car.color}]`).attr("selected",true);
-  $(`#modelkm`).val(car.km);
-  $(`#modeldate`).val(car.date);
-  $(`#modelstatus`).val(car.carstatus);
-  $(`#modelmemo`).val(car.memo);
-  $(`#carbrand`).val($(`#modelbrand option[value=${car.brand}]`).html());
-  $(`#carseries`).val($(`#modelseries option[value=${car.series}]`).html());
-  $(`#carmodel`).val($(`#modelmodel option[value=${car.model}]`).html());
-  $(`#carcolor`).val($(`#modelcolor option[value=${car.color}]`).html());
+  $(`#carbrand`).val(ddllist.BD.filter(x=>x.dataid == car.brand)[0].data);
+  $(`#carseries`).val(ddllist.SS.filter(x=>x.dataid == car.series)[0].data);
+  $(`#carmodel`).val(ddllist.CMD.filter(x=>x.dataid == car.model)[0].data);
+  $(`#carcolor`).val(ddllist.CL.filter(x=>x.dataid == car.color)[0].data);
   $(`#carnumber`).val(car.carnumber);
   $(`#carkm`).val(car.km);
   $(`#cardate`).val(car.date);
