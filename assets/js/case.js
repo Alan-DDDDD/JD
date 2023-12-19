@@ -473,7 +473,7 @@ $(`#addDeitail`).on(`click`,async function(){
     table.empty();
     $.each(contactlist,(index,value)=>{
       table.append(`<tr data-id="${value.contactid}">
-      <td style="width:30%">${value.a_sysdt}</td>
+      <td style="width:30%">${value.a_sysdt.substring(0,10)}</td>
       <td style="width:40%">${value.contmemo}</td>
       <td style="width:30%">
         <small class="badge bg-label-warning dataedit" style="cursor:pointer;">編輯</small>
