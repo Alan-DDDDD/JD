@@ -434,6 +434,7 @@ function detailControl(action){
       $(`.filebtn`).removeAttr("disabled");
       $(`#pass`).removeAttr("disabled");
       $(`#cancel`).removeAttr("disabled");
+      $(`#btnclose`).removeAttr("disabled");
       break;
   }
 }
