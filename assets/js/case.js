@@ -353,7 +353,7 @@ $(`#sendlog`).on('click',async function(){
     })
     var data = await response.json();
     if(data.Status){
-      $(`#addDeitail`).click();
+      $(`#addDeitail`).click();//刷新畫面
       alert(data.Data);
     }else{
       alert(data.error.ErrorMsg);
