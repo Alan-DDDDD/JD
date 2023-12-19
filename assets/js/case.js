@@ -346,6 +346,7 @@ $(`#sendlog`).on('click',async function(){
       method : "Post",
       headers : new Headers({
         "ngrok-skip-browser-warning": "69420",
+        "Content-Type":"application/json"
       }),
       body : JSON.stringify(contact)
     })
