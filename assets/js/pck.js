@@ -232,7 +232,6 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
 
 //CAR INSERT AND EDIT AND EVENT
 function cardatabind(car){
-  $(`#send`).data('carid',car.carid);
   $(`#modelcarnumber`).val(car.carnumber);
   $(`#modelbrand option`).removeAttr('selected').filter(`[value=${car.brand}]`).attr("selected",true);
   $(`#modelbrand`).change();
@@ -248,11 +247,11 @@ function cardatabind(car){
   $(`#carseries`).val($(`#modelseries option[value=${car.series}]`).html());
   $(`#carmodel`).val($(`#modelmodel option[value=${car.model}]`).html());
   $(`#carcolor`).val($(`#modelcolor option[value=${car.color}]`).html());
-  $(`#carnumber`).val($(`#modelcarnumber`).val());
-  $(`#carkm`).val($(`#modelkm`).val());
-  $(`#cardate`).val($(`#modeldate`).val());
-  $(`#carstatus`).val($(`#modelstatus`).val());
-  $(`#carmemo`).val($(`#modelmemo`).val());
+  $(`#carnumber`).val(car.carnumber);
+  $(`#carkm`).val(car.km);
+  $(`#cardate`).val(car.date);
+  $(`#carstatus`).val(car.carstatus);
+  $(`#carmemo`).val(car.memo);
 }
 // $(`.carinsert`).on(`click`,function(){
 // });
