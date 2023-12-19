@@ -84,19 +84,19 @@ function select(){
   });
 }
 
-$(`#addcase`).on(`click`,()=>{
-  detailControl("open");
-  clearPage();
-  $(`#casesave`).removeAttr("disabled");
-  $(`#empid`).val(curruntid);
-  $(`#empname`).val(curruntuser);
-  $(`#casestatus`).val("進件中");
-  $(`#casedate`).val(new Date());
-  $(`#mainpanel`).show(300);
-  if($(`#listpanel`).css("display") != "none"){
-    $(`#listpanel`).slideToggle();
-  }
-})
+// $(`#addcase`).on(`click`,()=>{
+//   detailControl("open");
+//   clearPage();
+//   $(`#casesave`).removeAttr("disabled");
+//   $(`#empid`).val(curruntid);
+//   $(`#empname`).val(curruntuser);
+//   $(`#casestatus`).val("進件中");
+//   $(`#casedate`).val(new Date());
+//   $(`#mainpanel`).show(300);
+//   if($(`#listpanel`).css("display") != "none"){
+//     $(`#listpanel`).slideToggle();
+//   }
+// })
 
 //初始化事件
 function clearPage(){//清除畫面
@@ -133,258 +133,258 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
   listclick(caseid);
 })
 //ToolBar btn event
-$(`#sendcase`).on(`click`,async function(){
-  let caseid = $(`.casesave`).data(`caseid`);
-  SCASE(caseid,"spaper");
-});
+// $(`#sendcase`).on(`click`,async function(){
+//   let caseid = $(`.casesave`).data(`caseid`);
+//   SCASE(caseid,"spaper");
+// });
 
-$(`#giveup`).on(`click`,function(){
-  let caseid = $(`.casesave`).data(`caseid`);
-  SCASE(caseid,"gu");
-});
+// $(`#giveup`).on(`click`,function(){
+//   let caseid = $(`.casesave`).data(`caseid`);
+//   SCASE(caseid,"gu");
+// });
 
 //CASE INSERT AND EDIT AND
-$(`.casesave`).on('click',async function(){
-  let caseid = $(this).data("caseid");
-  let caseObject = {
-    caseid : caseid,
-    emplid : $(`#empid`).val(),
-    custname : $(`#custname`).val(),
-    custphone : $(`#custphone`).val(),
-    carid : $(`#send`).data("carid"),
-    price : $(`#price`).val() || 0,
-    dealprice : $(`#dealprice`).val() || 0,
-    status : $(`#casestatus`).val()
-  }
-  let files = [
-    document.getElementById("carkeyinput").files[0],
-    document.getElementById("carpaper1input").files[0],
-    document.getElementById("carpaper2input").files[0],
-    document.getElementById("carpaper3input").files[0],
-    document.getElementById("idcardFinput").files[0],
-    document.getElementById("idcardRinput").files[0],
-    document.getElementById("bankinput").files[0]
-  ]
-  let fileName = [
-    "carkey",
-    "paper1",
-    "paper2",
-    "paper3",
-    "idcardf",
-    "idcardr",
-    "bank"
-  ]
-  var form = new FormData();
-  for(var i = 0;i<files.length;i++){
-    if(files[i]){
-      form.append(`files`,files[i],fileName[i])
-    }
-  }
-  form.append(`orderCase`,JSON.stringify(caseObject));
-  //案件基本資料API
-  if(caseid){
-    //修改
-    var response = await fetch(url + "/api/OrderCase/edit?user=" + curruntid,{
-      method : "POST",
-      headers : new Headers({
-        "ngrok-skip-browser-warning": "69420",
-      }),
-      body : form
-    });
-    var body = await response.json();
-    if(body.status){
-      if(body.error){//資料邏輯錯誤
-        alert("");
-      }else{
-        getSelfData(caseid);
-        alert("編輯成功!!");
-      }
-    }else{//系統錯誤
-      alert(body.error.errorMsg);
-    }
-  }else{
-    //新增
-    var response = await fetch(url + "/api/OrderCase/create?user=" + curruntid,{
-      method : "POST",
-      headers : new Headers({
-        "ngrok-skip-browser-warning": "69420",
-      }),
-      body : form
-    });
-    var body = await response.json();
-    if(body.status){
-      if(body.error){//資料邏輯錯誤
-        alert("");
-      }else{
-        $(this).data("caseid",body.data);
-        getSelfData(body.data);
-        alert("新增成功!!");
-      }
-    }else{//系統錯誤
-      alert(body.error.errorMsg);
-    }
-  }
-  $(`#mainpanel`).hide(300);
-  $(`#listpanel`).slideToggle();
-});
+// $(`.casesave`).on('click',async function(){
+//   let caseid = $(this).data("caseid");
+//   let caseObject = {
+//     caseid : caseid,
+//     emplid : $(`#empid`).val(),
+//     custname : $(`#custname`).val(),
+//     custphone : $(`#custphone`).val(),
+//     carid : $(`#send`).data("carid"),
+//     price : $(`#price`).val() || 0,
+//     dealprice : $(`#dealprice`).val() || 0,
+//     status : $(`#casestatus`).val()
+//   }
+//   let files = [
+//     document.getElementById("carkeyinput").files[0],
+//     document.getElementById("carpaper1input").files[0],
+//     document.getElementById("carpaper2input").files[0],
+//     document.getElementById("carpaper3input").files[0],
+//     document.getElementById("idcardFinput").files[0],
+//     document.getElementById("idcardRinput").files[0],
+//     document.getElementById("bankinput").files[0]
+//   ]
+//   let fileName = [
+//     "carkey",
+//     "paper1",
+//     "paper2",
+//     "paper3",
+//     "idcardf",
+//     "idcardr",
+//     "bank"
+//   ]
+//   var form = new FormData();
+//   for(var i = 0;i<files.length;i++){
+//     if(files[i]){
+//       form.append(`files`,files[i],fileName[i])
+//     }
+//   }
+//   form.append(`orderCase`,JSON.stringify(caseObject));
+//   //案件基本資料API
+//   if(caseid){
+//     //修改
+//     var response = await fetch(url + "/api/OrderCase/edit?user=" + curruntid,{
+//       method : "POST",
+//       headers : new Headers({
+//         "ngrok-skip-browser-warning": "69420",
+//       }),
+//       body : form
+//     });
+//     var body = await response.json();
+//     if(body.status){
+//       if(body.error){//資料邏輯錯誤
+//         alert("");
+//       }else{
+//         getSelfData(caseid);
+//         alert("編輯成功!!");
+//       }
+//     }else{//系統錯誤
+//       alert(body.error.errorMsg);
+//     }
+//   }else{
+//     //新增
+//     var response = await fetch(url + "/api/OrderCase/create?user=" + curruntid,{
+//       method : "POST",
+//       headers : new Headers({
+//         "ngrok-skip-browser-warning": "69420",
+//       }),
+//       body : form
+//     });
+//     var body = await response.json();
+//     if(body.status){
+//       if(body.error){//資料邏輯錯誤
+//         alert("");
+//       }else{
+//         $(this).data("caseid",body.data);
+//         getSelfData(body.data);
+//         alert("新增成功!!");
+//       }
+//     }else{//系統錯誤
+//       alert(body.error.errorMsg);
+//     }
+//   }
+//   $(`#mainpanel`).hide(300);
+//   $(`#listpanel`).slideToggle();
+// });
 
 
 //CAR INSERT AND EDIT AND EVENT
-function cardatabind(car){
-  $(`#send`).data('carid',car.carid);
-  $(`#modelcarnumber`).val(car.carnumber);
-  $(`#modelbrand option`).removeAttr('selected').filter(`[value=${car.brand}]`).attr("selected",true);
-  $(`#modelbrand`).change();
-  $(`#modelseries option`).removeAttr('selected').filter(`[value=${car.series}]`).attr("selected",true);
-  $(`#modelseries`).change();
-  $(`#modelmodel option`).removeAttr('selected').filter(`[value=${car.model}]`).attr("selected",true);
-  $(`#modelcolor option`).removeAttr('selected').filter(`[value=${car.color}]`).attr("selected",true);
-  $(`#modelkm`).val(car.km);
-  $(`#modeldate`).val(car.date);
-  $(`#modelstatus`).val(car.carstatus);
-  $(`#modelmemo`).val(car.memo);
-  $(`#carbrand`).val($(`#modelbrand option[value=${car.brand}]`).html());
-  $(`#carseries`).val($(`#modelseries option[value=${car.series}]`).html());
-  $(`#carmodel`).val($(`#modelmodel option[value=${car.model}]`).html());
-  $(`#carcolor`).val($(`#modelcolor option[value=${car.color}]`).html());
-  $(`#carnumber`).val($(`#modelcarnumber`).val());
-  $(`#carkm`).val($(`#modelkm`).val());
-  $(`#cardate`).val($(`#modeldate`).val());
-  $(`#carstatus`).val($(`#modelstatus`).val());
-  $(`#carmemo`).val($(`#modelmemo`).val());
-}
-$(`.carinsert`).on(`click`,function(){
-});
-$(`.caredit`).on(`click`,function(){
-  let carid = $(this).data(`id`);//車輛(產品)編號
-});
+// function cardatabind(car){
+//   $(`#send`).data('carid',car.carid);
+//   $(`#modelcarnumber`).val(car.carnumber);
+//   $(`#modelbrand option`).removeAttr('selected').filter(`[value=${car.brand}]`).attr("selected",true);
+//   $(`#modelbrand`).change();
+//   $(`#modelseries option`).removeAttr('selected').filter(`[value=${car.series}]`).attr("selected",true);
+//   $(`#modelseries`).change();
+//   $(`#modelmodel option`).removeAttr('selected').filter(`[value=${car.model}]`).attr("selected",true);
+//   $(`#modelcolor option`).removeAttr('selected').filter(`[value=${car.color}]`).attr("selected",true);
+//   $(`#modelkm`).val(car.km);
+//   $(`#modeldate`).val(car.date);
+//   $(`#modelstatus`).val(car.carstatus);
+//   $(`#modelmemo`).val(car.memo);
+//   $(`#carbrand`).val($(`#modelbrand option[value=${car.brand}]`).html());
+//   $(`#carseries`).val($(`#modelseries option[value=${car.series}]`).html());
+//   $(`#carmodel`).val($(`#modelmodel option[value=${car.model}]`).html());
+//   $(`#carcolor`).val($(`#modelcolor option[value=${car.color}]`).html());
+//   $(`#carnumber`).val($(`#modelcarnumber`).val());
+//   $(`#carkm`).val($(`#modelkm`).val());
+//   $(`#cardate`).val($(`#modeldate`).val());
+//   $(`#carstatus`).val($(`#modelstatus`).val());
+//   $(`#carmemo`).val($(`#modelmemo`).val());
+// }
+// $(`.carinsert`).on(`click`,function(){
+// });
+// $(`.caredit`).on(`click`,function(){
+//   let carid = $(this).data(`id`);//車輛(產品)編號
+// });
 //車輛資料新增儲存
-$(`#send`).on(`click`,async function(){
-  let id = $(this).data(`carid`);
-  let carObject={
-    Carid : id,
-    carnumber : $(`#modelcarnumber`).val(),
-    Brand : $(`#modelbrand option:selected`).val(),
-    Series : $(`#modelseries option:selected`).val(),
-    Model : $(`#modelmodel option:selected`).val(),
-    Color : $(`#modelcolor option:selected`).val(),
-    Km : $(`#modelkm`).val(),
-    Date : $(`#modeldate`).val(),
-    carstatus : $(`#modelstatus`).val(),
-    Memo : $(`#modelmemo`).val()
-  }
-  if(carObject.Carid){
-    //寫修改
-    var response = await fetch(url + "/api/Car/edit?user=" + curruntid,{
-      method : "POST",
-      headers : new Headers({
-        "ngrok-skip-browser-warning": "69420",
-        "Content-Type":"application/json"
-      }),
-      body : JSON.stringify(carObject)
-    });
-    var body = await response.json();
-    if(body.status){
-      if(body.error){//資料邏輯錯誤
-        alert("");
-      }else{
-        alert("編輯成功!!");
-        getSelfData();
-      }
-    }else{//系統錯誤
-      alert(body.error.errorMsg);
-    }
-  }else{
-    //寫新增
-    var response = await fetch(url + "/api/Car/create?user=" + curruntid,{
-      method : "POST",
-      headers : new Headers({
-        "ngrok-skip-browser-warning": "69420",
-        "Content-Type":"application/json"
-      }),
-      body : JSON.stringify(carObject)
-    });
-    var body = await response.json();
-    if(body.status){
-      if(body.error){//資料邏輯錯誤
-        alert("");
-      }else{
-        $(this).data("carid",body.data);
-        $(`.caredit`).removeAttr("disabled");
-        $(`.carinsert`).attr("disabled","disabled");
-        alert("新增成功!!");
-        getSelfData();
-      }
-    }else{//系統錯誤
-      alert(body.error.errorMsg);
-    }
-  }
-  //console.log(carObject);
-  modelbindcar(carObject);
-  $(`.btn-close`).click();
-});
-var contactlist;
-//聯絡紀錄新增修改
-$(`#sendlog`).on('click',async function(){
-  let caseid = $(`.casesave`).data("caseid");
-  let contact = {
-    caseid : caseid,
-    contactid : $(`#logcaseid`).val(),
-    contmemo : $(`#logmemo`).val()
-  }
-  if(caseid){
-    var response = await fetch(url+ "/api/Contact/Data?user="+curruntid,{
-      method : "Post",
-      headers : new Headers({
-        "ngrok-skip-browser-warning": "69420",
-        "Content-Type":"application/json"
-      }),
-      body : JSON.stringify(contact)
-    })
-    var data = await response.json();
-    if(data.Status){
-      getContact($(`#addDeitail`).data("caseid"));//刷新畫面
-      alert(data.Data);
-    }else{
-      alert(data.error.ErrorMsg);
-    }
-  }
-})
+// $(`#send`).on(`click`,async function(){
+//   let id = $(this).data(`carid`);
+//   let carObject={
+//     Carid : id,
+//     carnumber : $(`#modelcarnumber`).val(),
+//     Brand : $(`#modelbrand option:selected`).val(),
+//     Series : $(`#modelseries option:selected`).val(),
+//     Model : $(`#modelmodel option:selected`).val(),
+//     Color : $(`#modelcolor option:selected`).val(),
+//     Km : $(`#modelkm`).val(),
+//     Date : $(`#modeldate`).val(),
+//     carstatus : $(`#modelstatus`).val(),
+//     Memo : $(`#modelmemo`).val()
+//   }
+//   if(carObject.Carid){
+//     //寫修改
+//     var response = await fetch(url + "/api/Car/edit?user=" + curruntid,{
+//       method : "POST",
+//       headers : new Headers({
+//         "ngrok-skip-browser-warning": "69420",
+//         "Content-Type":"application/json"
+//       }),
+//       body : JSON.stringify(carObject)
+//     });
+//     var body = await response.json();
+//     if(body.status){
+//       if(body.error){//資料邏輯錯誤
+//         alert("");
+//       }else{
+//         alert("編輯成功!!");
+//         getSelfData();
+//       }
+//     }else{//系統錯誤
+//       alert(body.error.errorMsg);
+//     }
+//   }else{
+//     //寫新增
+//     var response = await fetch(url + "/api/Car/create?user=" + curruntid,{
+//       method : "POST",
+//       headers : new Headers({
+//         "ngrok-skip-browser-warning": "69420",
+//         "Content-Type":"application/json"
+//       }),
+//       body : JSON.stringify(carObject)
+//     });
+//     var body = await response.json();
+//     if(body.status){
+//       if(body.error){//資料邏輯錯誤
+//         alert("");
+//       }else{
+//         $(this).data("carid",body.data);
+//         $(`.caredit`).removeAttr("disabled");
+//         $(`.carinsert`).attr("disabled","disabled");
+//         alert("新增成功!!");
+//         getSelfData();
+//       }
+//     }else{//系統錯誤
+//       alert(body.error.errorMsg);
+//     }
+//   }
+//   //console.log(carObject);
+//   modelbindcar(carObject);
+//   $(`.btn-close`).click();
+// });
+// var contactlist;
+// //聯絡紀錄新增修改
+// $(`#sendlog`).on('click',async function(){
+//   let caseid = $(`.casesave`).data("caseid");
+//   let contact = {
+//     caseid : caseid,
+//     contactid : $(`#logcaseid`).val(),
+//     contmemo : $(`#logmemo`).val()
+//   }
+//   if(caseid){
+//     var response = await fetch(url+ "/api/Contact/Data?user="+curruntid,{
+//       method : "Post",
+//       headers : new Headers({
+//         "ngrok-skip-browser-warning": "69420",
+//         "Content-Type":"application/json"
+//       }),
+//       body : JSON.stringify(contact)
+//     })
+//     var data = await response.json();
+//     if(data.Status){
+//       getContact($(`#addDeitail`).data("caseid"));//刷新畫面
+//       alert(data.Data);
+//     }else{
+//       alert(data.error.ErrorMsg);
+//     }
+//   }
+// })
 
-function modelbindcar(carObject){//儲存完綁資料回畫面
-  $(`#carnumber`).val(carObject.carnumber);
-  $(`#carbrand`).val($(`#modelbrand option:selected`).html());
-  $(`#carseries`).val($(`#modelseries option:selected`).html());
-  $(`#carmodel`).val($(`#modelmodel option:selected`).html());
-  $(`#carcolor`).val($(`#modelcolor option:selected`).html());
-  $(`#carkm`).val(carObject.Km);
-  $(`#cardate`).val(carObject.Date);
-  $(`#carstatus`).val(carObject.carstatus);
-  $(`#carmemo`).val(carObject.Memo);
-}
+// function modelbindcar(carObject){//儲存完綁資料回畫面
+//   $(`#carnumber`).val(carObject.carnumber);
+//   $(`#carbrand`).val($(`#modelbrand option:selected`).html());
+//   $(`#carseries`).val($(`#modelseries option:selected`).html());
+//   $(`#carmodel`).val($(`#modelmodel option:selected`).html());
+//   $(`#carcolor`).val($(`#modelcolor option:selected`).html());
+//   $(`#carkm`).val(carObject.Km);
+//   $(`#cardate`).val(carObject.Date);
+//   $(`#carstatus`).val(carObject.carstatus);
+//   $(`#carmemo`).val(carObject.Memo);
+// }
 
-$(`#modelbrand`).on(`change`,function(){//廠牌下拉選單更變
-  let value = $(`#modelbrand option:selected`).val();
-  let SS = $(`#modelseries`);
-  SS.empty();
-  SS.append(`<option selected>請選擇</option>`)
-  $.each(ddllist.SS,(index,item)=>{
-    if(item.parentgroup == value){
-      SS.append(`<option value="${item.dataid}">${item.data}</option>`);
-    }
-  })
-});
-$(`#modelseries`).on(`change`,function(){//系列下拉選單更變
-  let value = $(`#modelseries option:selected`).val();
-  let CMD = $(`#modelmodel`);
-  CMD.empty();
-  CMD.append(`<option selected>請選擇</option>`)
-  $.each(ddllist.CMD,(index,item)=>{
-    if(item.parentgroup == value){
-      CMD.append(`<option value="${item.dataid}">${item.data}</option>`);
-    }
-  })
-});
+// $(`#modelbrand`).on(`change`,function(){//廠牌下拉選單更變
+//   let value = $(`#modelbrand option:selected`).val();
+//   let SS = $(`#modelseries`);
+//   SS.empty();
+//   SS.append(`<option selected>請選擇</option>`)
+//   $.each(ddllist.SS,(index,item)=>{
+//     if(item.parentgroup == value){
+//       SS.append(`<option value="${item.dataid}">${item.data}</option>`);
+//     }
+//   })
+// });
+// $(`#modelseries`).on(`change`,function(){//系列下拉選單更變
+//   let value = $(`#modelseries option:selected`).val();
+//   let CMD = $(`#modelmodel`);
+//   CMD.empty();
+//   CMD.append(`<option selected>請選擇</option>`)
+//   $.each(ddllist.CMD,(index,item)=>{
+//     if(item.parentgroup == value){
+//       CMD.append(`<option value="${item.dataid}">${item.data}</option>`);
+//     }
+//   })
+// });
 
 
 //圖檔瀏覽
@@ -449,43 +449,43 @@ function detailControl(action){
   }
 }
 
-$(`#addDeitail`).on(`click`,function(){
-  let caseid = $(this).data("caseid");
-  $(`#contacttable tbody`).empty();
-  getContact(caseid)
-})
-$(`#contacttable tbody`).on('click','.dataedit',function(){
-  let thistd = $(this).parent();
-  $(`#logcaseid`).val(thistd.parent().data("id"));
-  $(`#logcaseid`).attr("disabled","disables");
-  $(`#logmemo`).val(thistd.prev().html());
-  //thistd.parent().remove();
-});
-async function getContact(caseid){
-  $(`#logcaseid`).val("");
-  $(`#logmemo`).val("");
-  var response = await fetch(url + "/api/Contact/getAll?user=" + curruntid + "&caseid=" + caseid,{
-    method : "Get",
-    headers : new Headers({
-      "ngrok-skip-browser-warning": "69420",
-    })
-  })
-  var data = await response.json();
-  if(data.Status){
-    contactlist = data.Data;
-    let table = $(`#contacttable tbody`);
-    table.empty();
-    $.each(contactlist,(index,value)=>{
-      table.append(`<tr data-id="${value.contactid}">
-      <td style="width:35%">${value.a_sysdt.substring(0,10)}</td>
-      <td style="width:50%;max-width:300px;word-wrap:break-word">${value.contmemo}</td>
-      <td style="width:15%">
-        <small class="badge bg-label-warning dataedit" style="cursor:pointer;">編輯</small>
-      </td>
-      </tr>`);
-    })
-  }
-}
+// $(`#addDeitail`).on(`click`,function(){
+//   let caseid = $(this).data("caseid");
+//   $(`#contacttable tbody`).empty();
+//   getContact(caseid)
+// })
+// $(`#contacttable tbody`).on('click','.dataedit',function(){
+//   let thistd = $(this).parent();
+//   $(`#logcaseid`).val(thistd.parent().data("id"));
+//   $(`#logcaseid`).attr("disabled","disables");
+//   $(`#logmemo`).val(thistd.prev().html());
+//   //thistd.parent().remove();
+// });
+// async function getContact(caseid){
+//   $(`#logcaseid`).val("");
+//   $(`#logmemo`).val("");
+//   var response = await fetch(url + "/api/Contact/getAll?user=" + curruntid + "&caseid=" + caseid,{
+//     method : "Get",
+//     headers : new Headers({
+//       "ngrok-skip-browser-warning": "69420",
+//     })
+//   })
+//   var data = await response.json();
+//   if(data.Status){
+//     contactlist = data.Data;
+//     let table = $(`#contacttable tbody`);
+//     table.empty();
+//     $.each(contactlist,(index,value)=>{
+//       table.append(`<tr data-id="${value.contactid}">
+//       <td style="width:35%">${value.a_sysdt.substring(0,10)}</td>
+//       <td style="width:50%;max-width:300px;word-wrap:break-word">${value.contmemo}</td>
+//       <td style="width:15%">
+//         <small class="badge bg-label-warning dataedit" style="cursor:pointer;">編輯</small>
+//       </td>
+//       </tr>`);
+//     })
+//   }
+// }
 
 //案件異動(送審、作廢)
 async function SCASE(caseid,flag){
