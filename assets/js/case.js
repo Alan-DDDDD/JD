@@ -339,6 +339,7 @@ $(`#sendlog`).on('click',async function(){
   let caseid = $(`#logcaseid`).val();
   let contact = {
     caseid : caseid,
+    contactid : "",
     contmemo : $(`#logmemo`).val()
   }
   if(caseid){
