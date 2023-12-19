@@ -487,8 +487,8 @@ async function getContact(caseid){
     $.each(contactlist,(index,value)=>{
       table.append(`<tr data-id="${value.contactid}">
       <td style="width:30%">${value.a_sysdt.substring(0,10)}</td>
-      <td style="width:40%;max-width:300px;word-wrap:break-word">${value.contmemo}</td>
-      <td style="width:30%">
+      <td style="width:50%;max-width:300px;word-wrap:break-word">${value.contmemo}</td>
+      <td style="width:20%">
         <small class="badge bg-label-warning dataedit" style="cursor:pointer;">編輯</small>
       </td>
       </tr>`);
