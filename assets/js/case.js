@@ -457,8 +457,9 @@ function detailControl(action){
 }
 
 $(`#addDeitail`).on(`click`,async function(){
-  $(`#logcaseid`).val($(this).data("caseid"));
-  var response = await fetch(url + "/api/Contact/getAll?user=" + curruntid,{
+  let caseid = $(this).data("caseid");
+  $(`#logcaseid`).val(caseid);
+  var response = await fetch(url + "/api/Contact/getAll?user=" + curruntid + "&caseid=" + caseid,{
     method : "Get",
     headers : new Headers({
       "ngrok-skip-browser-warning": "69420",
