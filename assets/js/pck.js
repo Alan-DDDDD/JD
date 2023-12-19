@@ -16,20 +16,20 @@ $(async function(){
   var carddldata = await carddl.json();
   if(carddldata.Status){
     ddllist = carddldata.Data;
-    let brand = $(`#modelbrand`);
-    let color = $(`#modelcolor`);
-    brand.append(`<option selected>請選擇</option>`);
-    color.append(`<option selected>請選擇</option>`);
-    $.each(ddllist.BD,(index,item)=>{
-      brand.append(`
-          <option value="${item.dataid}">${item.data}</option>
-      `)
-    })
-    $.each(ddllist.CL,(index,item)=>{
-      color.append(`
-          <option value="${item.dataid}">${item.data}</option>
-      `)
-    })
+    // let brand = $(`#modelbrand`);
+    // let color = $(`#modelcolor`);
+    // brand.append(`<option selected>請選擇</option>`);
+    // color.append(`<option selected>請選擇</option>`);
+    // $.each(ddllist.BD,(index,item)=>{
+    //   brand.append(`
+    //       <option value="${item.dataid}">${item.data}</option>
+    //   `)
+    // })
+    // $.each(ddllist.CL,(index,item)=>{
+    //   color.append(`
+    //       <option value="${item.dataid}">${item.data}</option>
+    //   `)
+    // })
   }else{
     console.log("CODE資料取得失敗")
   }
