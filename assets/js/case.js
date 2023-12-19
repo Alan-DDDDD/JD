@@ -353,7 +353,7 @@ $(`#sendlog`).on('click',async function(){
     })
     var data = await response.json();
     if(data.Status){
-      getContact();//刷新畫面
+      getContact($(`#addDeitail`).data("caseid"));//刷新畫面
       alert(data.Data);
     }else{
       alert(data.error.ErrorMsg);
@@ -460,7 +460,8 @@ function detailControl(action){
 }
 
 $(`#addDeitail`).on(`click`,function(){
-  getContact()
+  let caseid = $(this).data("caseid");
+  getContact(caseid)
 })
 $(`#contacttable tbody`).on('click','.dataedit',function(){
   let thistd = $(this).parent();
@@ -469,10 +470,9 @@ $(`#contacttable tbody`).on('click','.dataedit',function(){
   $(`#logmemo`).val(thistd.prev().html());
   //thistd.parent().remove();
 });
-async function getContact(){
+async function getContact(caseid){
   $(`#logcaseid`).val("");
   $(`#logmemo`).val("");
-  let caseid = $(this).data("caseid");
   var response = await fetch(url + "/api/Contact/getAll?user=" + curruntid + "&caseid=" + caseid,{
     method : "Get",
     headers : new Headers({
