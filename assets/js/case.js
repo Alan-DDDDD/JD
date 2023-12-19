@@ -336,10 +336,10 @@ $(`#send`).on(`click`,async function(){
 var contactlist;
 //聯絡紀錄新增修改
 $(`#sendlog`).on('click',async function(){
-  let caseid = $(`#logcaseid`).val();
+  let caseid = $(`.casesave`).data("caseid");
   let contact = {
     caseid : caseid,
-    contactid : "",
+    contactid : $(`#logcaseid`).val(),
     contmemo : $(`#logmemo`).val()
   }
   if(caseid){
@@ -460,7 +460,7 @@ function detailControl(action){
 
 $(`#addDeitail`).on(`click`,async function(){
   let caseid = $(this).data("caseid");
-  $(`#logcaseid`).val(caseid);
+  //$(`#logcaseid`).val(caseid);
   var response = await fetch(url + "/api/Contact/getAll?user=" + curruntid + "&caseid=" + caseid,{
     method : "Get",
     headers : new Headers({
