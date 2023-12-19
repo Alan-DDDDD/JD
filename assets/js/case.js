@@ -353,6 +353,7 @@ $(`#sendlog`).on('click',async function(){
     })
     var data = await response.json();
     if(data.Status){
+      $(`#addDeitail`).click();
       alert(data.Data);
     }else{
       alert(data.error.ErrorMsg);
