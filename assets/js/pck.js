@@ -231,29 +231,29 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
 
 
 //CAR INSERT AND EDIT AND EVENT
-// function cardatabind(car){
-//   $(`#send`).data('carid',car.carid);
-//   $(`#modelcarnumber`).val(car.carnumber);
-//   $(`#modelbrand option`).removeAttr('selected').filter(`[value=${car.brand}]`).attr("selected",true);
-//   $(`#modelbrand`).change();
-//   $(`#modelseries option`).removeAttr('selected').filter(`[value=${car.series}]`).attr("selected",true);
-//   $(`#modelseries`).change();
-//   $(`#modelmodel option`).removeAttr('selected').filter(`[value=${car.model}]`).attr("selected",true);
-//   $(`#modelcolor option`).removeAttr('selected').filter(`[value=${car.color}]`).attr("selected",true);
-//   $(`#modelkm`).val(car.km);
-//   $(`#modeldate`).val(car.date);
-//   $(`#modelstatus`).val(car.carstatus);
-//   $(`#modelmemo`).val(car.memo);
-//   $(`#carbrand`).val($(`#modelbrand option[value=${car.brand}]`).html());
-//   $(`#carseries`).val($(`#modelseries option[value=${car.series}]`).html());
-//   $(`#carmodel`).val($(`#modelmodel option[value=${car.model}]`).html());
-//   $(`#carcolor`).val($(`#modelcolor option[value=${car.color}]`).html());
-//   $(`#carnumber`).val($(`#modelcarnumber`).val());
-//   $(`#carkm`).val($(`#modelkm`).val());
-//   $(`#cardate`).val($(`#modeldate`).val());
-//   $(`#carstatus`).val($(`#modelstatus`).val());
-//   $(`#carmemo`).val($(`#modelmemo`).val());
-// }
+function cardatabind(car){
+  $(`#send`).data('carid',car.carid);
+  $(`#modelcarnumber`).val(car.carnumber);
+  $(`#modelbrand option`).removeAttr('selected').filter(`[value=${car.brand}]`).attr("selected",true);
+  $(`#modelbrand`).change();
+  $(`#modelseries option`).removeAttr('selected').filter(`[value=${car.series}]`).attr("selected",true);
+  $(`#modelseries`).change();
+  $(`#modelmodel option`).removeAttr('selected').filter(`[value=${car.model}]`).attr("selected",true);
+  $(`#modelcolor option`).removeAttr('selected').filter(`[value=${car.color}]`).attr("selected",true);
+  $(`#modelkm`).val(car.km);
+  $(`#modeldate`).val(car.date);
+  $(`#modelstatus`).val(car.carstatus);
+  $(`#modelmemo`).val(car.memo);
+  $(`#carbrand`).val($(`#modelbrand option[value=${car.brand}]`).html());
+  $(`#carseries`).val($(`#modelseries option[value=${car.series}]`).html());
+  $(`#carmodel`).val($(`#modelmodel option[value=${car.model}]`).html());
+  $(`#carcolor`).val($(`#modelcolor option[value=${car.color}]`).html());
+  $(`#carnumber`).val($(`#modelcarnumber`).val());
+  $(`#carkm`).val($(`#modelkm`).val());
+  $(`#cardate`).val($(`#modeldate`).val());
+  $(`#carstatus`).val($(`#modelstatus`).val());
+  $(`#carmemo`).val($(`#modelmemo`).val());
+}
 // $(`.carinsert`).on(`click`,function(){
 // });
 // $(`.caredit`).on(`click`,function(){
@@ -559,7 +559,7 @@ function listclick(caseid){
       $(`#price`).val(value.OrderCase.price || "");
       $(`#dealprice`).val(value.OrderCase.dealprice || "");
       $(`#casedate`).val(value.OrderCase.a_sysdt.substring(0,10));
-      //if(value.Car) cardatabind(value.Car); 
+      if(value.Car) cardatabind(value.Car); 
       //綁定檔案路徑與顯示資料
       $(`#carkeyinput`).data("path",value.OrderCase.carkey);
       $(`#carpaper1input`).data("path",value.OrderCase.paper1);
