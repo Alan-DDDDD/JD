@@ -1,3 +1,16 @@
+$(async function(){
+  var result = await fetch(url + "/api/EMPL/Page?user="+curruntid,{
+    method : "Get",
+    headers: new Headers({
+      "ngrok-skip-browser-warning": "69420",
+    }),
+  })
+  var object = await result.json();
+  if(!object.Status){
+    alert(object.error.ErrorMsg);
+    open(fronturl + "/case.html","_self")
+  }
+})
 getSelfData();
 $(async function(){
   //初始化畫面
