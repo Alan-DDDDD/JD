@@ -612,7 +612,7 @@ function listclick(caseid){
           sendcase.attr("disabled","disabled");
         }
       }
-      if(value.OrderCase.status >= "07"){
+      if(value.OrderCase.status >= "07" || value.OrderCase.giveupdt != null){
         detailControl("close");
         $(`#casesave`).attr("disabled","disabled");
       }
