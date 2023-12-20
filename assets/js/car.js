@@ -98,6 +98,7 @@ $(`#carsearch`).on(`click`,async function(){
   var data = await response.json();
   if(data.Status){
     let table = $(`#cartbody`);
+    table.empty();
     $.each(data.Data,(index,value)=>{
       table.append(`<tr>
                         <td>${value.brand}</td>
