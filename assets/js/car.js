@@ -46,7 +46,7 @@ async function getSelfData(){
     if(body.Status){
       datalist = body.Data
       $.each(datalist,function(index,data){
-          table.append(`${data.EXISTS == 'Y' ? '<tr>':'<tr class="table-secondary">'}
+          table.append(`<tr>
                             <td>${data.brand}</td>
                             <td>${data.sereis}</td>
                             <td>${data.model}</td>
@@ -76,7 +76,7 @@ $(`#BD,#SS`).on(`change`,function(){
   let parentValue = $(`#${parentid} option:selected`).val();
   let son = $(`#${sonid}`);
   son.empty();
-  son.append(`<option value="X">請選擇</option>`);
+  son.append(`<option value="">請選擇</option>`);
   let datalist = sonid == "SS" ? ddllist.SS : ddllist.CMD;
   $.each(datalist,(index,data)=>{
     if(data.parentgroup == parentValue){
@@ -84,3 +84,29 @@ $(`#BD,#SS`).on(`change`,function(){
     }
   });
 });
+
+$(`#carsearch`).on(`click`,async function(){
+  let BD = $(`#BD option:selected`).val();
+  let SS = $(`#SS option:selected`).val();
+  let CMD = $(`#CMD option:selected`).val();
+  var response = await fetch(url + "/api/Car?BD=" + BD + "&SS=" + SS + "&CMD=" + CMD + "&user=" + curruntid,{
+    method : "Get",
+    headers: new Headers({
+      "ngrok-skip-browser-warning": "69420",
+    }),
+  })
+  var data = await response.json();
+  if(data.Status){
+    let table = $(`#cartbody`);
+    $.each(data.Data,(index,value)=>{
+      table.append(`<tr>
+                        <td>${value.brand}</td>
+                        <td>${value.sereis}</td>
+                        <td>${value.model}</td>
+                        <td>${value.color}</td>
+                        <td>${value.km}</td>
+                        <td>${value.date}</td>
+                    </tr>`);
+    });
+  }
+})
