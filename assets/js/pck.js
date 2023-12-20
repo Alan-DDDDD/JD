@@ -2,6 +2,7 @@ getSelfData();
 $(async function(){
   //初始化畫面
   $(`#mainpanel`).hide();
+  $(`.toolbar`).attr("disabled","disabled");
   detailControl("close");
   //取得ddl資料
   let parames = ["BD","SS","CMD","CL","CS"];
@@ -545,6 +546,7 @@ function listclick(caseid){
   // $(`#addDeitail`).data("caseid",caseid);
   // $(`#addDeitail`).removeAttr("disabled");
   $(`#pass`).data("caseid",caseid);
+  $(`.toolbar`).removeAttr("disabled");
   //綁定頁面
   $.each(datalist,(index,value)=>{
     if(value.OrderCase.caseid == caseid){
