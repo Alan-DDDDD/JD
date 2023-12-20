@@ -1,5 +1,5 @@
 $(async function(){
-  var result = await fetch(url + "/api/EMPL/Page?user="+curruntid,{
+  var result = await fetch(url + "/EMPL/Page?user="+curruntid,{
     method : "Get",
     headers: new Headers({
       "ngrok-skip-browser-warning": "69420",
