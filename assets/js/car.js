@@ -53,6 +53,8 @@ async function getSelfData(){
                             <td>${data.color}</td>
                             <td>${data.km}</td>
                             <td>${data.date}</td>
+                            <td>${data.years}</td>
+                            <td>${data.dealprice}</td>
                         </tr>`);
       });
     }
@@ -107,6 +109,8 @@ $(`#carsearch`).on(`click`,async function(){
                         <td>${value.color}</td>
                         <td>${value.km}</td>
                         <td>${value.date}</td>
+                        <td>${data.years}</td>
+                        <td>${data.dealprice}</td>
                     </tr>`);
     });
   }
