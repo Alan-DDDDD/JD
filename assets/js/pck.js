@@ -504,6 +504,8 @@ async function SCASE(caseid,flag){
     //     break;
     // }
     getSelfData();
+    $(`#mainpanel`).hide();
+    $(`#listpanel`).slideToggle();
     alert(data.Data);
   }else{
     alert(data.error.ErrorMsg)
