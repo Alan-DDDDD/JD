@@ -493,16 +493,16 @@ async function SCASE(caseid,flag){
   var data = await response.json();
   if(data.Status){
     detailControl("close");
-    $(`#bankinput`).removeAttr("disabled");
-    $(`#bankbtn`).removeAttr("disabled");
-    switch (flag){
-      case "spaper":
-        break;
-      case "gu":
-        $(`#bankinput`).attr("disabled","disabled");
-        $(`#casesave`).attr("disabled","disabled");
-        break;
-    }
+    // $(`#bankinput`).removeAttr("disabled");
+    // $(`#bankbtn`).removeAttr("disabled");
+    // switch (flag){
+    //   case "spaper":
+    //     break;
+    //   case "gu":
+    //     $(`#bankinput`).attr("disabled","disabled");
+    //     $(`#casesave`).attr("disabled","disabled");
+    //     break;
+    // }
     getSelfData();
     alert(data.Data);
   }else{
