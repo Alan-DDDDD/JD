@@ -48,7 +48,7 @@ async function getSelfData(){
       $.each(datalist,function(index,data){
           table.append(`<tr>
                             <td>${data.brand}</td>
-                            <td>${data.sereis}</td>
+                            <td>${data.series}</td>
                             <td>${data.model}</td>
                             <td>${data.color}</td>
                             <td>${data.km}</td>
