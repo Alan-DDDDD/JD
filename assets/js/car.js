@@ -101,7 +101,7 @@ $(`#carsearch`).on(`click`,async function(){
     $.each(data.Data,(index,value)=>{
       table.append(`<tr>
                         <td>${value.brand}</td>
-                        <td>${value.sereis}</td>
+                        <td>${value.series}</td>
                         <td>${value.model}</td>
                         <td>${value.color}</td>
                         <td>${value.km}</td>
