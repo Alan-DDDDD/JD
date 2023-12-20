@@ -136,18 +136,7 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
 $(`#pass,#cancel`).on(`click`,async function(){
   let caseid = $(`#pass`).data("caseid");
   let flag = $(this).data("flag");
-  var response = await fetch(url+"/api/SCASE?user="+curruntid+"&caseid="+caseid+"&flag="+flag,{
-    method : "Get",
-    headers : new Headers({
-      "ngrok-skip-browser-warning": "69420",
-    }),
-  })
-  var data = await response.json();
-  if(data.Status){
-    alert(data.Data);
-  }else{
-    alert(data.error.ErrorMsg);
-  }
+  SCASE(caseid,flag);
 });
 //ToolBar btn event
 // $(`#sendcase`).on(`click`,async function(){
