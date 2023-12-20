@@ -181,8 +181,8 @@ function detailControl(action){
     case "close":
       $(`.casepanel input,button,textarea`).attr("disabled","disabled");
       $(`.filebtn`).removeAttr("disabled");
-      $(`#pass`).removeAttr("disabled");
-      $(`#cancel`).removeAttr("disabled");
+      //$(`#pass`).removeAttr("disabled");
+      //$(`#cancel`).removeAttr("disabled");
       $(`#btnclose`).removeAttr("disabled");
       break;
   }
