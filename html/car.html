@@ -279,11 +279,12 @@
                     class="btn btn-primary btni"
                     data-bs-toggle="modal"
                     data-bs-target="#modalCenter"
+                    id="carsearch"
                   >
-                    新增
+                    搜尋
                   </button>
                   <!-- Modal -->
-                  <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+                  <!-- <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -391,7 +392,7 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             
@@ -400,11 +401,17 @@
                 <div class="card-body">
                   <div class="row">
                     <label for="searchbrand" class="form-label">廠牌</label>
-                    <select class="form-select">
-                      <option value="BMW">BMW</option>
-                      <option value="BENZ">BENZ</option>
-                      <option value="PORSCHE">PORSCHE</option>
-                      <option value="AUDI">AUDI</option>
+                    <select class="form-select" id="BD" data-id="BD">
+                    </select>
+                  </div>
+                  <div class="row">
+                    <label for="searchbrand" class="form-label">系列</label>
+                    <select class="form-select" id="SS" data-id="SS">
+                    </select>
+                  </div>
+                  <div class="row">
+                    <label for="searchbrand" class="form-label">車型</label>
+                    <select class="form-select" id="CMD" data-id="CMD">
                     </select>
                   </div>
                 </div>
@@ -419,9 +426,12 @@
                         <th>車型</th>
                         <th>顏色</th>
                         <th>里程</th>
+                        <th>出廠年份</th>
+                        <th>車齡</th>
+                        <th>採購價格</th>
                       </tr>
                     </thead>
-                    <tbody class="table-border-bottom-0" id="empltbody">
+                    <tbody class="table-border-bottom-0" id="cartbody">
                       
                     </tbody>
                   </table>
