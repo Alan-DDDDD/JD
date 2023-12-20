@@ -133,6 +133,22 @@ $(`#caselist`).on(`click`,`.listdata`,function(){
   $(this).css("color","white");
   listclick(caseid);
 })
+$(`#pass,#cancel`).on(`click`,async function(){
+  let caseid = $(`#pass`).data("caseid");
+  let flag = $(this).data("flag");
+  var response = await fetch(url+"/api/SCASE?user="+curruntid+"&caseid="+caseid+"&flag="+flag,{
+    method : "Get",
+    headers : new Headers({
+      "ngrok-skip-browser-warning": "69420",
+    }),
+  })
+  var data = await response.json();
+  if(data.Status){
+    alert(data.Data);
+  }else{
+    alert(data.error.ErrorMsg);
+  }
+});
 //ToolBar btn event
 // $(`#sendcase`).on(`click`,async function(){
 //   let caseid = $(`.casesave`).data(`caseid`);
@@ -533,10 +549,11 @@ function flash(element){
 
 function listclick(caseid){
   //設定頁面元件
-  $(`#casesave`).removeAttr("disabled");
-  $(`.casesave`).data("caseid",caseid);
-  $(`#addDeitail`).data("caseid",caseid);
-  $(`#addDeitail`).removeAttr("disabled");
+  // $(`#casesave`).removeAttr("disabled");
+  // $(`.casesave`).data("caseid",caseid);
+  // $(`#addDeitail`).data("caseid",caseid);
+  // $(`#addDeitail`).removeAttr("disabled");
+  $(`#pass`).data("caseid",caseid);
   //綁定頁面
   $.each(datalist,(index,value)=>{
     if(value.OrderCase.caseid == caseid){
