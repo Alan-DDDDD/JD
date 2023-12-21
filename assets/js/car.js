@@ -56,7 +56,7 @@ async function getSelfData(){
                             <td>${data.date}</td>
                             <td>
                               <div class="dropdown">
-                                <button type="button" class="btn btn-primary btne" data-id="${data.carid}">修改</button>
+                                <button type="button" class="btn btn-primary btne" data-id="${data.carid}">出售</button>
                               </div>
                             </td>
                         </tr>`);
@@ -116,7 +116,7 @@ $(`#carsearch`).on(`click`,async function(){
                         <td>${value.date}</td>
                         <td>
                           <div class="dropdown">
-                            <button type="button" class="btn btn-primary btne" data-id="${value.carid}">修改</button>
+                            <button type="button" class="btn btn-primary btne" data-id="${value.carid}">出售</button>
                           </div>
                         </td>
                     </tr>`);
