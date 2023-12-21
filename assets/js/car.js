@@ -123,3 +123,19 @@ $(`#carsearch`).on(`click`,async function(){
     });
   }
 })
+
+$(`.btne`).on(`click`,async function(){
+  let carid = $(this).data(`id`);
+  var response = await fetch(url + "/api/Car/sold?user=" + curruntid + "&carid=" + carid,{
+    method : "Get",
+    headers: new Headers({
+      "ngrok-skip-browser-warning": "69420",
+    }),
+  })
+  var result = await response.json()
+  if(result.Status){
+    alert(carid + result.Data)
+  }else{
+    alert(result.error,ErrorMsg);
+  }
+});
