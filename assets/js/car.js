@@ -47,6 +47,7 @@ async function getSelfData(){
       datalist = body.Data
       $.each(datalist,function(index,data){
           table.append(`<tr>
+                            <td>${data.carnumber}</td>
                             <td>${data.brand}</td>
                             <td>${data.series}</td>
                             <td>${data.model}</td>
@@ -106,6 +107,7 @@ $(`#carsearch`).on(`click`,async function(){
     table.empty();
     $.each(data.Data,(index,value)=>{
       table.append(`<tr>
+                        <td>${data.carnumber}</td>
                         <td>${value.brand}</td>
                         <td>${value.series}</td>
                         <td>${value.model}</td>
