@@ -69,7 +69,6 @@ async function getSelfData(){
 }
 //搜尋
 function select(){
-  alert("x");
   let key = $(`#search`).val();
   $("#cartbody tr").filter(function() {
     $(this).toggle($(this).text().toLowerCase().indexOf(key) > -1)
