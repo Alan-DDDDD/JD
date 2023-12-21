@@ -138,4 +138,5 @@ $(`#cartbody`).on(`click`,`.btne`,async function(){
   }else{
     alert(result.error.ErrorMsg);
   }
+  getSelfData();
 });
