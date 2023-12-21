@@ -110,7 +110,7 @@ $(`#carsearch`).on(`click`,async function(){
                         <td>${value.km}</td>
                         <td>${value.date}</td>
                         <td>${data.years}</td>
-                        <td>${data.dealprice.numberFormat(0,".",",")}</td>
+                        <td>${data.dealprice}</td>
                     </tr>`);
     });
   }
