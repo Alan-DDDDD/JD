@@ -54,6 +54,7 @@ async function getSelfData(){
                             <td>${data.km}</td>
                             <td>${data.date}</td>
                             <td>${data.years}</td>
+                            <td>${data.carstatus}</td>
                             <td>${data.dealprice.numberFormat(0,".",",")}</td>
                         </tr>`);
       });
@@ -110,6 +111,7 @@ $(`#carsearch`).on(`click`,async function(){
                         <td>${value.km}</td>
                         <td>${value.date}</td>
                         <td>${value.years}</td>
+                        <td>${value.carstatus}</td>
                         <td>${value.dealprice.numberFormat(0,".",",")}</td>
                     </tr>`);
     });
