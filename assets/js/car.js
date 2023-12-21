@@ -124,7 +124,7 @@ $(`#carsearch`).on(`click`,async function(){
   }
 })
 
-$(`.btne`).on(`click`,async function(){
+$(`#cartbody`).on(`click`,`.btne`,async function(){
   let carid = $(this).data(`id`);
   var response = await fetch(url + "/api/Car/sold?user=" + curruntid + "&carid=" + carid,{
     method : "Get",
