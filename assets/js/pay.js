@@ -287,7 +287,7 @@ function listclick(caseid){
       let giveup = $(`#giveup`);
       
       if(value.OrderCase.sckdt != null){
-        detailControl("close");
+        //detailControl("close");
       }
       else{
       }
