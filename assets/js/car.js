@@ -136,6 +136,6 @@ $(`#cartbody`).on(`click`,`.btne`,async function(){
   if(result.Status){
     alert(carid + result.Data)
   }else{
-    alert(result.error,ErrorMsg);
+    alert(result.error.ErrorMsg);
   }
 });
