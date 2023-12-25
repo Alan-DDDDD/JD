@@ -108,7 +108,7 @@ $(`#listbar`).on(`click`,()=>{
 });
 //list tr click
 $(`#caselist`).on(`click`,`.listdata`,function(){
-  detailControl("open");
+  //detailControl("open");
   console.log($(this));
   clearPage();
   let caseid = $($(this).children()[0]).html();
