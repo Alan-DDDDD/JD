@@ -300,7 +300,7 @@
               <!-- 主畫面 -->
               <div class="card mt-2">
                     <div id="viewdata">
-                      <div class="col-md g-0" style="display: flex;align-items: center;justify-content: center;">
+                      <!-- <div class="col-md g-0" style="display: flex;align-items: center;justify-content: center;">
                         <div style="width: 220px;text-align: center;">
                           <div id="01" style="
                           display: inline-block;
@@ -401,51 +401,131 @@
                           ">
                           </div>
                         </div>
+                      </div> -->
+                      <div id="viewdatatable" class="col-md g-0" style="display: flex;align-items: center;justify-content: center;">
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td><h5>員工編號</h5></td>
+                              <td class="py-3">
+                                <h5 class="mb-0" id="empid">A001</h5>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><h5>員工姓名</h5></td>
+                              <td class="py-3">
+                                <h5 class="mb-0" id="empname">戴浩宇</h5>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><h5>當月採購總額</h5></td>
+                              <td class="py-3">
+                                <h5 class="mb-0" id="total">5000000</h5>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><h5>當年採購總額</h5></td>
+                              <td class="py-3">
+                                <h5 class="mb-0" id="keep">10000000</h5>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><h5>可用額度</h5></td>
+                              <td class="py-3">
+                                <h5 class="mb-0" id="balance">5000000</h5>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
-                      <div id="viewdatatable" class="col-md g-0" style="margin: 0 10%;">
-                      <table class="table table-borderless">
-                        <tbody>
-                          <tr>
-                            <td><h5>員工編號</h5></td>
-                            <td class="py-3">
-                              <h5 class="mb-0" id="empid">A001</h5>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td><h5>員工姓名</h5></td>
-                            <td class="py-3">
-                              <h5 class="mb-0" id="empname">戴浩宇</h5>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td><h5>當月採購總額</h5></td>
-                            <td class="py-3">
-                              <h5 class="mb-0" id="total">5000000</h5>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td><h5>當年採購總額</h5></td>
-                            <td class="py-3">
-                              <h5 class="mb-0" id="keep">10000000</h5>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td><h5>可用額度</h5></td>
-                            <td class="py-3">
-                              <h5 class="mb-0" id="balance">5000000</h5>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+                      <div class="table-responsive text-nowrap">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>案件狀態</th>
+                              <th>案件數量</th>
+                              <th>轉化率</th>
+                              <th>TOP1</th>
+                              <th>TOP2</th>
+                              <th>TOP3</th>
+                            </tr>
+                          </thead>
+                          <tbody class="table-border-bottom-0" id="casebody">
+                            <tr>
+                              <td>進件中</td>
+                              <td>55</td>
+                              <td></td>
+                              <td>BMW</td>
+                              <td>BENZ</td>
+                              <td>PROSCHE</td>
+                            </tr>
+                            <tr>
+                              <td>進件完成</td>
+                              <td>50</td>
+                              <td>90%</td>
+                              <td>BENZ</td>
+                              <td>BMW</td>
+                              <td>LAND ROVER</td>
+                            </tr>
+                            <tr>
+                              <td>報價</td>
+                              <td>55</td>
+                              <td></td>
+                              <td>BMW</td>
+                              <td>BENZ</td>
+                              <td>PROSCHE</td>
+                            </tr>
+                            <tr>
+                              <td>看車</td>
+                              <td>55</td>
+                              <td></td>
+                              <td>BMW</td>
+                              <td>BENZ</td>
+                              <td>PROSCHE</td>
+                            </tr>
+                            <tr>
+                              <td>簽約</td>
+                              <td>55</td>
+                              <td></td>
+                              <td>BMW</td>
+                              <td>BENZ</td>
+                              <td>PROSCHE</td>
+                            </tr>
+                            <tr>
+                              <td>過戶</td>
+                              <td>55</td>
+                              <td></td>
+                              <td>BMW</td>
+                              <td>BENZ</td>
+                              <td>PROSCHE</td>
+                            </tr>
+                            <tr>
+                              <td>撥款</td>
+                              <td>55</td>
+                              <td></td>
+                              <td>BMW</td>
+                              <td>BENZ</td>
+                              <td>PROSCHE</td>
+                            </tr>
+                            <tr>
+                              <td>結案</td>
+                              <td>55</td>
+                              <td></td>
+                              <td>BMW</td>
+                              <td>BENZ</td>
+                              <td>ROLLS-ROYSE</td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </div>
               </div>
-              <div class="card mt-2">
+              <!-- <div class="card mt-2">
                 <div class="row" style="--bs-gutter-x:0;background-color: #f5f5f9;box-shadow: 0 0 0;padding: 50px;">
                   <div class="card col-md"  style="margin:0 0.25rem">1</div>
                   <div class="card col-md"  style="margin:0 0.25rem">2</div>
                 </div>
-              </div>
+              </div> -->
               <div class="card mt-2">
                 <div class="table-responsive text-nowrap">
                   <table class="table">
