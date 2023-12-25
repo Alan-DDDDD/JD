@@ -35,7 +35,7 @@ async function getSelfData(){
   $(`#cartbody`).append(`<div class="spinner-border text-primary" role="status" id="mainwait">
     <span class="visually-hidden">Lodding....</span>
   </div>`);
-    var response = await fetch(url + "/api/Car?user=" + localStorage.getItem(`currid`), {
+    var response = await fetch(url + "/api/Car?user=" + localStorage.getItem(`currid`) + "&flag=A", {
         method: "get",
         headers: new Headers({
           "ngrok-skip-browser-warning": "69420",
