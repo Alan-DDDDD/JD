@@ -93,7 +93,7 @@ $(`#carsearch`).on(`click`,async function(){
   let BD = $(`#BD option:selected`).val();
   let SS = $(`#SS option:selected`).val();
   let CMD = $(`#CMD option:selected`).val();
-  var response = await fetch(url + "/api/Car?BD=" + BD + "&SS=" + SS + "&CMD=" + CMD + "&user=" + curruntid,{
+  var response = await fetch(url + "/api/Car?BD=" + BD + "&SS=" + SS + "&CMD=" + CMD + "&user=" + curruntid + "&flag=A",{
     method : "Get",
     headers: new Headers({
       "ngrok-skip-browser-warning": "69420",
