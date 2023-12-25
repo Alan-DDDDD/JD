@@ -20,6 +20,8 @@ $(async function(){
           <option value="${item.dataid}">${item.data}</option>
       `)
     })
+    $(`#SS`).append(`<option selected>請選擇</option>`);
+    $(`#CMD`).append(`<option selected>請選擇</option>`);
     // $.each(ddllist.CL,(index,item)=>{
     //   color.append(`
     //       <option value="${item.dataid}">${item.data}</option>
