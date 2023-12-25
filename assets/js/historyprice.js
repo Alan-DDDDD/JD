@@ -54,11 +54,9 @@ async function getSelfData(){
                             <td>${data.color}</td>
                             <td>${data.km}</td>
                             <td>${data.date}</td>
-                            <td>
-                              <div class="dropdown">
-                                <button type="button" class="btn btn-primary btne" data-id="${data.carid}">出售</button>
-                              </div>
-                            </td>
+                            <td>${data.carstatus}</td>
+                            <td>${data.price}</td>
+                            <td>${data.dealprice}</td>
                         </tr>`);
       });
     }
@@ -114,11 +112,9 @@ $(`#carsearch`).on(`click`,async function(){
                         <td>${value.color}</td>
                         <td>${value.km}</td>
                         <td>${value.date}</td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn btn-primary btne" data-id="${value.carid}">出售</button>
-                          </div>
-                        </td>
+                        <td>${data.carstatus}</td>
+                        <td>${data.price}</td>
+                        <td>${data.dealprice}</td>
                     </tr>`);
     });
   }
