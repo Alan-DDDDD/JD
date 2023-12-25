@@ -98,8 +98,8 @@ function clearPage(){//清除畫面
   $(`.casesave`).data("caseid","");
   $(`#addDeitail`).data("caseid","");
   $(`#addDeitail`).attr("disabled","disabled")
-  $(`.caredit`).attr("disabled","disabled");
-  $(`.carinsert`).removeAttr("disabled");
+  //$(`.caredit`).attr("disabled","disabled");
+  //$(`.carinsert`).removeAttr("disabled");
   $(`#send`).data('carid',"");
 }
 //list
