@@ -1,4 +1,15 @@
 $(async function(){
+  var result = await fetch(url + "/EMPL/Page?user="+curruntid,{
+    method : "Get",
+    headers: new Headers({
+      "ngrok-skip-browser-warning": "69420",
+    }),
+  })
+  var object = await result.json();
+  if(!object.Status){
+    alert(object.error.ErrorMsg);
+    open(fronturl + "/case.html","_self")
+  }
   let parames = ["BD","SS","CMD","CL","CS"];
   var carddl = await fetch(url+"/api/Code/getMultiddl",{
     method: "post",
