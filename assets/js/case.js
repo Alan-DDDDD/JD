@@ -208,6 +208,8 @@ $(`.casesave`).on('click',async function(){
       }else{
         getSelfData(caseid);
         alert("編輯成功!!");
+        $(`#mainpanel`).hide(300);
+        $(`#listpanel`).slideToggle();
       }
     }else{//系統錯誤
       alert(body.error.errorMsg);
@@ -228,14 +230,14 @@ $(`.casesave`).on('click',async function(){
       }else{
         $(this).data("caseid",body.data);
         getSelfData(body.data);
+        $(`#mainpanel`).hide(300);
+        $(`#listpanel`).slideToggle();
         alert("新增成功!!");
       }
     }else{//系統錯誤
       alert(body.error.errorMsg);
     }
   }
-  $(`#mainpanel`).hide(300);
-  $(`#listpanel`).slideToggle();
 });
 
 
