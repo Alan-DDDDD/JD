@@ -13,15 +13,15 @@ $(async function(){
     ddllist = carddldata.Data;
     let brand = $(`#BD`);
     //let color = $(`#modelcolor`);
-    brand.append(`<option selected>請選擇</option>`);
+    brand.append(`<option value="" selected>請選擇</option>`);
     //color.append(`<option selected>請選擇</option>`);
     $.each(ddllist.BD,(index,item)=>{
       brand.append(`
           <option value="${item.dataid}">${item.data}</option>
       `)
     })
-    $(`#SS`).append(`<option selected>請選擇</option>`);
-    $(`#CMD`).append(`<option selected>請選擇</option>`);
+    $(`#SS`).append(`<option value="" selected>請選擇</option>`);
+    $(`#CMD`).append(`<option value="" selected>請選擇</option>`);
     // $.each(ddllist.CL,(index,item)=>{
     //   color.append(`
     //       <option value="${item.dataid}">${item.data}</option>
