@@ -52,7 +52,7 @@ async function getSelfData(){
                             <td>${data.km.numberFormat(0,".",",")}</td>
                             <td>${data.date}</td>
                             <td>${data.years}</td>
-                            <td style="max-width:white-space: pre-wrap;">${data.carstatus}</td>
+                            <td style="max-width:300px;white-space: pre-wrap;">${data.carstatus}</td>
                             <td>${data.price.numberFormat(0,".",",")}</td>
                             <td>${data.dealprice.numberFormat(0,".",",")}</td>
                         </tr>`);
