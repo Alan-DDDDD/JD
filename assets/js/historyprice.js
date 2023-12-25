@@ -54,6 +54,7 @@ async function getSelfData(){
                             <td>${data.color}</td>
                             <td>${data.km.numberFormat(0,".",",")}</td>
                             <td>${data.date}</td>
+                            <td>${data.years}</td>
                             <td>${data.carstatus}</td>
                             <td>${data.price.numberFormat(0,".",",")}</td>
                             <td>${data.dealprice.numberFormat(0,".",",")}</td>
@@ -112,6 +113,7 @@ $(`#carsearch`).on(`click`,async function(){
                         <td>${value.color}</td>
                         <td>${value.km.numberFormat(0,".",",")}</td>
                         <td>${value.date}</td>
+                        <td>${value.years}</td>
                         <td>${value.carstatus}</td>
                         <td>${value.price.numberFormat(0,".",",")}</td>
                         <td>${value.dealprice.numberFormat(0,".",",")}</td>
