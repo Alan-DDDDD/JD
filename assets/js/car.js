@@ -63,7 +63,7 @@ async function getSelfData(){
                             <td>${data.series}</td>
                             <td>${data.model}</td>
                             <td>${data.color}</td>
-                            <td>${data.km}</td>
+                            <td>${data.km.numberFormat(0,".",",")}</td>
                             <td>${data.date}</td>
                             <td>
                               <div class="dropdown">
@@ -123,7 +123,7 @@ $(`#carsearch`).on(`click`,async function(){
                         <td>${value.series}</td>
                         <td>${value.model}</td>
                         <td>${value.color}</td>
-                        <td>${value.km}</td>
+                        <td>${value.km.numberFormat(0,".",",")}</td>
                         <td>${value.date}</td>
                         <td>
                           <div class="dropdown">
