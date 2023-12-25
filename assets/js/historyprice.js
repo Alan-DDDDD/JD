@@ -52,7 +52,7 @@ async function getSelfData(){
                             <td>${data.km.numberFormat(0,".",",")}</td>
                             <td>${data.date}</td>
                             <td>${data.years}</td>
-                            <td style="width:30%;max-width:300px;word-wrap:break-word">${data.carstatus}</td>
+                            <td style="width:30%;max-width:300px;word-break:break-all">${data.carstatus}</td>
                             <td>${data.price.numberFormat(0,".",",")}</td>
                             <td>${data.dealprice.numberFormat(0,".",",")}</td>
                         </tr>`);
@@ -108,7 +108,7 @@ $(`#carsearch`).on(`click`,async function(){
                         <td>${value.km.numberFormat(0,".",",")}</td>
                         <td>${value.date}</td>
                         <td>${value.years}</td>
-                        <td style="width:30%;max-width:300px;word-wrap:break-word">${value.carstatus}</td>
+                        <td style="width:30%;max-width:300px;word-break:break-all">${value.carstatus}</td>
                         <td>${value.price.numberFormat(0,".",",")}</td>
                         <td>${value.dealprice.numberFormat(0,".",",")}</td>
                     </tr>`);
