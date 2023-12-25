@@ -60,7 +60,16 @@
     <!-- datatable -->
     
     <!-- Page CSS -->
-
+    <style>
+      @media(min-width: 740px){
+        #viewdata{
+          display: flex;
+        }
+        #viewdatatable{
+          width: 40%;
+        }
+      }
+    </style>
     <!-- Helpers -->
     <script src="../assets/vendor/js/helpers.js"></script>
 
@@ -290,111 +299,110 @@
             
               <!-- 主畫面 -->
               <div class="card mt-2">
-                <div class="card-body">
-                  <div style="display: flex;">
-                    <div style="display: flex;align-items: center;">
-                      <div style="width: 220px;text-align: center;">
-                    <div id="01" style="
-                    display: inline-block;
-                    border-color: #072D57 transparent transparent transparent;
-                    border-style: solid solid solid solid;
-                    border-top-width: 20px;
-                    border-left-width: 10px;
-                    border-right-width: 10px;
-                    border-bottom-width: 0px;
-                    height: 0px;
-                    width: 220px;
-                    ">
-                    </div>
-                    <div id="02" style="
-                    display: inline-block;
-                    border-color: #072D57 transparent transparent transparent;
-                    border-style: solid solid solid solid;
-                    border-top-width: 20px;
-                    border-left-width: 10px;
-                    border-right-width: 10px;
-                    border-bottom-width: 0px;
-                    height: 0px;
-                    width: 200px;
-                    ">
-                    </div>
-                    <div id="03" style="
-                    display: inline-block;
-                    border-color: #072D57 transparent transparent transparent;
-                    border-style: solid solid solid solid;
-                    border-top-width: 20px;
-                    border-left-width: 10px;
-                    border-right-width: 10px;
-                    border-bottom-width: 0px;
-                    height: 0px;
-                    width: 180px;
-                    ">
-                    </div>
-                    <div id="04" style="
-                    display: inline-block;
-                    border-color: #072D57 transparent transparent transparent;
-                    border-style: solid solid solid solid;
-                    border-top-width: 20px;
-                    border-left-width: 10px;
-                    border-right-width: 10px;
-                    border-bottom-width: 0px;
-                    height: 0px;
-                    width: 160px;
-                    ">
-                    </div>
-                    <div id="05" style="
-                    display: inline-block;
-                    border-color: #072D57 transparent transparent transparent;
-                    border-style: solid solid solid solid;
-                    border-top-width: 20px;
-                    border-left-width: 10px;
-                    border-right-width: 10px;
-                    border-bottom-width: 0px;
-                    height: 0px;
-                    width: 140px;
-                    ">
-                    </div>
-                    <div id="06" style="
-                    display: inline-block;
-                    border-color: #072D57 transparent transparent transparent;
-                    border-style: solid solid solid solid;
-                    border-top-width: 20px;
-                    border-left-width: 10px;
-                    border-right-width: 10px;
-                    border-bottom-width: 0px;
-                    height: 0px;
-                    width: 120px;
-                    ">
-                    </div>
-                    <div id="07" style="
-                    margin: 0px 60px;
-                    display: inline-block;
-                    border-color: #072D57 transparent transparent transparent;
-                    border-style: solid solid solid solid;
-                    border-top-width: 20px;
-                    border-left-width: 10px;
-                    border-right-width: 10px;
-                    border-bottom-width: 0px;
-                    height: 0px;
-                    width: 100px;
-                    ">
-                    </div>
-                    <div id="10" style="
-                    margin: 0px 70px;
-                    display: inline-block;
-                    border-color: #072D57 transparent transparent transparent;
-                    border-style: solid solid solid solid;
-                    border-top-width: 20px;
-                    border-left-width: 10px;
-                    border-right-width: 10px;
-                    border-bottom-width: 0px;
-                    height: 0px;
-                    width: 80px;
-                    ">
-                    </div>
+                    <div id="viewdata">
+                      <div class="col-md g-0" style="display: flex;align-items: center;justify-content: center;">
+                        <div style="width: 220px;text-align: center;">
+                          <div id="01" style="
+                          display: inline-block;
+                          border-color: #072D57 transparent transparent transparent;
+                          border-style: solid solid solid solid;
+                          border-top-width: 20px;
+                          border-left-width: 10px;
+                          border-right-width: 10px;
+                          border-bottom-width: 0px;
+                          height: 0px;
+                          width: 220px;
+                          ">
+                          </div>
+                          <div id="02" style="
+                          display: inline-block;
+                          border-color: #072D57 transparent transparent transparent;
+                          border-style: solid solid solid solid;
+                          border-top-width: 20px;
+                          border-left-width: 10px;
+                          border-right-width: 10px;
+                          border-bottom-width: 0px;
+                          height: 0px;
+                          width: 200px;
+                          ">
+                          </div>
+                          <div id="03" style="
+                          display: inline-block;
+                          border-color: #072D57 transparent transparent transparent;
+                          border-style: solid solid solid solid;
+                          border-top-width: 20px;
+                          border-left-width: 10px;
+                          border-right-width: 10px;
+                          border-bottom-width: 0px;
+                          height: 0px;
+                          width: 180px;
+                          ">
+                          </div>
+                          <div id="04" style="
+                          display: inline-block;
+                          border-color: #072D57 transparent transparent transparent;
+                          border-style: solid solid solid solid;
+                          border-top-width: 20px;
+                          border-left-width: 10px;
+                          border-right-width: 10px;
+                          border-bottom-width: 0px;
+                          height: 0px;
+                          width: 160px;
+                          ">
+                          </div>
+                          <div id="05" style="
+                          display: inline-block;
+                          border-color: #072D57 transparent transparent transparent;
+                          border-style: solid solid solid solid;
+                          border-top-width: 20px;
+                          border-left-width: 10px;
+                          border-right-width: 10px;
+                          border-bottom-width: 0px;
+                          height: 0px;
+                          width: 140px;
+                          ">
+                          </div>
+                          <div id="06" style="
+                          display: inline-block;
+                          border-color: #072D57 transparent transparent transparent;
+                          border-style: solid solid solid solid;
+                          border-top-width: 20px;
+                          border-left-width: 10px;
+                          border-right-width: 10px;
+                          border-bottom-width: 0px;
+                          height: 0px;
+                          width: 120px;
+                          ">
+                          </div>
+                          <div id="07" style="
+                          margin: 0px 60px;
+                          display: inline-block;
+                          border-color: #072D57 transparent transparent transparent;
+                          border-style: solid solid solid solid;
+                          border-top-width: 20px;
+                          border-left-width: 10px;
+                          border-right-width: 10px;
+                          border-bottom-width: 0px;
+                          height: 0px;
+                          width: 100px;
+                          ">
+                          </div>
+                          <div id="10" style="
+                          margin: 0px 70px;
+                          display: inline-block;
+                          border-color: #072D57 transparent transparent transparent;
+                          border-style: solid solid solid solid;
+                          border-top-width: 20px;
+                          border-left-width: 10px;
+                          border-right-width: 10px;
+                          border-bottom-width: 0px;
+                          height: 0px;
+                          width: 80px;
+                          ">
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div style="width: 40%;margin: 0 10%;">
+                      <div id="viewdatatable" class="col-md g-0" style="margin: 0 10%;">
                       <table class="table table-borderless">
                         <tbody>
                           <tr>
@@ -429,12 +437,15 @@
                           </tr>
                         </tbody>
                       </table>
+                      </div>
                     </div>
-                  </div>
+              </div>
+              <div class="card mt-2">
+                <div class="row" style="--bs-gutter-x:0;background-color: #f5f5f9;box-shadow: 0 0 0;padding: 50px;">
+                  <div class="card col-md"  style="margin:0 0.25rem">1</div>
+                  <div class="card col-md"  style="margin:0 0.25rem">2</div>
                 </div>
               </div>
-
-
               <div class="card mt-2">
                 <div class="table-responsive text-nowrap">
                   <table class="table">
