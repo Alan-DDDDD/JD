@@ -46,10 +46,10 @@ $(async function(){
       $.each(datalist.Cul,(index,value)=>{
         CulTable.append();
       });
-      $.each(datalisty.Deitail,(index,value)=>{
+      $.each(datalist.Deitail,(index,value)=>{
         DeitailTable.append();
       })
-      $.each(dataList.ordercase,(index,value)=>{
+      $.each(datalist.ordercase,(index,value)=>{
         CaseTable.append(`<tr>
                             <td>${value.model}</td>
                             <td>${value.color}</td>
