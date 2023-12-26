@@ -55,9 +55,10 @@ $(async function(){
                             <td>${value.color}</td>
                             <td>${value.km}</td>
                             <td>${value.date}</td>
-                            <td>${value.model}</td>
-                            <td>${value.model}</td>
-                            <td>${value.model}</td>
+                            <td>${value.years}</td>
+                            <td>${value.carstatus}</td>
+                            <td>${value.price}</td>
+                            <td>${value.dealprice}</td>
                           </tr>`)
       })
     }else{
