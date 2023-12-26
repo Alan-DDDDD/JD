@@ -49,7 +49,7 @@ $(async function(){
       $.each(datalist.Deitail,(index,value)=>{
         DeitailTable.append();
       })
-      $.each(datalist.ordercase,(index,value)=>{
+      $.each(datalist.car,(index,value)=>{
         CaseTable.append(`<tr>
                             <td>${value.model}</td>
                             <td>${value.color}</td>
