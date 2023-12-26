@@ -56,7 +56,7 @@ $(async function(){
                             <td>${value.km.numberFormat(0,".",",")}</td>
                             <td>${value.date}</td>
                             <td>${value.years}</td>
-                            <td style="max-width:300px;white-space: pre-wrap;">${value.carstatus}</td>
+                            <td style="min-width:100px;max-width:300px;white-space: pre-wrap;">${value.carstatus}</td>
                             <td>${value.price.numberFormat(0,".",",")}</td>
                             <td>${value.dealprice.numberFormat(0,".",",")}</td>
                           </tr>`)
