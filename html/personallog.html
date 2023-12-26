@@ -474,73 +474,120 @@
                         <th>轉化率</th>
                       </tr>
                     </thead>
-                    <tbody class="table-border-bottom-0" id="casebody">
-                      <tr>
-                        <td>進件中</td>
-                        <td>100</td>
-                        <td></td>
-                        <td>BMW</td>
-                        <td>BENZ</td>
-                        <td>PROSCHE</td>
-                      </tr>
-                      <tr>
-                        <td>進件完成</td>
-                        <td>90</td>
-                        <td>90%</td>
-                        <td>BENZ</td>
-                        <td>BMW</td>
-                        <td>LAND ROVER</td>
-                      </tr>
-                      <tr>
-                        <td>報價</td>
-                        <td>81</td>
-                        <td>90%</td>
-                        <td>BMW</td>
-                        <td>BENZ</td>
-                        <td>PROSCHE</td>
-                      </tr>
-                      <tr>
-                        <td>看車</td>
-                        <td>70</td>
-                        <td>90%</td>
-                        <td>BMW</td>
-                        <td>BENZ</td>
-                        <td>PROSCHE</td>
-                      </tr>
-                      <tr>
-                        <td>簽約</td>
-                        <td>40</td>
-                        <td></td>
-                        <td>BMW</td>
-                        <td>BENZ</td>
-                        <td>PROSCHE</td>
-                      </tr>
-                      <tr>
-                        <td>過戶</td>
-                        <td>35</td>
-                        <td></td>
-                        <td>BMW</td>
-                        <td>BENZ</td>
-                        <td>PROSCHE</td>
-                      </tr>
-                      <tr>
-                        <td>撥款</td>
-                        <td>35</td>
-                        <td></td>
-                        <td>BMW</td>
-                        <td>BENZ</td>
-                        <td>PROSCHE</td>
-                      </tr>
-                      <tr>
-                        <td>結案</td>
-                        <td>30</td>
-                        <td></td>
-                        <td>BMW</td>
-                        <td>BENZ</td>
-                        <td>ROLLS-ROYSE</td>
-                      </tr>
+                    <tbody class="table-border-bottom-0" id="CulTable">
+                      
                     </tbody>
                   </table>
+                </div>
+              </div>
+              <div class="card mt-2">
+                <div class="nav-align-top">
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                      <button
+                        type="button"
+                        class="nav-link active"
+                        role="tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#navs-top-total"
+                        aria-controls="navs-top-total"
+                        aria-selected="true"
+                      >
+                        總表
+                      </button>
+                    </li>
+                    <li class="nav-item">
+                      <button
+                        type="button"
+                        class="nav-link"
+                        role="tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#navs-top-year"
+                        aria-controls="navs-top-year"
+                        aria-selected="false"
+                      >
+                        當年
+                      </button>
+                    </li>
+                    <li class="nav-item">
+                      <button
+                        type="button"
+                        class="nav-link"
+                        role="tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#navs-top-month"
+                        aria-controls="navs-top-month"
+                        aria-selected="false"
+                      >
+                        當月
+                      </button>
+                    </li>
+                  </ul>
+                  <div class="tab-content">
+                    <div class="tab-pane fade show active" id="navs-top-total" role="tabpanel">
+                      <div class="table-responsive text-nowrap">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>廠牌</th>
+                              <th>使用額度</th>
+                              <th>總量</th>
+                              <th>平均金額(單台)</th>
+                            </tr>
+                          </thead>
+                          <tbody class="table-border-bottom-0" id="totalbody">
+                            
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="navs-top-year" role="tabpanel">
+                      <div class="table-responsive text-nowrap">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>廠牌</th>
+                              <th>使用額度(前一年)</th>
+                              <th>使用額度(今年)</th>
+                              <th>漲跌幅</th>
+                              <th>總量(前一年)</th>
+                              <th>總量(今年)</th>
+                              <th>漲跌幅</th>
+                              <th>單台平均金額(前一年)</th>
+                              <th>單台平均金額(今年)</th>
+                              <th>漲跌幅</th>
+                            </tr>
+                          </thead>
+                          <tbody class="table-border-bottom-0" id="yearbody">
+                            
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="navs-top-month" role="tabpanel">
+                      <div class="table-responsive text-nowrap">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>廠牌</th>
+                              <th>使用額度(前一月)</th>
+                              <th>使用額度(當月)</th>
+                              <th>漲跌幅</th>
+                              <th>總量(前一月)</th>
+                              <th>總量(當月)</th>
+                              <th>漲跌幅</th>
+                              <th>單台平均金額(前一月)</th>
+                              <th>單台平均金額(當月)</th>
+                              <th>漲跌幅</th>
+                            </tr>
+                          </thead>
+                          <tbody class="table-border-bottom-0" id="monthbody">
+                            
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="card mt-2">
