@@ -131,7 +131,7 @@ function Chart(data){
   });
   chart.intervalSymmetric()
     .position('action*value')
-    .color('action', ['#C82B3D', '#EB4456', '#F9815C', '#F8AB60', '#EDCC72'])
+    .color('action', ['#072D57', '#284668', '#104e96', '#366192', '#156dd1'])
     .shape('funnel')
     .label('', {offset: 10, label: {fontSize: 14}}).animate({
     appear:{
