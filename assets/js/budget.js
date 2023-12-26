@@ -1,4 +1,4 @@
-getSelfData();
+
 $(async function(){
   //取得BS資料
   var BS = await fetch(url+"/api/Code/BS",{
@@ -39,6 +39,7 @@ $(async function(){
     console.log("EMP資料取得失敗")
   }
 })
+getSelfData();
 async function getSelfData(){
   $(`#budgettbody`).empty();
   $(`#budgettbody`).append(`<div class="spinner-border text-primary" role="status" id="mainwait">

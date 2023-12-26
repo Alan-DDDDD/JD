@@ -423,19 +423,19 @@
                             <tr>
                               <td><h5>當月採購總額</h5></td>
                               <td class="py-3">
-                                <h5 class="mb-0" id="total">50,000,000</h5>
+                                <h5 class="mb-0" id="monthtotal">50,000,000</h5>
                               </td>
                             </tr>
                             <tr>
                               <td><h5>當年採購總額</h5></td>
                               <td class="py-3">
-                                <h5 class="mb-0" id="keep">100,000,000</h5>
+                                <h5 class="mb-0" id="yeartotal">100,000,000</h5>
                               </td>
                             </tr>
                             <tr>
                               <td><h5>可用額度</h5></td>
                               <td class="py-3">
-                                <h5 class="mb-0" id="balance">50,000,000</h5>
+                                <h5 class="mb-0" id="ablecoda">50,000,000</h5>
                               </td>
                             </tr>
                           </tbody>
@@ -626,44 +626,47 @@
     <script src="../assets/js/dashboards-analytics.js"></script>
     <script src="../assets/js/maindata.js"></script>
     <!-- <script src="../assets/js/login.js"></script> -->
-    <!-- <script src="../assets/js/historyprice.js"></script> -->
+    <script src="../assets/js/personallog.js"></script>
     <script>
       var data = [
-        {"action": "Website visits", "value": 5654},
-        {"action": "Downloads", "value": 4064},
-        {"action": "Requested price list", "value": 1987},
-        {"action": "Invoice sent", "value": 976},
-        {"action": "Finalized", "value": 484}
-      ];
-      var chart = new G2.Chart({
-        id: 'c1',
-        //forceFit: true,
-        width:300,
-        height: 300,
-        plotCfg: {
-         //margin: 80
-        }
-      });
-      chart.source(data);
-      chart.coord('rect').transpose().scale(1,-1);
-      chart.axis(false);
-      chart.legend('action', {
-        position: 'bottom'
-      });
-      chart.intervalSymmetric()
-        .position('action*value')
-        .color('action', ['#C82B3D', '#EB4456', '#F9815C', '#F8AB60', '#EDCC72'])
-        .shape('funnel')
-        .label('action', {offset: 10, label: {fontSize: 14}}).animate({
-        appear:{
-          animation:'zoomIn'
-        },
-        leave:{
-          animation:'fadeIn',
-          easing:'easeInQuart'
-        }
-      });
-      chart.render();
+    {"action": "Website visits", "value": 5654},
+    {"action": "Downloads", "value": 4064},
+    {"action": "Requested price list", "value": 1987},
+    {"action": "Invoice sent", "value": 976},
+    {"action": "Finalized", "value": 484},
+    {"action": "Finalized1", "value": 484},
+    {"action": "Finalized2", "value": 484},
+    {"action": "Finalized3", "value": 484}
+  ];
+  var chart = new G2.Chart({
+    id: 'c1',
+    // forceFit: true,
+    width:500,
+    height: 300,
+    plotCfg: {
+     //margin: 80
+    }
+  });
+  chart.source(data);
+  chart.coord('rect').transpose().scale(1,-1);
+  chart.axis(false);
+  chart.legend('action', {
+    position: 'bottom'
+  });
+  chart.intervalSymmetric()
+    .position('action*value')
+    .color('action', ['#C82B3D', '#EB4456', '#F9815C', '#F8AB60', '#EDCC72'])
+    .shape('funnel')
+    .label('', {offset: 10, label: {fontSize: 14}}).animate({
+    appear:{
+      animation:'zoomIn'
+    },
+    leave:{
+      animation:'fadeIn',
+      easing:'easeInQuart'
+    }
+  });
+  chart.render();
     </script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
