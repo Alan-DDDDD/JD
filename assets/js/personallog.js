@@ -53,12 +53,12 @@ $(async function(){
         CaseTable.append(`<tr>
                             <td>${value.model}</td>
                             <td>${value.color}</td>
-                            <td>${value.km}</td>
+                            <td>${value.km.numberFormat(0,".",",")}</td>
                             <td>${value.date}</td>
                             <td>${value.years}</td>
-                            <td>${value.carstatus}</td>
-                            <td>${value.price}</td>
-                            <td>${value.dealprice}</td>
+                            <td style="max-width:300px;white-space: pre-wrap;">${value.carstatus}</td>
+                            <td>${value.price.numberFormat(0,".",",")}</td>
+                            <td>${value.dealprice.numberFormat(0,".",",")}</td>
                           </tr>`)
       })
     }else{
