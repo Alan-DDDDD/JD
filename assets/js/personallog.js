@@ -17,9 +17,9 @@ $(async function(){
       let datalist = result.Data;
       $(`#empid`).html(datalist.empid);
       $(`#empname`).html(datalist.empname);
-      $(`#monthtotal`).html(datalist.monthtotal);
-      $(`#yeartotal`).html(datalist.yeartotal);
-      $(`#ablecoda`).html(datalist.ablecode);
+      $(`#monthtotal`).html(datalist.monthtotal.numberFormat(0,".",","));
+      $(`#yeartotal`).html(datalist.yeartotal.numberFormat(0,".",","));
+      $(`#ablecoda`).html(datalist.ablecoda.numberFormat(0,".",","));
       Chart(datalist.ChartData);
       let CulTable = $(`#CulTable`);
       let DeitailTable = $(`#DeitailTable`);
