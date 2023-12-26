@@ -127,7 +127,7 @@ function Chart(data){
   chart.coord('rect').transpose().scale(1,-1);
   chart.axis(false);
   chart.legend('action', {
-    position: 'bottom'
+    position: 'none'
   });
   chart.intervalSymmetric()
     .position('action*value')
