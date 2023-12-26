@@ -133,7 +133,7 @@ function Chart(data){
     .position('action*value')
     .color('action', ['#C82B3D', '#EB4456', '#F9815C', '#F8AB60', '#EDCC72'])
     .shape('funnel')
-    .label('action', {offset: 10, label: {fontSize: 14}}).animate({
+    .label('', {offset: 10, label: {fontSize: 14}}).animate({
     appear:{
       animation:'zoomIn'
     },
