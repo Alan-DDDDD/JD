@@ -1,8 +1,8 @@
 
 $(async function(){
   var getUrlString = location.href;
-  var url = new URL(getUrlString);
-  var empid = url.searchParams.get(`empid`);
+  var nowurl = new URL(getUrlString);
+  var empid = nowurl.searchParams.get(`empid`);
 
   if(empid){
     //取得PersonalData資料
