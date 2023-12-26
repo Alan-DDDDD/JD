@@ -4,6 +4,22 @@ $(async function(){
   var nowurl = new URL(getUrlString);
   var empid = nowurl.searchParams.get(`empid`);
 
+  let parames = ["BD","SS","CMD","CL","CS"];
+  var carddl = await fetch(url+"/api/Code/getMultiddl",{
+    method: "post",
+    headers: new Headers({
+      "ngrok-skip-browser-warning": "69420",
+      "Content-Type": "application/json"
+    }),
+    body : JSON.stringify(parames)
+  })
+  var carddldata = await carddl.json();
+  if(carddldata.Status){
+    ddllist = carddldata.Data;
+  }else{
+    console.log("CODE資料取得失敗")
+  }
+
   if(empid){
     //取得PersonalData資料
     var response = await fetch(url+"/api/Statistic/getPerOne?user="+curruntid+"&empid="+empid,{
@@ -23,13 +39,26 @@ $(async function(){
       Chart(datalist.ChartData);
       let CulTable = $(`#CulTable`);
       let DeitailTable = $(`#DeitailTable`);
+      let CaseTable = $(`#casebody`);
       CulTable.empty();
       DeitailTable.empty();
+      CaseTable.empty();
       $.each(datalist.Cul,(index,value)=>{
         CulTable.append();
       });
       $.each(datalisty.Deitail,(index,value)=>{
         DeitailTable.append();
+      })
+      $.each(dataList.ordercase,(index,value)=>{
+        CaseTable.append(`<tr>
+                            <td>${value.model}</td>
+                            <td>${value.color}</td>
+                            <td>${value.km}</td>
+                            <td>${value.date}</td>
+                            <td>${value.model}</td>
+                            <td>${value.model}</td>
+                            <td>${value.model}</td>
+                          </tr>`)
       })
     }else{
       console.log("資料取得失敗")
