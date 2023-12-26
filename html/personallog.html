@@ -70,6 +70,9 @@
         }
       }
     </style>
+    <!-- 統計圖 -->
+    <script src="https://a.alipayobjects.com/jquery/jquery/1.11.1/jquery.js"></script>
+    <script src="https://gw.alipayobjects.com/as/g/datavis/g2/2.3.13/index.js"></script>
     <!-- Helpers -->
     <script src="../assets/vendor/js/helpers.js"></script>
 
@@ -438,85 +441,8 @@
                           </tbody>
                         </table>
                       </div>
-                      <div class="table-responsive text-nowrap">
-                        <table class="table">
-                          <thead>
-                            <tr>
-                              <th>案件狀態</th>
-                              <th>案件數量</th>
-                              <th>轉化率</th>
-                              <th>TOP1</th>
-                              <th>TOP2</th>
-                              <th>TOP3</th>
-                            </tr>
-                          </thead>
-                          <tbody class="table-border-bottom-0" id="casebody">
-                            <tr>
-                              <td>進件中</td>
-                              <td>100</td>
-                              <td></td>
-                              <td>BMW</td>
-                              <td>BENZ</td>
-                              <td>PROSCHE</td>
-                            </tr>
-                            <tr>
-                              <td>進件完成</td>
-                              <td>90</td>
-                              <td>90%</td>
-                              <td>BENZ</td>
-                              <td>BMW</td>
-                              <td>LAND ROVER</td>
-                            </tr>
-                            <tr>
-                              <td>報價</td>
-                              <td>81</td>
-                              <td>90%</td>
-                              <td>BMW</td>
-                              <td>BENZ</td>
-                              <td>PROSCHE</td>
-                            </tr>
-                            <tr>
-                              <td>看車</td>
-                              <td>70</td>
-                              <td>90%</td>
-                              <td>BMW</td>
-                              <td>BENZ</td>
-                              <td>PROSCHE</td>
-                            </tr>
-                            <tr>
-                              <td>簽約</td>
-                              <td>40</td>
-                              <td></td>
-                              <td>BMW</td>
-                              <td>BENZ</td>
-                              <td>PROSCHE</td>
-                            </tr>
-                            <tr>
-                              <td>過戶</td>
-                              <td>35</td>
-                              <td></td>
-                              <td>BMW</td>
-                              <td>BENZ</td>
-                              <td>PROSCHE</td>
-                            </tr>
-                            <tr>
-                              <td>撥款</td>
-                              <td>35</td>
-                              <td></td>
-                              <td>BMW</td>
-                              <td>BENZ</td>
-                              <td>PROSCHE</td>
-                            </tr>
-                            <tr>
-                              <td>結案</td>
-                              <td>30</td>
-                              <td></td>
-                              <td>BMW</td>
-                              <td>BENZ</td>
-                              <td>ROLLS-ROYSE</td>
-                            </tr>
-                          </tbody>
-                        </table>
+                      <div class="col-md g-0" style="display: flex;align-items: center;justify-content: center;">
+                        <div id="c1"></div>
                       </div>
                     </div>
               </div>
@@ -526,6 +452,97 @@
                   <div class="card col-md"  style="margin:0 0.25rem">2</div>
                 </div>
               </div> -->
+              <div class="card mt-2">
+                <div class="table-responsive text-nowrap">
+                  <table class="table" style="text-align: center;">
+                    <thead>
+                      <tr>
+                        <th rowspan="2" style="vertical-align: middle;">案件狀態</th>
+                        <th colspan="2" style="text-align: center;border-right: #072D57;">總表</th>
+                        <th colspan="2" style="text-align: center;border-right: #072D57;">年</th>
+                        <th colspan="2" style="text-align: center;border-right: #072D57;">月</th>
+                        <th rowspan="2" style="vertical-align: middle;">TOP1</th>
+                        <th rowspan="2" style="vertical-align: middle;">TOP2</th>
+                        <th rowspan="2" style="vertical-align: middle;">TOP3</th>
+                      </tr>
+                      <tr>
+                        <th>案件數量</th>
+                        <th>轉化率</th>
+                        <th>案件數量</th>
+                        <th>轉化率</th>
+                        <th>案件數量</th>
+                        <th>轉化率</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0" id="casebody">
+                      <tr>
+                        <td>進件中</td>
+                        <td>100</td>
+                        <td></td>
+                        <td>BMW</td>
+                        <td>BENZ</td>
+                        <td>PROSCHE</td>
+                      </tr>
+                      <tr>
+                        <td>進件完成</td>
+                        <td>90</td>
+                        <td>90%</td>
+                        <td>BENZ</td>
+                        <td>BMW</td>
+                        <td>LAND ROVER</td>
+                      </tr>
+                      <tr>
+                        <td>報價</td>
+                        <td>81</td>
+                        <td>90%</td>
+                        <td>BMW</td>
+                        <td>BENZ</td>
+                        <td>PROSCHE</td>
+                      </tr>
+                      <tr>
+                        <td>看車</td>
+                        <td>70</td>
+                        <td>90%</td>
+                        <td>BMW</td>
+                        <td>BENZ</td>
+                        <td>PROSCHE</td>
+                      </tr>
+                      <tr>
+                        <td>簽約</td>
+                        <td>40</td>
+                        <td></td>
+                        <td>BMW</td>
+                        <td>BENZ</td>
+                        <td>PROSCHE</td>
+                      </tr>
+                      <tr>
+                        <td>過戶</td>
+                        <td>35</td>
+                        <td></td>
+                        <td>BMW</td>
+                        <td>BENZ</td>
+                        <td>PROSCHE</td>
+                      </tr>
+                      <tr>
+                        <td>撥款</td>
+                        <td>35</td>
+                        <td></td>
+                        <td>BMW</td>
+                        <td>BENZ</td>
+                        <td>PROSCHE</td>
+                      </tr>
+                      <tr>
+                        <td>結案</td>
+                        <td>30</td>
+                        <td></td>
+                        <td>BMW</td>
+                        <td>BENZ</td>
+                        <td>ROLLS-ROYSE</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
               <div class="card mt-2">
                 <div class="table-responsive text-nowrap">
                   <table class="table">
@@ -610,6 +627,44 @@
     <script src="../assets/js/maindata.js"></script>
     <!-- <script src="../assets/js/login.js"></script> -->
     <!-- <script src="../assets/js/historyprice.js"></script> -->
+    <script>
+      var data = [
+        {"action": "Website visits", "value": 5654},
+        {"action": "Downloads", "value": 4064},
+        {"action": "Requested price list", "value": 1987},
+        {"action": "Invoice sent", "value": 976},
+        {"action": "Finalized", "value": 484}
+      ];
+      var chart = new G2.Chart({
+        id: 'c1',
+        //forceFit: true,
+        width:300,
+        height: 300,
+        plotCfg: {
+         //margin: 80
+        }
+      });
+      chart.source(data);
+      chart.coord('rect').transpose().scale(1,-1);
+      chart.axis(false);
+      chart.legend('action', {
+        position: 'bottom'
+      });
+      chart.intervalSymmetric()
+        .position('action*value')
+        .color('action', ['#C82B3D', '#EB4456', '#F9815C', '#F8AB60', '#EDCC72'])
+        .shape('funnel')
+        .label('action', {offset: 10, label: {fontSize: 14}}).animate({
+        appear:{
+          animation:'zoomIn'
+        },
+        leave:{
+          animation:'fadeIn',
+          easing:'easeInQuart'
+        }
+      });
+      chart.render();
+    </script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
