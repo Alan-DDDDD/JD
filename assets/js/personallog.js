@@ -67,14 +67,14 @@ $(async function(){
       $.each(datalist.po,(index,value)=>{
         yearbody.append(`<tr>
                             <td>${value.empname}</td>
-                            <td>${value.prevamount}</td>
-                            <td>${value.amount}</td>
+                            <td>${value.prevamount.numberFormat(0,".",",")}</td>
+                            <td>${value.amount.numberFormat(0,".",",")}</td>
                             <td>${value.amtdiff}</td>
-                            <td>${value.prevcount}</td>
-                            <td>${value.count}</td>
+                            <td>${value.prevcount.numberFormat(0,".",",")}</td>
+                            <td>${value.count.numberFormat(0,".",",")}</td>
                             <td>${value.cntdiff}</td>
-                            <td>${value.prevunitprice}</td>
-                            <td>${value.unitprice}</td>
+                            <td>${value.prevunitprice.numberFormat(0,".",",")}</td>
+                            <td>${value.unitprice.numberFormat(0,".",",")}</td>
                             <td>${value.updiff}</td>
                           </tr>`);
       });
