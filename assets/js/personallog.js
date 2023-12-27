@@ -58,8 +58,8 @@ $(async function(){
         totalbody.append(`<tr>
                             <td>${value.brand}</td>
                             <td>${value.count}</td>
-                            <td>${value.total}</td>
-                            <td>${value.unitprice}</td>
+                            <td>${value.total.numberFormat(0,".",",")}</td>
+                            <td>${value.unitprice.numberFormat(0,".",",")}</td>
                           </tr>`);
       })
       $.each(datalist.car,(index,value)=>{
