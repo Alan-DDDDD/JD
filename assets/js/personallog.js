@@ -38,10 +38,10 @@ $(async function(){
       $(`#ablecoda`).html(datalist.ablecoda.numberFormat(0,".",","));
       Chart(datalist.ChartData);
       let CulTable = $(`#CulTable`);
-      let DeitailTable = $(`#DeitailTable`);
+      let totalbody = $(`#totalbody`);
       let CaseTable = $(`#casebody`);
       CulTable.empty();
-      DeitailTable.empty();
+      totalbody.empty();
       CaseTable.empty();
       $.each(datalist.cul,(index,value)=>{
         CulTable.append(`<tr>
@@ -54,8 +54,13 @@ $(async function(){
                             <td>${value.mconversion}</td>
                           </tr>`);
       });
-      $.each(datalist.Deitail,(index,value)=>{
-        DeitailTable.append();
+      $.each(datalist.ba,(index,value)=>{
+        totalbody.append(`<tr>
+                            <td>${value.brand}</td>
+                            <td>${value.count}</td>
+                            <td>${value.total}</td>
+                            <td>${value.unitprice}</td>
+                          </tr>`);
       })
       $.each(datalist.car,(index,value)=>{
         CaseTable.append(`<tr>
