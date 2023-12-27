@@ -43,7 +43,7 @@ $(async function(){
       CulTable.empty();
       DeitailTable.empty();
       CaseTable.empty();
-      $.each(datalist.Cul,(index,value)=>{
+      $.each(datalist.cul,(index,value)=>{
         CulTable.append(`<tr>
                             <td>${value.casestatus}</td>
                             <td>${value.tcount}</td>
