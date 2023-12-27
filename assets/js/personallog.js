@@ -32,7 +32,7 @@ $(async function(){
     if(result.Status){
       let datalist = result.Data;
       $(`#empid`).html(datalist.empid);
-      $(`#empname`).html(datalist.empname);
+      $(`.empname`).html(datalist.empname);
       $(`#monthtotal`).html(datalist.monthtotal.numberFormat(0,".",","));
       $(`#yeartotal`).html(datalist.yeartotal.numberFormat(0,".",","));
       $(`#ablecoda`).html(datalist.ablecoda.numberFormat(0,".",","));
