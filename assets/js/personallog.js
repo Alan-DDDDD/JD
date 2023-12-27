@@ -57,8 +57,8 @@ $(async function(){
       $.each(datalist.ba,(index,value)=>{
         totalbody.append(`<tr>
                             <td>${value.brand}</td>
-                            <td>${value.count}</td>
                             <td>${value.total.numberFormat(0,".",",")}</td>
+                            <td>${value.count}</td>
                             <td>${value.unitprice.numberFormat(0,".",",")}</td>
                           </tr>`);
       })
