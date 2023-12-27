@@ -65,7 +65,7 @@ $(async function(){
                           </tr>`);
       })
       $.each(datalist.po,(index,value)=>{
-        yearbody.append(`${value.empname == curruntuser ? `<tr>`:`<tr class="bg-danger">`}
+        yearbody.append(`${value.empname != curruntuser ? `<tr>`:`<tr class="bg-danger">`}
                             <td>${index+1}</td>
                             <td>${value.empname}</td>
                             <td>${value.prevamount.numberFormat(0,".",",")}</td>
