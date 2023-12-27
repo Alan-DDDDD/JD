@@ -47,11 +47,11 @@ $(async function(){
         CulTable.append(`<tr>
                             <td>${value.casestatus}</td>
                             <td>${value.tcount}</td>
-                            <td>${value.tconversion}</td>
+                            <td>${value.tconversion}%</td>
                             <td>${value.ycount}</td>
-                            <td>${value.yconversion}</td>
+                            <td>${value.yconversion}%</td>
                             <td>${value.mcount}</td>
-                            <td>${value.mconversion}</td>
+                            <td>${value.mconversion}%</td>
                           </tr>`);
       });
       $.each(datalist.Deitail,(index,value)=>{
