@@ -44,7 +44,15 @@ $(async function(){
       DeitailTable.empty();
       CaseTable.empty();
       $.each(datalist.Cul,(index,value)=>{
-        CulTable.append();
+        CulTable.append(`<tr>
+                            <td>${value.casestatus}</td>
+                            <td>${value.tcount}</td>
+                            <td>${value.tconvert}</td>
+                            <td>${value.ycount}</td>
+                            <td>${value.yconvert}</td>
+                            <td>${value.mcount}</td>
+                            <td>${value.mconvert}</td>
+                          </tr>`);
       });
       $.each(datalist.Deitail,(index,value)=>{
         DeitailTable.append();
