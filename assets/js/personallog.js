@@ -40,9 +40,11 @@ $(async function(){
       let CulTable = $(`#CulTable`);
       let totalbody = $(`#totalbody`);
       let CaseTable = $(`#casebody`);
+      let yearbody = $(`#yearbody`);
       CulTable.empty();
       totalbody.empty();
       CaseTable.empty();
+      yearbody.empty();
       $.each(datalist.cul,(index,value)=>{
         CulTable.append(`<tr>
                             <td>${value.casestatus}</td>
@@ -62,6 +64,20 @@ $(async function(){
                             <td>${value.unitprice.numberFormat(0,".",",")}</td>
                           </tr>`);
       })
+      $.each(datalist.po,(index,value)=>{
+        yearbody.append(`<tr>
+                            <td>${value.empname}</td>
+                            <td>${value.prevamount}</td>
+                            <td>${value.amount}</td>
+                            <td>${value.amtdiff}</td>
+                            <td>${value.prevcount}</td>
+                            <td>${value.count}</td>
+                            <td>${value.cntdiff}</td>
+                            <td>${value.prevunitprice}</td>
+                            <td>${value.unitprice}</td>
+                            <td>${value.updiff}</td>
+                          </tr>`);
+      });
       $.each(datalist.car,(index,value)=>{
         CaseTable.append(`<tr>
                             <td>${value.model}</td>
