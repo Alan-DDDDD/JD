@@ -29,7 +29,7 @@ $(async function(){
     let emplist = $(`#emplist`);
     emplist.empty();
     $.each(datalist,(index,value)=>{
-      emplist.append(`<tr class="emplist" data-id="${value.empid}">
+      emplist.append(`<tr class="emplist" data-id="${value.empid}" style="cursor:pointer">
                           <td>${value.empname}</td>
                           <td>${value.action.numberFormat(0,".",",")}</td>
                           <td>${value.done.numberFormat(0,".",",")}</td>
