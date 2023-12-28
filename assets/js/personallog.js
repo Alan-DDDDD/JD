@@ -117,41 +117,7 @@ $(async function(){
 })
 //getSelfData();
 async function getSelfData(){
-  $(`#budgettbody`).empty();
-  $(`#budgettbody`).append(`<div class="spinner-border text-primary" role="status" id="mainwait">
-    <span class="visually-hidden">Lodding....</span>
-  </div>`);
-    var response = await fetch(url + "/api/Budget?user=" + localStorage.getItem(`currid`), {
-        method: "get",
-        headers: new Headers({
-          "ngrok-skip-browser-warning": "69420",
-        }),
-      });
-    var body = await response.json();
-    console.log(body);
-    var table = $(`#budgettbody`);
-    if(body.Status){
-      datalist = body.Data
-      $.each(datalist,function(index,data){
-          table.append(`<tr>
-                            <td onclick="detail('${data.empid}');" style="cursor:pointer;">${data.empname}</td>
-                            <td>${data.pb.balance.numberFormat(0,".",",")}</td>
-                            <td>${data.pb.keep.numberFormat(0,".",",")}</td>
-                            <td>${data.pb.total.numberFormat(0,".",",")}</td>
-                            <td>
-                              <div class="dropdown">
-                                <button type="button" class="btn btn-primary btne"
-                                 data-bs-toggle="modal"
-                                 data-bs-target="#modalCenter" data-id="${data.empid}">修改</button>
-                              </div>
-                            </td>
-                        </tr>`);
-      });
-    }
-    else{
-      //openLogin();
-    }
-    $(`#mainwait`).remove();
+  
 }
 //搜尋
 function select(){
