@@ -78,7 +78,7 @@ async function getSelfData(){
     }
     $(`#mainwait`).remove();
 }
-$(`#search`).keypress(select());
+$(`#search`).keypress(function(){select()});
 //搜尋
 function select(){
   let key = $(`#search`).val();
