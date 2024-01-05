@@ -224,18 +224,18 @@ $(`.casesave`).on('click',async function(){
       body : form
     });
     var body = await response.json();
-    if(body.status){
+    if(body.Status){
       if(body.error){//資料邏輯錯誤
         alert("");
       }else{
-        $(this).data("caseid",body.data);
-        getSelfData(body.data);
+        $(this).data("caseid",body.Data);
+        getSelfData(body.Data);
         $(`#mainpanel`).hide(300);
         $(`#listpanel`).slideToggle();
         alert("新增成功!!");
       }
     }else{//系統錯誤
-      alert(body.error.errorMsg);
+      alert(body.error.ErrorMsg);
     }
   }
 });
