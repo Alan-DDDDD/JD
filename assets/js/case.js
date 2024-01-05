@@ -202,7 +202,7 @@ $(`.casesave`).on('click',async function(){
       body : form
     });
     var body = await response.json();
-    if(body.status){
+    if(body.Status){
       if(body.error){//資料邏輯錯誤
         alert("");
       }else{
@@ -212,7 +212,7 @@ $(`.casesave`).on('click',async function(){
         $(`#listpanel`).slideToggle();
       }
     }else{//系統錯誤
-      alert(body.error.errorMsg);
+      alert(body.error.ErrorMsg);
     }
   }else{
     //新增
